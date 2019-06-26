@@ -1057,6 +1057,10 @@ id barrier
 id beginning
 id blocking
 id bottom
+id button
+id button2
+id button3
+id button4
 id buttonPanel
 id center
 id center_horizontal
@@ -1113,10 +1117,6 @@ id id_tab_frd
 id id_tab_frd_img
 id ifRoom
 id image
-id imageButton1
-id imageButton2
-id imageButton3
-id imageButton4
 id imageButton6
 id imageButton7
 id imageButton8
@@ -1210,11 +1210,7 @@ id text2
 id textSpacerNoButtons
 id textSpacerNoTitle
 id textStart
-id textView1
 id textView10
-id textView2
-id textView3
-id textView4
 id textView7
 id textView8
 id textView9

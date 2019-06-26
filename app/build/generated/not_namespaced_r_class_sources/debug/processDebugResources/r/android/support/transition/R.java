@@ -85,11 +85,11 @@ public final class R {
         public static final int actions = 0x7f080017;
         public static final int async = 0x7f08001d;
         public static final int blocking = 0x7f080021;
-        public static final int chronometer = 0x7f080029;
-        public static final int forever = 0x7f080049;
-        public static final int ghost_view = 0x7f08004a;
-        public static final int icon = 0x7f080050;
-        public static final int icon_group = 0x7f080051;
+        public static final int chronometer = 0x7f08002d;
+        public static final int forever = 0x7f08004d;
+        public static final int ghost_view = 0x7f08004e;
+        public static final int icon = 0x7f080054;
+        public static final int icon_group = 0x7f080055;
         public static final int info = 0x7f080062;
         public static final int italic = 0x7f080064;
         public static final int line1 = 0x7f080069;
@@ -109,13 +109,13 @@ public final class R {
         public static final int tag_unhandled_key_listeners = 0x7f0800b6;
         public static final int text = 0x7f0800b7;
         public static final int text2 = 0x7f0800b8;
-        public static final int time = 0x7f0800c8;
-        public static final int title = 0x7f0800c9;
-        public static final int transition_current_scene = 0x7f0800cf;
-        public static final int transition_layout_save = 0x7f0800d0;
-        public static final int transition_position = 0x7f0800d1;
-        public static final int transition_scene_layoutid_cache = 0x7f0800d2;
-        public static final int transition_transform = 0x7f0800d3;
+        public static final int time = 0x7f0800c4;
+        public static final int title = 0x7f0800c5;
+        public static final int transition_current_scene = 0x7f0800cb;
+        public static final int transition_layout_save = 0x7f0800cc;
+        public static final int transition_position = 0x7f0800cd;
+        public static final int transition_scene_layoutid_cache = 0x7f0800ce;
+        public static final int transition_transform = 0x7f0800cf;
     }
     public static final class integer {
         private integer() {}
