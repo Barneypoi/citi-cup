@@ -1057,6 +1057,11 @@ id barrier
 id beginning
 id blocking
 id bottom
+id button
+id button2
+id button3
+id button4
+id button5
 id buttonPanel
 id center
 id center_horizontal
@@ -1115,6 +1120,7 @@ id id_tab_weixin
 id id_tab_weixin_img
 id ifRoom
 id image
+id imageView
 id info
 id invisible
 id italic
@@ -1205,6 +1211,8 @@ id text2
 id textSpacerNoButtons
 id textSpacerNoTitle
 id textStart
+id textView
+id textView2
 id text_input_password_toggle
 id textinput_counter
 id textinput_error
@@ -1310,6 +1318,7 @@ layout tab2
 layout tab3
 layout tab4
 layout top
+layout user_info
 mipmap ic_launcher
 mipmap ic_launcher_round
 string abc_action_bar_home_description
