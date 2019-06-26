@@ -14,7 +14,7 @@ public class WDFragment extends Fragment{
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.tab3, container, false);
+        View view = inflater.inflate(R.layout.my, container, false);
         return view;
     }
 }

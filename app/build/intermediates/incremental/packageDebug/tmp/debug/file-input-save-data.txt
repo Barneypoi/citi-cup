@@ -1,7 +1,7 @@
 #Internal package file, do not edit.
-#Wed Jun 26 18:52:49 CST 2019
+#Wed Jun 26 20:49:24 CST 2019
 0.baseType=DIRECTORY
-0.base=C\:\\Users\\14764\\Downloads\\citi-cup-master\\app\\build\\intermediates\\dex\\debug\\mergeDexDebug\\out
+0.base=F\:\\Android\\citi\\1\\citi-cup\\app\\build\\intermediates\\dex\\debug\\mergeDexDebug\\out
 0.path=classes.dex
 0.set=DEX
 count=1
