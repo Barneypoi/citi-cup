@@ -16,34 +16,39 @@
         app:fontFamily="casual" />
 
 
-    <Button
-        android:id="@+id/buttonJJ"
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_weight="1"
-        android:background="#FFFFFF"
-        android:text="基金" />
+        android:orientation="horizontal">
 
-    <Button
-        android:id="@+id/buttonJZ"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_weight="1"
-        android:background="#FFFFFF"
-        android:text="净值" />
+        <Button
+            android:id="@+id/buttonJJ"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="#FFFFFF"
+            android:text="基金" />
 
-    <Button
-        android:id="@+id/buttonZF"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_weight="1"
-        android:background="#FFFFFF"
-        android:text="加入后涨幅" />
+        <Button
+            android:id="@+id/buttonJZ"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="#FFFFFF"
+            android:text="净值" />
 
+        <Button
+            android:id="@+id/buttonZF"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="#FFFFFF"
+            android:text="加入后涨幅" />
+    </LinearLayout>
 
     <ListView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_weight="1" />
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
 
 </LinearLayout>

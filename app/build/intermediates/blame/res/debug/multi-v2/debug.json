@@ -16,38 +16,6 @@
             ]
         },
         {
-            "outputFile": "C:\\Users\\14764\\Downloads\\citi-cup-master\\app\\build\\intermediates\\res\\merged\\debug\\values-be_values-be.arsc.flat",
-            "map": [
-                {
-                    "source": "C:\\Users\\14764\\.gradle\\caches\\transforms-2\\files-2.1\\7e308e215f23d5b17f60f8dd8f9afcab\\res\\values-be\\values-be.xml",
-                    "from": {
-                        "startLines": "2",
-                        "startColumns": "4",
-                        "startOffsets": "55",
-                        "endColumns": "100",
-                        "endOffsets": "151"
-                    },
-                    "to": {
-                        "startLines": "30",
-                        "startColumns": "4",
-                        "startOffsets": "2915",
-                        "endColumns": "100",
-                        "endOffsets": "3011"
-                    }
-                },
-                {
-                    "source": "C:\\Users\\14764\\.gradle\\caches\\transforms-2\\files-2.1\\e007fba4b470df46c6673acb402ab0ef\\res\\values-be\\values-be.xml",
-                    "from": {
-                        "startLines": "2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29",
-                        "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",
-                        "startOffsets": "105,225,328,444,530,638,756,835,913,1005,1099,1195,1289,1385,1479,1575,1670,1762,1854,1937,2043,2149,2247,2355,2460,2565,2734,2834",
-                        "endColumns": "119,102,115,85,107,117,78,77,91,93,95,93,95,93,95,94,91,91,82,105,105,97,107,104,104,168,99,80",
-                        "endOffsets": "220,323,439,525,633,751,830,908,1000,1094,1190,1284,1380,1474,1570,1665,1757,1849,1932,2038,2144,2242,2350,2455,2560,2729,2829,2910"
-                    }
-                }
-            ]
-        },
-        {
             "outputFile": "C:\\Users\\14764\\Downloads\\citi-cup-master\\app\\build\\intermediates\\res\\merged\\debug\\values-da_values-da.arsc.flat",
             "map": [
                 {
@@ -75,6 +43,38 @@
                         "startOffsets": "105,208,307,419,502,602,715,792,869,960,1053,1149,1243,1338,1431,1526,1624,1715,1806,1885,1994,2102,2198,2312,2414,2515,2668,2765",
                         "endColumns": "102,98,111,82,99,112,76,76,90,92,95,93,94,92,94,97,90,90,78,108,107,95,113,101,100,152,96,78",
                         "endOffsets": "203,302,414,497,597,710,787,864,955,1048,1144,1238,1333,1426,1521,1619,1710,1801,1880,1989,2097,2193,2307,2409,2510,2663,2760,2839"
+                    }
+                }
+            ]
+        },
+        {
+            "outputFile": "C:\\Users\\14764\\Downloads\\citi-cup-master\\app\\build\\intermediates\\res\\merged\\debug\\values-be_values-be.arsc.flat",
+            "map": [
+                {
+                    "source": "C:\\Users\\14764\\.gradle\\caches\\transforms-2\\files-2.1\\7e308e215f23d5b17f60f8dd8f9afcab\\res\\values-be\\values-be.xml",
+                    "from": {
+                        "startLines": "2",
+                        "startColumns": "4",
+                        "startOffsets": "55",
+                        "endColumns": "100",
+                        "endOffsets": "151"
+                    },
+                    "to": {
+                        "startLines": "30",
+                        "startColumns": "4",
+                        "startOffsets": "2915",
+                        "endColumns": "100",
+                        "endOffsets": "3011"
+                    }
+                },
+                {
+                    "source": "C:\\Users\\14764\\.gradle\\caches\\transforms-2\\files-2.1\\e007fba4b470df46c6673acb402ab0ef\\res\\values-be\\values-be.xml",
+                    "from": {
+                        "startLines": "2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29",
+                        "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",
+                        "startOffsets": "105,225,328,444,530,638,756,835,913,1005,1099,1195,1289,1385,1479,1575,1670,1762,1854,1937,2043,2149,2247,2355,2460,2565,2734,2834",
+                        "endColumns": "119,102,115,85,107,117,78,77,91,93,95,93,95,93,95,94,91,91,82,105,105,97,107,104,104,168,99,80",
+                        "endOffsets": "220,323,439,525,633,751,830,908,1000,1094,1190,1284,1380,1474,1570,1665,1757,1849,1932,2038,2144,2242,2350,2455,2560,2729,2829,2910"
                     }
                 }
             ]
@@ -287,38 +287,6 @@
             ]
         },
         {
-            "outputFile": "C:\\Users\\14764\\Downloads\\citi-cup-master\\app\\build\\intermediates\\res\\merged\\debug\\values-ur_values-ur.arsc.flat",
-            "map": [
-                {
-                    "source": "C:\\Users\\14764\\.gradle\\caches\\transforms-2\\files-2.1\\e007fba4b470df46c6673acb402ab0ef\\res\\values-ur\\values-ur.xml",
-                    "from": {
-                        "startLines": "2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29",
-                        "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",
-                        "startOffsets": "105,215,321,430,516,620,740,816,892,984,1078,1174,1268,1370,1464,1560,1654,1746,1838,1923,2031,2140,2242,2353,2453,2561,2726,2824",
-                        "endColumns": "109,105,108,85,103,119,75,75,91,93,95,93,101,93,95,93,91,91,84,107,108,101,110,99,107,164,97,79",
-                        "endOffsets": "210,316,425,511,615,735,811,887,979,1073,1169,1263,1365,1459,1555,1649,1741,1833,1918,2026,2135,2237,2348,2448,2556,2721,2819,2899"
-                    }
-                },
-                {
-                    "source": "C:\\Users\\14764\\.gradle\\caches\\transforms-2\\files-2.1\\7e308e215f23d5b17f60f8dd8f9afcab\\res\\values-ur\\values-ur.xml",
-                    "from": {
-                        "startLines": "2",
-                        "startColumns": "4",
-                        "startOffsets": "55",
-                        "endColumns": "100",
-                        "endOffsets": "151"
-                    },
-                    "to": {
-                        "startLines": "30",
-                        "startColumns": "4",
-                        "startOffsets": "2904",
-                        "endColumns": "100",
-                        "endOffsets": "3000"
-                    }
-                }
-            ]
-        },
-        {
             "outputFile": "C:\\Users\\14764\\Downloads\\citi-cup-master\\app\\build\\intermediates\\res\\merged\\debug\\values-my_values-my.arsc.flat",
             "map": [
                 {
@@ -346,6 +314,38 @@
                         "startOffsets": "2979",
                         "endColumns": "100",
                         "endOffsets": "3075"
+                    }
+                }
+            ]
+        },
+        {
+            "outputFile": "C:\\Users\\14764\\Downloads\\citi-cup-master\\app\\build\\intermediates\\res\\merged\\debug\\values-ur_values-ur.arsc.flat",
+            "map": [
+                {
+                    "source": "C:\\Users\\14764\\.gradle\\caches\\transforms-2\\files-2.1\\e007fba4b470df46c6673acb402ab0ef\\res\\values-ur\\values-ur.xml",
+                    "from": {
+                        "startLines": "2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29",
+                        "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",
+                        "startOffsets": "105,215,321,430,516,620,740,816,892,984,1078,1174,1268,1370,1464,1560,1654,1746,1838,1923,2031,2140,2242,2353,2453,2561,2726,2824",
+                        "endColumns": "109,105,108,85,103,119,75,75,91,93,95,93,101,93,95,93,91,91,84,107,108,101,110,99,107,164,97,79",
+                        "endOffsets": "210,316,425,511,615,735,811,887,979,1073,1169,1263,1365,1459,1555,1649,1741,1833,1918,2026,2135,2237,2348,2448,2556,2721,2819,2899"
+                    }
+                },
+                {
+                    "source": "C:\\Users\\14764\\.gradle\\caches\\transforms-2\\files-2.1\\7e308e215f23d5b17f60f8dd8f9afcab\\res\\values-ur\\values-ur.xml",
+                    "from": {
+                        "startLines": "2",
+                        "startColumns": "4",
+                        "startOffsets": "55",
+                        "endColumns": "100",
+                        "endOffsets": "151"
+                    },
+                    "to": {
+                        "startLines": "30",
+                        "startColumns": "4",
+                        "startOffsets": "2904",
+                        "endColumns": "100",
+                        "endOffsets": "3000"
                     }
                 }
             ]
@@ -543,38 +543,6 @@
             ]
         },
         {
-            "outputFile": "C:\\Users\\14764\\Downloads\\citi-cup-master\\app\\build\\intermediates\\res\\merged\\debug\\values-b+sr+Latn_values-b+sr+Latn.arsc.flat",
-            "map": [
-                {
-                    "source": "C:\\Users\\14764\\.gradle\\caches\\transforms-2\\files-2.1\\e007fba4b470df46c6673acb402ab0ef\\res\\values-b+sr+Latn\\values-b+sr+Latn.xml",
-                    "from": {
-                        "startLines": "2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29",
-                        "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",
-                        "startOffsets": "105,214,318,424,510,614,732,814,895,986,1079,1175,1269,1370,1463,1558,1663,1754,1845,1933,2039,2147,2248,2353,2461,2562,2731,2828",
-                        "endColumns": "108,103,105,85,103,117,81,80,90,92,95,93,100,92,94,104,90,90,87,105,107,100,104,107,100,168,96,83",
-                        "endOffsets": "209,313,419,505,609,727,809,890,981,1074,1170,1264,1365,1458,1553,1658,1749,1840,1928,2034,2142,2243,2348,2456,2557,2726,2823,2907"
-                    }
-                },
-                {
-                    "source": "C:\\Users\\14764\\.gradle\\caches\\transforms-2\\files-2.1\\7e308e215f23d5b17f60f8dd8f9afcab\\res\\values-b+sr+Latn\\values-b+sr+Latn.xml",
-                    "from": {
-                        "startLines": "2",
-                        "startColumns": "4",
-                        "startOffsets": "55",
-                        "endColumns": "100",
-                        "endOffsets": "151"
-                    },
-                    "to": {
-                        "startLines": "30",
-                        "startColumns": "4",
-                        "startOffsets": "2912",
-                        "endColumns": "100",
-                        "endOffsets": "3008"
-                    }
-                }
-            ]
-        },
-        {
             "outputFile": "C:\\Users\\14764\\Downloads\\citi-cup-master\\app\\build\\intermediates\\res\\merged\\debug\\values-sr_values-sr.arsc.flat",
             "map": [
                 {
@@ -602,6 +570,38 @@
                         "startOffsets": "105,214,317,423,509,613,731,812,892,983,1076,1172,1266,1367,1460,1555,1660,1751,1842,1930,2035,2143,2244,2348,2456,2557,2724,2821",
                         "endColumns": "108,102,105,85,103,117,80,79,90,92,95,93,100,92,94,104,90,90,87,104,107,100,103,107,100,166,96,83",
                         "endOffsets": "209,312,418,504,608,726,807,887,978,1071,1167,1261,1362,1455,1550,1655,1746,1837,1925,2030,2138,2239,2343,2451,2552,2719,2816,2900"
+                    }
+                }
+            ]
+        },
+        {
+            "outputFile": "C:\\Users\\14764\\Downloads\\citi-cup-master\\app\\build\\intermediates\\res\\merged\\debug\\values-b+sr+Latn_values-b+sr+Latn.arsc.flat",
+            "map": [
+                {
+                    "source": "C:\\Users\\14764\\.gradle\\caches\\transforms-2\\files-2.1\\e007fba4b470df46c6673acb402ab0ef\\res\\values-b+sr+Latn\\values-b+sr+Latn.xml",
+                    "from": {
+                        "startLines": "2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29",
+                        "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",
+                        "startOffsets": "105,214,318,424,510,614,732,814,895,986,1079,1175,1269,1370,1463,1558,1663,1754,1845,1933,2039,2147,2248,2353,2461,2562,2731,2828",
+                        "endColumns": "108,103,105,85,103,117,81,80,90,92,95,93,100,92,94,104,90,90,87,105,107,100,104,107,100,168,96,83",
+                        "endOffsets": "209,313,419,505,609,727,809,890,981,1074,1170,1264,1365,1458,1553,1658,1749,1840,1928,2034,2142,2243,2348,2456,2557,2726,2823,2907"
+                    }
+                },
+                {
+                    "source": "C:\\Users\\14764\\.gradle\\caches\\transforms-2\\files-2.1\\7e308e215f23d5b17f60f8dd8f9afcab\\res\\values-b+sr+Latn\\values-b+sr+Latn.xml",
+                    "from": {
+                        "startLines": "2",
+                        "startColumns": "4",
+                        "startOffsets": "55",
+                        "endColumns": "100",
+                        "endOffsets": "151"
+                    },
+                    "to": {
+                        "startLines": "30",
+                        "startColumns": "4",
+                        "startOffsets": "2912",
+                        "endColumns": "100",
+                        "endOffsets": "3008"
                     }
                 }
             ]
@@ -1356,22 +1356,6 @@
             ]
         },
         {
-            "outputFile": "C:\\Users\\14764\\Downloads\\citi-cup-master\\app\\build\\intermediates\\res\\merged\\debug\\values-v25_values-v25.arsc.flat",
-            "map": [
-                {
-                    "source": "C:\\Users\\14764\\.gradle\\caches\\transforms-2\\files-2.1\\e007fba4b470df46c6673acb402ab0ef\\res\\values-v25\\values-v25.xml",
-                    "from": {
-                        "startLines": "2,3,4,6",
-                        "startColumns": "4,4,4,4",
-                        "startOffsets": "55,126,209,308",
-                        "endLines": "2,3,5,7",
-                        "endColumns": "70,82,12,12",
-                        "endOffsets": "121,204,303,414"
-                    }
-                }
-            ]
-        },
-        {
             "outputFile": "C:\\Users\\14764\\Downloads\\citi-cup-master\\app\\build\\intermediates\\res\\merged\\debug\\values-pt-rBR_values-pt-rBR.arsc.flat",
             "map": [
                 {
@@ -1399,6 +1383,22 @@
                         "startOffsets": "105,225,331,438,527,628,746,829,909,1000,1093,1189,1283,1384,1477,1572,1667,1758,1849,1936,2043,2155,2257,2365,2472,2582,2744,2844",
                         "endColumns": "119,105,106,88,100,117,82,79,90,92,95,93,100,92,94,94,90,90,86,106,111,101,107,106,109,161,99,84",
                         "endOffsets": "220,326,433,522,623,741,824,904,995,1088,1184,1278,1379,1472,1567,1662,1753,1844,1931,2038,2150,2252,2360,2467,2577,2739,2839,2924"
+                    }
+                }
+            ]
+        },
+        {
+            "outputFile": "C:\\Users\\14764\\Downloads\\citi-cup-master\\app\\build\\intermediates\\res\\merged\\debug\\values-v25_values-v25.arsc.flat",
+            "map": [
+                {
+                    "source": "C:\\Users\\14764\\.gradle\\caches\\transforms-2\\files-2.1\\e007fba4b470df46c6673acb402ab0ef\\res\\values-v25\\values-v25.xml",
+                    "from": {
+                        "startLines": "2,3,4,6",
+                        "startColumns": "4,4,4,4",
+                        "startOffsets": "55,126,209,308",
+                        "endLines": "2,3,5,7",
+                        "endColumns": "70,82,12,12",
+                        "endOffsets": "121,204,303,414"
                     }
                 }
             ]
