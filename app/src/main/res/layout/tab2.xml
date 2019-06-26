@@ -9,11 +9,12 @@
         android:id="@+id/textView"
         android:layout_width="match_parent"
         android:layout_height="50dp"
-        android:background="#977AFF"
+        android:background="@color/main"
         android:gravity="center"
         android:text="自选基金"
         android:textAppearance="@style/TextAppearance.AppCompat.Display1"
-        app:fontFamily="casual" />
+        android:textColor="@color/titlecolor"
+        app:fontFamily="cursive" />
 
 
     <LinearLayout
@@ -26,7 +27,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:background="#FFFFFF"
+            android:background="@color/modulecolor"
             android:text="基金" />
 
         <Button
@@ -34,7 +35,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:background="#FFFFFF"
+            android:background="@color/modulecolor"
             android:text="净值" />
 
         <Button
@@ -42,7 +43,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:background="#FFFFFF"
+            android:background="@color/modulecolor"
             android:text="加入后涨幅" />
     </LinearLayout>
 

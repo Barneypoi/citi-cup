@@ -78,7 +78,9 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
-                        android:text="基金搜索" />
+                        android:background="@color/main"
+                        android:text="基金搜索"
+                        android:textColor="@color/titlecolor" />
                 </LinearLayout>
 
                 <LinearLayout
@@ -92,7 +94,9 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
-                        android:text="基金筛选" />
+                        android:background="@color/main"
+                        android:text="基金筛选"
+                        android:textColor="@color/titlecolor" />
                 </LinearLayout>
 
             </LinearLayout>
@@ -113,7 +117,9 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
-                        android:text="查回报率" />
+                        android:background="@color/main"
+                        android:text="查回报率"
+                        android:textColor="@color/titlecolor" />
                 </LinearLayout>
 
                 <LinearLayout
@@ -127,7 +133,9 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
-                        android:text="基金净值" />
+                        android:background="@color/main"
+                        android:text="基金净值"
+                        android:textColor="@color/titlecolor" />
                 </LinearLayout>
 
             </LinearLayout>
