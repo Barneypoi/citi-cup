@@ -12,23 +12,17 @@ import android.widget.ImageButton;
 import android.widget.LinearLayout;
 
 public class MainActivity extends FragmentActivity implements OnClickListener {
-    //声明四个Tab的布局文件
-    private LinearLayout mTabWeixin;
-    private LinearLayout mTabFrd;
-    private LinearLayout mTabAddress;
-    private LinearLayout mTabSetting;
+    //声明Tab的布局文件
+    private LinearLayout mTabSY;
+    private LinearLayout mTabZX;
+    private LinearLayout mTabWD;
 
-    //声明四个Tab的ImageButton
-    private ImageButton mWeixinImg;
-    private ImageButton mFrdImg;
-    private ImageButton mAddressImg;
-    private ImageButton mSettingImg;
 
-    //声明四个Tab分别对应的Fragment
-    private Fragment mFragWeinxin;
+    //声明Tab分别对应的Fragment
+    private Fragment mFragSY;
     private Fragment mFragFrd;
     private Fragment mFragAddress;
-    private Fragment mFragSetting;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -41,34 +35,25 @@ public class MainActivity extends FragmentActivity implements OnClickListener {
     }
 
     private void initEvents() {
-        //初始化四个Tab的点击事件
-        mTabWeixin.setOnClickListener(this);
-        mTabFrd.setOnClickListener(this);
-        mTabAddress.setOnClickListener(this);
-        mTabSetting.setOnClickListener(this);
+        //初始化Tab的点击事件
+        mTabSY.setOnClickListener(this);
+        mTabZX.setOnClickListener(this);
+        mTabWD.setOnClickListener(this);
     }
 
     private void initViews() {
-        //初始化四个Tab的布局文件
-        mTabWeixin = (LinearLayout) findViewById(R.id.id_tab_weixin);
-        mTabFrd = (LinearLayout) findViewById(R.id.id_tab_frd);
-        mTabAddress = (LinearLayout) findViewById(R.id.id_tab_address);
-        mTabSetting = (LinearLayout) findViewById(R.id.id_tab_setting);
-
-        //初始化四个ImageButton
-        mWeixinImg = (ImageButton) findViewById(R.id.id_tab_weixin_img);
-        mFrdImg = (ImageButton) findViewById(R.id.id_tab_frd_img);
-        mAddressImg = (ImageButton) findViewById(R.id.id_tab_address_img);
-        mSettingImg = (ImageButton) findViewById(R.id.id_tab_setting_img);
+        //初始化Tab的布局文件
+        mTabSY = (LinearLayout) findViewById(R.id.id_tab_SY);
+        mTabZX = (LinearLayout) findViewById(R.id.id_tab_frd);
+        mTabWD = (LinearLayout) findViewById(R.id.id_tab_address);
+        
     }
 
     //处理Tab的点击事件
     @Override
     public void onClick(View v) {
-        //先将四个ImageButton置为灰色
-        resetImgs();
         switch (v.getId()) {
-            case R.id.id_tab_weixin:
+            case R.id.id_tab_SY:
                 selectTab(0);//当点击的是微信的Tab就选中微信的Tab
                 break;
             case R.id.id_tab_frd:
@@ -76,9 +61,6 @@ public class MainActivity extends FragmentActivity implements OnClickListener {
                 break;
             case R.id.id_tab_address:
                 selectTab(2);
-                break;
-            case R.id.id_tab_setting:
-                selectTab(3);
                 break;
         }
 
@@ -95,19 +77,16 @@ public class MainActivity extends FragmentActivity implements OnClickListener {
         switch (i) {
             //当选中点击的是微信的Tab时
             case 0:
-                //设置微信的ImageButton为绿色
-                //mWeixinImg.setImageResource(R.mipmap.tab_weixin_pressed);
                 //如果微信对应的Fragment没有实例化，则进行实例化，并显示出来
-                if (mFragWeinxin == null) {
-                    mFragWeinxin = new WeixinFragment();
-                    transaction.add(R.id.id_content, mFragWeinxin);
+                if (mFragSY == null) {
+                    mFragSY = new WeixinFragment();
+                    transaction.add(R.id.id_content, mFragSY);
                 } else {
                     //如果微信对应的Fragment已经实例化，则直接显示出来
-                    transaction.show(mFragWeinxin);
+                    transaction.show(mFragSY);
                 }
                 break;
             case 1:
-                //mFrdImg.setImageResource(R.mipmap.tab_find_frd_pressed);
                 if (mFragFrd == null) {
                     mFragFrd = new FrdFragment();
                     transaction.add(R.id.id_content, mFragFrd);
@@ -116,7 +95,6 @@ public class MainActivity extends FragmentActivity implements OnClickListener {
                 }
                 break;
             case 2:
-                //mAddressImg.setImageResource(R.mipmap.tab_address_pressed);
                 if (mFragAddress == null) {
                     mFragAddress = new AddressFragment();
                     transaction.add(R.id.id_content, mFragAddress);
@@ -124,24 +102,15 @@ public class MainActivity extends FragmentActivity implements OnClickListener {
                     transaction.show(mFragAddress);
                 }
                 break;
-            case 3:
-                //mSettingImg.setImageResource(R.mipmap.tab_settings_pressed);
-                if (mFragSetting == null) {
-                    mFragSetting = new SettingFragment();
-                    transaction.add(R.id.id_content, mFragSetting);
-                } else {
-                    transaction.show(mFragSetting);
-                }
-                break;
         }
         //不要忘记提交事务
         transaction.commit();
     }
 
-    //将四个的Fragment隐藏
+    //将Fragment隐藏
     private void hideFragments(FragmentTransaction transaction) {
-        if (mFragWeinxin != null) {
-            transaction.hide(mFragWeinxin);
+        if (mFragSY != null) {
+            transaction.hide(mFragSY);
         }
         if (mFragFrd != null) {
             transaction.hide(mFragFrd);
@@ -149,16 +118,5 @@ public class MainActivity extends FragmentActivity implements OnClickListener {
         if (mFragAddress != null) {
             transaction.hide(mFragAddress);
         }
-        if (mFragSetting != null) {
-            transaction.hide(mFragSetting);
-        }
-    }
-
-    //将四个ImageButton置为灰色
-    private void resetImgs() {
-        //mWeixinImg.setImageResource(R.mipmap.tab_weixin_normal);
-        //mFrdImg.setImageResource(R.mipmap.tab_find_frd_normal);
-        //mAddressImg.setImageResource(R.mipmap.tab_address_normal);
-        //mSettingImg.setImageResource(R.mipmap.tab_settings_normal);
     }
 }
