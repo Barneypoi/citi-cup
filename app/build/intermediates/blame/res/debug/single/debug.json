@@ -36,6 +36,10 @@
         "source": "E:\\.gradle\\caches\\transforms-2\\files-2.1\\254225ace00609852d4ce171f8f2a6a9\\res\\drawable-xxxhdpi-v4\\abc_btn_radio_to_on_mtrl_000.png"
     },
     {
+        "merged": "F:\\Android\\citi\\1\\citi-cup\\app\\build\\intermediates\\res\\merged\\debug\\layout_user_info.xml.flat",
+        "source": "F:\\Android\\citi\\1\\citi-cup\\app\\src\\main\\res\\layout\\user_info.xml"
+    },
+    {
         "merged": "F:\\Android\\citi\\1\\citi-cup\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4_abc_list_divider_mtrl_alpha.9.png.flat",
         "source": "E:\\.gradle\\caches\\transforms-2\\files-2.1\\254225ace00609852d4ce171f8f2a6a9\\res\\drawable-xhdpi-v4\\abc_list_divider_mtrl_alpha.9.png"
     },

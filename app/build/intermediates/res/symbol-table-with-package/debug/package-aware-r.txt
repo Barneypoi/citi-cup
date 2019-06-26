@@ -678,6 +678,11 @@ id barrier
 id beginning
 id blocking
 id bottom
+id button
+id button2
+id button3
+id button4
+id button5
 id buttonPanel
 id center
 id center_horizontal
@@ -714,6 +719,7 @@ id icon
 id icon_group
 id ifRoom
 id image
+id imageView
 id info
 id invisible
 id italic
@@ -779,6 +785,8 @@ id text
 id text2
 id textSpacerNoButtons
 id textSpacerNoTitle
+id textView
+id textView2
 id time
 id title
 id titleDividerNoCustom
@@ -835,6 +843,7 @@ layout select_dialog_item_material
 layout select_dialog_multichoice_material
 layout select_dialog_singlechoice_material
 layout support_simple_spinner_dropdown_item
+layout user_info
 mipmap ic_launcher
 mipmap ic_launcher_round
 string abc_action_bar_home_description
