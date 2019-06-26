@@ -1,4 +1,0 @@
-#Tue Jun 25 17:49:59 CST 2019
-base.0=F\:\\Android\\citi\\1\\citi-cup\\app\\build\\intermediates\\transforms\\dexMerger\\debug\\7
-path.0=classes.dex
-renamed.0=classes.dex
