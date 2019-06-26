@@ -8,5 +8,5 @@
         android:layout_height="match_parent"
         android:gravity="center"
         android:textSize="30sp"
-        android:text="The Setting Tab!"/>
+        android:text="The Setting Tab!citi"/>
 </LinearLayout>
