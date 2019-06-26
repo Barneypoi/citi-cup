@@ -1632,10 +1632,6 @@
         "source": "C:\\Users\\14764\\.gradle\\caches\\transforms-2\\files-2.1\\e007fba4b470df46c6673acb402ab0ef\\res\\drawable-xxhdpi-v4\\abc_scrubber_control_off_mtrl_alpha.png"
     },
     {
-        "merged": "C:\\Users\\14764\\Downloads\\citi-cup-master\\app\\build\\intermediates\\res\\merged\\debug\\layout_top.xml.flat",
-        "source": "C:\\Users\\14764\\Downloads\\citi-cup-master\\app\\src\\main\\res\\layout\\top.xml"
-    },
-    {
         "merged": "C:\\Users\\14764\\Downloads\\citi-cup-master\\app\\build\\intermediates\\res\\merged\\debug\\drawable_abc_edit_text_material.xml.flat",
         "source": "C:\\Users\\14764\\.gradle\\caches\\transforms-2\\files-2.1\\e007fba4b470df46c6673acb402ab0ef\\res\\drawable\\abc_edit_text_material.xml"
     },
@@ -1934,6 +1930,10 @@
     {
         "merged": "C:\\Users\\14764\\Downloads\\citi-cup-master\\app\\build\\intermediates\\res\\merged\\debug\\drawable-v21_notification_action_background.xml.flat",
         "source": "C:\\Users\\14764\\.gradle\\caches\\transforms-2\\files-2.1\\7e308e215f23d5b17f60f8dd8f9afcab\\res\\drawable-v21\\notification_action_background.xml"
+    },
+    {
+        "merged": "C:\\Users\\14764\\Downloads\\citi-cup-master\\app\\build\\intermediates\\res\\merged\\debug\\drawable_color.xml.flat",
+        "source": "C:\\Users\\14764\\Downloads\\citi-cup-master\\app\\src\\main\\res\\drawable\\color.xml"
     },
     {
         "merged": "C:\\Users\\14764\\Downloads\\citi-cup-master\\app\\build\\intermediates\\res\\merged\\debug\\layout-v3_tab1.xml.flat",

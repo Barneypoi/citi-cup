@@ -10,11 +10,11 @@ import android.view.ViewGroup;
 /**
  * Created by caobotao on 16/1/4.
  */
-public class WeixinFragment extends Fragment{
+public class WDFragment extends Fragment{
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.tab1, container, false);
+        View view = inflater.inflate(R.layout.tab3, container, false);
         return view;
     }
 }

@@ -13,7 +13,7 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical" >
+            android:orientation="vertical">
 
             <HorizontalScrollView
                 android:layout_width="match_parent"
@@ -65,7 +65,8 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:orientation="horizontal">
+                android:orientation="horizontal"
+                android:baselineAligned="false">
 
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -74,11 +75,12 @@
                     android:orientation="horizontal">
 
                     <Button
-                        android:id="@+id/button"
-                        android:layout_width="wrap_content"
+                        android:id="@+id/buttonJJ"
+                        android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
-                        android:text="基金搜索" />
+                        android:text="基金搜索"
+                        tools:ignore="NestedWeights" />
                 </LinearLayout>
 
                 <LinearLayout
@@ -89,10 +91,11 @@
 
                     <Button
                         android:id="@+id/button2"
-                        android:layout_width="wrap_content"
+                        android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
-                        android:text="基金筛选" />
+                        android:text="基金筛选"
+                        tools:ignore="NestedWeights" />
                 </LinearLayout>
 
             </LinearLayout>

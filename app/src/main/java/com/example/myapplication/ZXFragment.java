@@ -10,7 +10,7 @@ import android.view.ViewGroup;
 /**
  * Created by caobotao on 16/1/4.
  */
-public class FrdFragment extends Fragment{
+public class ZXFragment extends Fragment{
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {

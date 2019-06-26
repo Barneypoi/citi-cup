@@ -8,7 +8,6 @@ import android.os.Bundle;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.view.Window;
-import android.widget.ImageButton;
 import android.widget.LinearLayout;
 
 public class MainActivity extends FragmentActivity implements OnClickListener {
@@ -79,7 +78,7 @@ public class MainActivity extends FragmentActivity implements OnClickListener {
             case 0:
                 //如果微信对应的Fragment没有实例化，则进行实例化，并显示出来
                 if (mFragSY == null) {
-                    mFragSY = new WeixinFragment();
+                    mFragSY = new SYFragment();
                     transaction.add(R.id.id_content, mFragSY);
                 } else {
                     //如果微信对应的Fragment已经实例化，则直接显示出来
@@ -88,7 +87,7 @@ public class MainActivity extends FragmentActivity implements OnClickListener {
                 break;
             case 1:
                 if (mFragFrd == null) {
-                    mFragFrd = new FrdFragment();
+                    mFragFrd = new ZXFragment();
                     transaction.add(R.id.id_content, mFragFrd);
                 } else {
                     transaction.show(mFragFrd);
@@ -96,7 +95,7 @@ public class MainActivity extends FragmentActivity implements OnClickListener {
                 break;
             case 2:
                 if (mFragAddress == null) {
-                    mFragAddress = new AddressFragment();
+                    mFragAddress = new WDFragment();
                     transaction.add(R.id.id_content, mFragAddress);
                 } else {
                     transaction.show(mFragAddress);

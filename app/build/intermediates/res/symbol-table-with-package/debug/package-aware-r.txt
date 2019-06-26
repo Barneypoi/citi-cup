@@ -994,6 +994,7 @@ drawable abc_textfield_search_material
 drawable abc_vector_test
 drawable avd_hide_password
 drawable avd_show_password
+drawable color
 drawable design_bottom_navigation_item_background
 drawable design_fab_background
 drawable design_ic_visibility
@@ -1057,11 +1058,13 @@ id barrier
 id beginning
 id blocking
 id bottom
-id button
 id button2
 id button3
 id button4
+id buttonJJ
+id buttonJZ
 id buttonPanel
+id buttonZF
 id center
 id center_horizontal
 id center_vertical
@@ -1120,6 +1123,7 @@ id image
 id imageButton6
 id imageButton7
 id imageButton8
+id imageView
 id info
 id invisible
 id italic
@@ -1210,7 +1214,11 @@ id text2
 id textSpacerNoButtons
 id textSpacerNoTitle
 id textStart
+id textView
 id textView10
+id textView2
+id textView4
+id textView5
 id textView7
 id textView8
 id textView9
@@ -1317,7 +1325,6 @@ layout support_simple_spinner_dropdown_item
 layout tab1
 layout tab2
 layout tab3
-layout top
 mipmap ic_launcher
 mipmap ic_launcher_round
 string abc_action_bar_home_description
