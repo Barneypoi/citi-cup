@@ -1058,9 +1058,11 @@ id barrier
 id beginning
 id blocking
 id bottom
+id button
 id button2
 id button3
 id button4
+id button5
 id buttonJJ
 id buttonJZ
 id buttonPanel
@@ -1325,6 +1327,7 @@ layout support_simple_spinner_dropdown_item
 layout tab1
 layout tab2
 layout tab3
+layout user_info
 mipmap ic_launcher
 mipmap ic_launcher_round
 string abc_action_bar_home_description

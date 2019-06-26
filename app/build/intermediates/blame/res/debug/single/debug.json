@@ -1100,6 +1100,10 @@
         "source": "C:\\Users\\14764\\.gradle\\caches\\transforms-2\\files-2.1\\e007fba4b470df46c6673acb402ab0ef\\res\\color-v23\\abc_btn_colored_borderless_text_material.xml"
     },
     {
+        "merged": "C:\\Users\\14764\\Downloads\\citi-cup-master\\app\\build\\intermediates\\res\\merged\\debug\\layout_user_info.xml.flat",
+        "source": "C:\\Users\\14764\\Downloads\\citi-cup-master\\app\\src\\main\\res\\layout\\user_info.xml"
+    },
+    {
         "merged": "C:\\Users\\14764\\Downloads\\citi-cup-master\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4_abc_textfield_search_activated_mtrl_alpha.9.png.flat",
         "source": "C:\\Users\\14764\\.gradle\\caches\\transforms-2\\files-2.1\\e007fba4b470df46c6673acb402ab0ef\\res\\drawable-hdpi-v4\\abc_textfield_search_activated_mtrl_alpha.9.png"
     },
