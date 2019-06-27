@@ -124,7 +124,7 @@ public class MainActivity extends FragmentActivity implements OnClickListener {
         Intent intent = new Intent(this, SearchActivity.class);
         startActivity(intent);
     }
-
+    //跳转到筛选界面
     public void jumpToFilter(View view) {
         Intent intent = new Intent(this, FilterActivity.class);
         startActivity(intent);
