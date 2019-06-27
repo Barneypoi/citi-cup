@@ -122,7 +122,8 @@
                         android:layout_weight="1"
                         android:background="@color/main"
                         android:text="查回报率"
-                        android:textColor="@color/titlecolor" />
+                        android:textColor="@color/titlecolor"
+                        android:onClick="jumpToReturn"/>
                 </LinearLayout>
 
                 <LinearLayout
@@ -138,7 +139,8 @@
                         android:layout_weight="1"
                         android:background="@color/main"
                         android:text="基金净值"
-                        android:textColor="@color/titlecolor" />
+                        android:textColor="@color/titlecolor"
+                        android:onClick="jumpToNet"/>
                 </LinearLayout>
 
             </LinearLayout>

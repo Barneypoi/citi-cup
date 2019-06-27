@@ -54,7 +54,7 @@ public class MainActivity extends FragmentActivity implements OnClickListener {
     public void onClick(View v) {
         switch (v.getId()) {
             case R.id.id_tab_SY:
-                selectTab(0);//当点击的是微信的Tab就选中微信的Tab
+                selectTab(0);//当点击的是首页的Tab就选中微信的Tab
                 break;
             case R.id.id_tab_frd:
                 selectTab(1);
@@ -75,14 +75,14 @@ public class MainActivity extends FragmentActivity implements OnClickListener {
         //先隐藏所有的Fragment
         hideFragments(transaction);
         switch (i) {
-            //当选中点击的是微信的Tab时
+            //当选中点击的是首页的Tab时
             case 0:
-                //如果微信对应的Fragment没有实例化，则进行实例化，并显示出来
+                //如果对应的Fragment没有实例化，则进行实例化，并显示出来
                 if (mFragSY == null) {
                     mFragSY = new SYFragment();
                     transaction.add(R.id.id_content, mFragSY);
                 } else {
-                    //如果微信对应的Fragment已经实例化，则直接显示出来
+                    //如果对应的Fragment已经实例化，则直接显示出来
                     transaction.show(mFragSY);
                 }
                 break;
@@ -127,6 +127,16 @@ public class MainActivity extends FragmentActivity implements OnClickListener {
     //跳转到筛选界面
     public void jumpToFilter(View view) {
         Intent intent = new Intent(this, FilterActivity.class);
+        startActivity(intent);
+    }
+    //跳转到回报
+    public void jumpToReturn(View view) {
+        Intent intent = new Intent(this, ReturnActivity.class);
+        startActivity(intent);
+    }
+    //跳转到净值
+    public void jumpToNet(View view) {
+        Intent intent = new Intent(this, NetActivity.class);
         startActivity(intent);
     }
 }
