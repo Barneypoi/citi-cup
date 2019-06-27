@@ -7,9 +7,6 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-/**
- * Created by caobotao on 16/1/4.
- */
 public class ZXFragment extends Fragment{
     @Nullable
     @Override

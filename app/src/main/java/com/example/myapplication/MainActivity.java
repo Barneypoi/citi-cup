@@ -9,6 +9,7 @@ import android.view.View;
 import android.view.View.OnClickListener;
 import android.view.Window;
 import android.widget.LinearLayout;
+import android.content.Intent;
 
 public class MainActivity extends FragmentActivity implements OnClickListener {
     //声明Tab的布局文件
@@ -117,5 +118,10 @@ public class MainActivity extends FragmentActivity implements OnClickListener {
         if (mFragAddress != null) {
             transaction.hide(mFragAddress);
         }
+    }
+    //跳转到搜索页面
+    public void jumpToSearch(View view) {
+        Intent intent = new Intent(this, SearchActivity.class);
+        startActivity(intent);
     }
 }
