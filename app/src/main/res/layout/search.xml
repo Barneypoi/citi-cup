@@ -16,7 +16,8 @@
             android:layout_height="wrap_content"
             android:layout_marginLeft="10dp"
             android:layout_marginTop="10dp"
-            android:background="?attr/homeAsUpIndicator" />
+            android:background="?attr/homeAsUpIndicator"
+            android:onClick="backToMain"/>
 
         <TextView
             android:id="@+id/textView15"
@@ -32,7 +33,7 @@
 
     <com.example.myapplication.MyPosterViewPager
         android:layout_width="match_parent"
-        android:layout_height="300dp" />
+        android:layout_height="250dp" />
 
     <SearchView
         android:layout_width="match_parent"
