@@ -1161,6 +1161,7 @@ id line1
 id line3
 id listMode
 id list_item
+id list_test
 id lv_fundinfo
 id lv_mainwin
 id masked
@@ -1170,6 +1171,7 @@ id mini
 id mtrl_child_content_container
 id mtrl_internal_children_alpha_tag
 id multiply
+id name
 id navigation_header_container
 id never
 id none
@@ -1194,6 +1196,7 @@ id right_side
 id save_image_matrix
 id save_non_transition_alpha
 id save_scale_type
+id says
 id screen
 id scroll
 id scrollIndicatorDown
@@ -1351,8 +1354,11 @@ layout activity_main
 layout activity_net
 layout activity_return
 layout activity_search
+layout activity_setting
 layout add_card
-layout bottom
+layout base_list_item
+layout block_bottom
+layout block_fundinfo
 layout design_bottom_navigation_item
 layout design_bottom_sheet_dialog
 layout design_layout_snackbar
@@ -1367,7 +1373,6 @@ layout design_navigation_item_subheader
 layout design_navigation_menu
 layout design_navigation_menu_item
 layout design_text_input_password_icon
-layout fundinfo
 layout layout_viewpager
 layout listitem_fundinfo
 layout listitem_mainwin
@@ -1383,12 +1388,12 @@ layout notification_template_part_time
 layout select_dialog_item_material
 layout select_dialog_multichoice_material
 layout select_dialog_singlechoice_material
-layout setting
 layout support_simple_spinner_dropdown_item
 layout tab1
 layout tab2
 layout tab3
 layout user_info
+mipmap back
 mipmap ic_launcher
 mipmap ic_launcher_round
 string abc_action_bar_home_description

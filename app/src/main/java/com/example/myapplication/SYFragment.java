@@ -14,7 +14,7 @@ import android.widget.TextView;
 import java.util.ArrayList;
 import java.util.List;
 
-public class SYFragment extends Fragment{
+public class SYFragment extends Fragment {
 
     //接受基金信息的TextView tv1为基金名称 tv2为七日年化收益率 tv3，tv4为其他可选添加信息
     private TextView tv1;
@@ -28,9 +28,9 @@ public class SYFragment extends Fragment{
     //改变该条目数据对象内容，将数据显示在ListView中
     private List<Integer> dataList = new ArrayList<Integer>();//实体类
     private View view;
+
     @Nullable
     @Override
-<<<<<<< HEAD
     public View onCreateView(final LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         view = inflater.inflate(R.layout.tab1, container, false);
 
@@ -85,10 +85,7 @@ public class SYFragment extends Fragment{
 
         lv.setAdapter(baseAdapter);
 
-=======
-    public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.tab1, container, false);
->>>>>>> 92b1034e77dd6854f73323432f9976ed66d2f167
         return view;
     }
+
 }

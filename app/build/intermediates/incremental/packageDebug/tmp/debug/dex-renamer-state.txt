@@ -1,9 +1,4 @@
-<<<<<<< HEAD
-#Fri Jun 28 11:53:57 CST 2019
+#Fri Jun 28 14:51:47 CST 2019
 base.0=F\:\\AndroidProject\\citi-cup\\app\\build\\intermediates\\dex\\debug\\mergeDexDebug\\out
-=======
-#Fri Jun 28 11:03:51 CST 2019
-base.0=C\:\\Users\\14764\\Downloads\\citi-cup-master\\app\\build\\intermediates\\dex\\debug\\mergeDexDebug\\out
->>>>>>> 92b1034e77dd6854f73323432f9976ed66d2f167
 path.0=classes.dex
 renamed.0=classes.dex
