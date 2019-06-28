@@ -1257,6 +1257,9 @@ id textView17
 id textView18
 id textView19
 id textView2
+id textView20
+id textView21
+id textView22
 id textView3
 id textView4
 id textView5
