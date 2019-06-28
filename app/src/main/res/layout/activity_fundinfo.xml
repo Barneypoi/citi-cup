@@ -28,7 +28,7 @@
         android:layout_marginStart="175dp" />
     </RelativeLayout>
 
-    <include layout="@layout/fundinfo"/>
+    <include layout="@layout/block_fundinfo"/>
     <ListView
         android:id="@+id/lv_fundinfo"
         android:layout_width="match_parent"

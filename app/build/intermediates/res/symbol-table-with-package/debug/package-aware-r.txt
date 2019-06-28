@@ -373,6 +373,21 @@ attr listPreferredItemHeightLarge
 attr listPreferredItemHeightSmall
 attr listPreferredItemPaddingLeft
 attr listPreferredItemPaddingRight
+attr liv_circularIconColor
+attr liv_displayMode
+attr liv_forceKeyline
+attr liv_icon
+attr liv_iconColor
+attr liv_keyline
+attr liv_menu
+attr liv_menuActionColor
+attr liv_menuItemsRoom
+attr liv_menuOverflowColor
+attr liv_multiline
+attr liv_paddingEnd
+attr liv_paddingStart
+attr liv_subtitle
+attr liv_title
 attr logo
 attr logoDescription
 attr materialButtonStyle
@@ -589,6 +604,7 @@ color abc_tint_spinner
 color abc_tint_switch_track
 color accent_material_dark
 color accent_material_light
+color background
 color background_floating_material_dark
 color background_floating_material_light
 color background_material_dark
@@ -634,6 +650,8 @@ color foreground_material_dark
 color foreground_material_light
 color highlighted_text_material_dark
 color highlighted_text_material_light
+color highlighttext
+color liv_gray_active_icon
 color main
 color material_blue_grey_800
 color material_blue_grey_900
@@ -690,7 +708,10 @@ color secondary_text_default_material_dark
 color secondary_text_default_material_light
 color secondary_text_disabled_material_dark
 color secondary_text_disabled_material_light
+color settingSubtitleColor
+color settingTitleColor
 color subtitlecolor
+color subtitledarkercolor
 color switch_thumb_disabled_material_dark
 color switch_thumb_disabled_material_light
 color switch_thumb_material_dark
@@ -844,6 +865,9 @@ dimen hint_pressed_alpha_material_light
 dimen item_touch_helper_max_drag_scroll_per_frame
 dimen item_touch_helper_swipe_escape_max_velocity
 dimen item_touch_helper_swipe_escape_velocity
+dimen liv_keyline
+dimen liv_padding_end
+dimen liv_padding_start
 dimen mtrl_bottomappbar_fabOffsetEndMode
 dimen mtrl_bottomappbar_fab_cradle_margin
 dimen mtrl_bottomappbar_fab_cradle_rounded_corner_radius
@@ -999,7 +1023,13 @@ drawable abc_textfield_search_activated_mtrl_alpha
 drawable abc_textfield_search_default_mtrl_alpha
 drawable abc_textfield_search_material
 drawable abc_vector_test
+drawable asl_checkbox
+drawable asl_radiobutton
+drawable avd_checkbox_checked_to_unchecked
+drawable avd_checkbox_unchecked_to_checked
 drawable avd_hide_password
+drawable avd_radiobutton_checked_to_unchecked
+drawable avd_radiobutton_unchecked_to_checked
 drawable avd_show_password
 drawable design_bottom_navigation_item_background
 drawable design_fab_background
@@ -1007,6 +1037,7 @@ drawable design_ic_visibility
 drawable design_ic_visibility_off
 drawable design_password_eye
 drawable design_snackbar_background
+drawable ic_action_next
 drawable ic_launcher_background
 drawable ic_launcher_foreground
 drawable ic_mtrl_chip_checked_black
@@ -1036,6 +1067,11 @@ drawable shape_dot_focus
 drawable shape_dot_unfocus
 drawable tooltip_frame_dark
 drawable tooltip_frame_light
+drawable vd_checkbox_checked
+drawable vd_checkbox_unchecked
+drawable vd_more_vert_black_24dp
+drawable vd_radiobutton_checked
+drawable vd_radiobutton_unchecked
 id ALT
 id CTRL
 id FUNCTION
@@ -1053,6 +1089,7 @@ id action_container
 id action_context_bar
 id action_divider
 id action_image
+id action_menu
 id action_menu_divider
 id action_menu_presenter
 id action_mode_bar
@@ -1067,6 +1104,8 @@ id all
 id always
 id async
 id auto
+id avatar
+id avatar_view
 id barrier
 id beginning
 id blocking
@@ -1093,7 +1132,10 @@ id center_horizontal
 id center_vertical
 id chains
 id checkbox
+id checked
 id chronometer
+id circularIcon
+id circular_icon_view
 id clip_horizontal
 id clip_vertical
 id collapseActionView
@@ -1135,6 +1177,7 @@ id home
 id homeAsUp
 id icon
 id icon_group
+id icon_view
 id id_content
 id id_tab_SY
 id id_tab_SY_img
@@ -1153,9 +1196,13 @@ id imageButton8
 id imageView
 id imageView2
 id imageView3
+id imageView4
+id imageView5
+id imageView6
 id info
 id invisible
 id italic
+id item_layout
 id item_touch_helper_previous_elevation
 id labeled
 id largeLabel
@@ -1164,9 +1211,13 @@ id line1
 id line3
 id listMode
 id list_item
-id list_test
+id list_test_1
+id list_test_2
+id list_test_3
 id lv_fundinfo
+id lv_mainwin
 id masked
+id menu_view
 id message
 id middle
 id mini
@@ -1207,6 +1258,7 @@ id scrollView
 id scrollable
 id search_badge
 id search_bar
+id search_bar_overflow_menu
 id search_button
 id search_close_btn
 id search_edit_frame
@@ -1243,6 +1295,7 @@ id start
 id stretch
 id submenuarrow
 id submit_area
+id subtitle_view
 id tabMode
 id tag_transition_group
 id tag_unhandled_key_event_manager
@@ -1254,7 +1307,6 @@ id textSpacerNoTitle
 id textStart
 id textView
 id textView1
-id textView10
 id textView11
 id textView12
 id textView13
@@ -1279,10 +1331,12 @@ id text_input_password_toggle
 id textinput_counter
 id textinput_error
 id textinput_helper_text
+id texts_layout
 id time
 id title
 id titleDividerNoCustom
 id title_template
+id title_view
 id top
 id topPanel
 id touch_outside
@@ -1293,6 +1347,11 @@ id transition_scene_layoutid_cache
 id transition_transform
 id tv1_list
 id tv2_list
+id tv_mainwin_fundName
+id tv_mainwin_fundRate
+id tv_mainwin_info1
+id tv_mainwin_info2
+id unchecked
 id uniform
 id unlabeled
 id up
@@ -1318,6 +1377,11 @@ integer mtrl_chip_anim_duration
 integer mtrl_tab_indicator_anim_duration_ms
 integer show_password_duration
 integer status_bar_notification_info_maxnum
+interpolator in_checkbox_to_checked_0
+interpolator in_checkbox_to_checked_1
+interpolator in_checkbox_to_unchecked_0
+interpolator in_checkbox_to_unchecked_1
+interpolator in_radiobutton
 interpolator mtrl_fast_out_linear_in
 interpolator mtrl_fast_out_slow_in
 interpolator mtrl_linear
@@ -1356,9 +1420,10 @@ layout activity_main
 layout activity_net
 layout activity_return
 layout activity_search
+layout activity_setting
 layout add_card
-layout base_list_item
-layout bottom
+layout block_bottom
+layout block_fundinfo
 layout design_bottom_navigation_item
 layout design_bottom_sheet_dialog
 layout design_layout_snackbar
@@ -1373,9 +1438,13 @@ layout design_navigation_item_subheader
 layout design_navigation_menu
 layout design_navigation_menu_item
 layout design_text_input_password_icon
-layout fundinfo
 layout layout_viewpager
-layout listitem
+layout listitem_fundinfo
+layout listitem_mainwin
+layout listitem_setting
+layout liv_action_item_layout
+layout liv_action_item_overflow_layout
+layout liv_list_item_layout
 layout mtrl_layout_snackbar
 layout mtrl_layout_snackbar_include
 layout my
@@ -1388,7 +1457,6 @@ layout notification_template_part_time
 layout select_dialog_item_material
 layout select_dialog_multichoice_material
 layout select_dialog_singlechoice_material
-layout setting
 layout support_simple_spinner_dropdown_item
 layout tab1
 layout tab2
@@ -1403,6 +1471,7 @@ mipmap ic_launcher
 mipmap ic_launcher_round
 mipmap mine_selected
 mipmap mine_unselected
+mipmap next_page
 string abc_action_bar_home_description
 string abc_action_bar_up_description
 string abc_action_menu_overflow_description
@@ -2002,6 +2071,7 @@ styleable GradientColorItem android_color android_offset
 styleable LinearConstraintLayout android_orientation
 styleable LinearLayoutCompat android_gravity android_orientation android_baselineAligned android_baselineAlignedChildIndex android_weightSum divider dividerPadding measureWithLargestChild showDividers
 styleable LinearLayoutCompat_Layout android_layout_gravity android_layout_width android_layout_height android_layout_weight
+styleable ListItemView liv_circularIconColor liv_displayMode liv_forceKeyline liv_icon liv_iconColor liv_keyline liv_menu liv_menuActionColor liv_menuItemsRoom liv_menuOverflowColor liv_multiline liv_paddingEnd liv_paddingStart liv_subtitle liv_title
 styleable ListPopupWindow android_dropDownHorizontalOffset android_dropDownVerticalOffset
 styleable MaterialButton android_insetLeft android_insetRight android_insetTop android_insetBottom backgroundTint backgroundTintMode cornerRadius icon iconGravity iconPadding iconSize iconTint iconTintMode rippleColor strokeColor strokeWidth
 styleable MaterialCardView strokeColor strokeWidth

@@ -13,5 +13,5 @@
 
     </FrameLayout>
 
-    <include layout="@layout/bottom"/>
+    <include layout="@layout/block_bottom"/>
 </LinearLayout>

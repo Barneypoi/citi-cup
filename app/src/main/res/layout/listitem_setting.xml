@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="50dp"
+    android:orientation="horizontal"
+    >
+
+
+    <!-- 定义一个竖直方向的LinearLayout,把QQ呢称与说说的文本框设置出来 -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="horizontal"
+        >
+
+        <TextView
+            android:id="@+id/name"
+            android:layout_width="50dp"
+            android:layout_height="match_parent"
+            android:layout_gravity="left"
+            android:layout_weight="3"
+            android:gravity="center_vertical"
+            android:paddingLeft="12dp"
+            android:textSize="20sp" />
+
+        <TextView
+            android:id="@+id/says"
+            android:layout_width="50dp"
+            android:layout_height="match_parent"
+            android:layout_gravity="right"
+            android:layout_weight="3"
+            android:gravity="center_vertical"
+            android:paddingLeft="8px"
+            android:textAlignment="textEnd"
+            android:textSize="12sp"
+            tools:ignore="RtlCompat" />
+
+        <ImageView
+            android:id="@+id/imageView4"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:scaleType="centerInside"
+            android:layout_marginLeft="0dp"
+            android:layout_marginRight="10dp"
+            android:layout_gravity="right|center_vertical"
+            android:src="@drawable/ic_action_next" />
+
+    </LinearLayout>
+
+</LinearLayout>

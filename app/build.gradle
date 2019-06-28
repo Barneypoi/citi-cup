@@ -4,7 +4,7 @@ android {
     compileSdkVersion 28
     defaultConfig {
         applicationId "com.example.myapplication"
-        minSdkVersion 15
+        minSdkVersion 24
         targetSdkVersion 28
         versionCode 1
         versionName "1.0"
@@ -31,5 +31,6 @@ dependencies {
     implementation 'jp.wasabeef:glide-transformations:2.0.1'
     implementation 'com.android.support:recyclerview-v7:28.0.0'
     implementation 'com.android.support:cardview-v7:28.0.0'
+    implementation 'com.lucasurbas:listitemview:1.1.1'
 
 }
