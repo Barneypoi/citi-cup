@@ -593,6 +593,8 @@ color background_floating_material_dark
 color background_floating_material_light
 color background_material_dark
 color background_material_light
+color black
+color bottomcolor
 color bright_foreground_disabled_material_dark
 color bright_foreground_disabled_material_light
 color bright_foreground_inverse_material_dark
@@ -1136,10 +1138,13 @@ id icon_group
 id id_content
 id id_tab_SY
 id id_tab_SY_img
+id id_tab_SY_text
 id id_tab_address
 id id_tab_address_img
+id id_tab_address_text
 id id_tab_frd
 id id_tab_frd_img
+id id_tab_frd_text
 id ifRoom
 id image
 id imageButton6
@@ -1159,6 +1164,7 @@ id line1
 id line3
 id listMode
 id list_item
+id list_test
 id lv_fundinfo
 id masked
 id message
@@ -1167,6 +1173,7 @@ id mini
 id mtrl_child_content_container
 id mtrl_internal_children_alpha_tag
 id multiply
+id name
 id navigation_header_container
 id never
 id none
@@ -1191,6 +1198,7 @@ id right_side
 id save_image_matrix
 id save_non_transition_alpha
 id save_scale_type
+id says
 id screen
 id scroll
 id scrollIndicatorDown
@@ -1349,6 +1357,7 @@ layout activity_net
 layout activity_return
 layout activity_search
 layout add_card
+layout base_list_item
 layout bottom
 layout design_bottom_navigation_item
 layout design_bottom_sheet_dialog
@@ -1385,8 +1394,15 @@ layout tab1
 layout tab2
 layout tab3
 layout user_info
+mipmap back
+mipmap fund_selected
+mipmap fund_unselected
+mipmap home_selected
+mipmap home_unselected
 mipmap ic_launcher
 mipmap ic_launcher_round
+mipmap mine_selected
+mipmap mine_unselected
 string abc_action_bar_home_description
 string abc_action_bar_up_description
 string abc_action_menu_overflow_description
@@ -1938,6 +1954,7 @@ style Widget_MaterialComponents_TextInputLayout_OutlinedBox
 style Widget_MaterialComponents_TextInputLayout_OutlinedBox_Dense
 style Widget_MaterialComponents_Toolbar
 style Widget_Support_CoordinatorLayout
+style backButton
 styleable ActionBar background backgroundSplit backgroundStacked contentInsetEnd contentInsetEndWithActions contentInsetLeft contentInsetRight contentInsetStart contentInsetStartWithNavigation customNavigationLayout displayOptions divider elevation height hideOnContentScroll homeAsUpIndicator homeLayout icon indeterminateProgressStyle itemPadding logo navigationMode popupTheme progressBarPadding progressBarStyle subtitle subtitleTextStyle title titleTextStyle
 styleable ActionBarLayout android_layout_gravity
 styleable ActionMenuItemView android_minWidth

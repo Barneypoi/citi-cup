@@ -20,12 +20,7 @@
 
             <Button
                 android:id="@+id/button5"
-                android:layout_width="30dp"
-                android:layout_height="30dp"
-                android:layout_marginLeft="10dp"
-                android:layout_marginTop="22dp"
-                android:background="@mipmap/back"
-                android:gravity="center_vertical"
+                style="@style/backButton"
                 android:onClick="backToMain" />
 
             <TextView

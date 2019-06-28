@@ -8,4 +8,6 @@
     <color name="titlecolor">#FFFFFF</color>
     <color name="subtitlecolor">#E0E0FF</color>
     <color name="exitcolor">#FF7043</color>
+    <color name= "black">#000000</color>
+    <color name="bottomcolor">#E4F1F1F1</color>
 </resources>

@@ -8,8 +8,10 @@ import android.os.Bundle;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.view.Window;
+import android.widget.ImageButton;
 import android.widget.LinearLayout;
 import android.content.Intent;
+import android.widget.TextView;
 
 public class MainActivity extends FragmentActivity implements OnClickListener {
     //声明Tab的布局文件
@@ -32,6 +34,10 @@ public class MainActivity extends FragmentActivity implements OnClickListener {
         initViews();//初始化控件
         initEvents();//初始化事件
         selectTab(0);//默认选中第一个Tab
+        ImageButton imageButton1 = (ImageButton)findViewById(R.id.id_tab_SY_img);
+        imageButton1.setImageResource(R.mipmap.home_selected);
+        TextView textView1 = (TextView)findViewById(R.id.id_tab_SY_text);
+        textView1.setTextColor(getResources().getColor(R.color.main));
     }
 
     private void initEvents() {
@@ -55,17 +61,47 @@ public class MainActivity extends FragmentActivity implements OnClickListener {
         switch (v.getId()) {
             case R.id.id_tab_SY:
                 selectTab(0);//当点击的是首页的Tab就选中微信的Tab
+                resetBottomImageAndText();
+                ImageButton imageButton1 = (ImageButton)findViewById(R.id.id_tab_SY_img);
+                imageButton1.setImageResource(R.mipmap.home_selected);
+                TextView textView1 = (TextView)findViewById(R.id.id_tab_SY_text);
+                textView1.setTextColor(getResources().getColor(R.color.main));
                 break;
             case R.id.id_tab_frd:
                 selectTab(1);
+                resetBottomImageAndText();
+                ImageButton imageButton2 = (ImageButton)findViewById(R.id.id_tab_frd_img);
+                imageButton2.setImageResource(R.mipmap.fund_selected);
+                TextView textView2 = (TextView)findViewById(R.id.id_tab_frd_text);
+                textView2.setTextColor(getResources().getColor(R.color.main));
                 break;
             case R.id.id_tab_address:
                 selectTab(2);
+                resetBottomImageAndText();
+                ImageButton imageButton3 = (ImageButton)findViewById(R.id.id_tab_address_img);
+                imageButton3.setImageResource(R.mipmap.mine_selected);
+                TextView textView3 = (TextView)findViewById(R.id.id_tab_address_text);
+                textView3.setTextColor(getResources().getColor(R.color.main));
                 break;
         }
 
     }
 
+    private void resetBottomImageAndText()
+    {
+        ImageButton imageButton1 = (ImageButton)findViewById(R.id.id_tab_SY_img);
+        ImageButton imageButton2 = (ImageButton)findViewById(R.id.id_tab_frd_img);
+        ImageButton imageButton3 = (ImageButton)findViewById(R.id.id_tab_address_img);
+        imageButton1.setImageResource(R.mipmap.home_unselected);
+        imageButton2.setImageResource(R.mipmap.fund_unselected);
+        imageButton3.setImageResource(R.mipmap.mine_unselected);
+        TextView textView1 = (TextView)findViewById(R.id.id_tab_SY_text);
+        textView1.setTextColor(getResources().getColor(R.color.black));
+        TextView textView2 = (TextView)findViewById(R.id.id_tab_frd_text);
+        textView2.setTextColor(getResources().getColor(R.color.black));
+        TextView textView3 = (TextView)findViewById(R.id.id_tab_address_text);
+        textView3.setTextColor(getResources().getColor(R.color.black));
+    }
     //进行选中Tab的处理
     private void selectTab(int i) {
         //获取FragmentManager对象

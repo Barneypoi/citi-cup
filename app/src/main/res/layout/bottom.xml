@@ -2,30 +2,35 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="55dp"
+    android:background="@color/bottomcolor"
     android:gravity="center"
-    android:background="@color/material_blue_grey_800"
     android:orientation="horizontal">
 
     <LinearLayout
+        android:id="@+id/id_tab_SY"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_weight="1"
-        android:id="@+id/id_tab_SY"
         android:gravity="center"
         android:orientation="vertical">
 
         <ImageButton
             android:id="@+id/id_tab_SY_img"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="#00000000"
+
             android:clickable="false"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:background="#00000000"/>
+            android:src="@mipmap/home_unselected" />
+
         <TextView
+            android:id="@+id/id_tab_SY_text"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textColor="#ffffff"
-            android:text="首页"/>
+            android:text="首页"
+            android:textColor="#000000" />
     </LinearLayout>
+
     <LinearLayout
         android:id="@+id/id_tab_frd"
         android:layout_width="0dp"
@@ -36,16 +41,22 @@
 
         <ImageButton
             android:id="@+id/id_tab_frd_img"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="2dp"
+            android:background="#00000000"
             android:clickable="false"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:background="#00000000"/>
+            android:src="@mipmap/fund_unselected" />
+
         <TextView
+            android:id="@+id/id_tab_frd_text"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textColor="#ffffff"
-            android:text="基金自选"/>
+            android:layout_marginTop="5dp"
+            android:text="基金自选"
+            android:textColor="#000000" />
     </LinearLayout>
+
     <LinearLayout
         android:id="@+id/id_tab_address"
         android:layout_width="0dp"
@@ -56,14 +67,17 @@
 
         <ImageButton
             android:id="@+id/id_tab_address_img"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="#00000000"
             android:clickable="false"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:background="#00000000"/>
+            android:src="@mipmap/mine_unselected" />
+
         <TextView
+            android:id="@+id/id_tab_address_text"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textColor="#ffffff"
-            android:text="我的"/>
+            android:text="我的"
+            android:textColor="#000000" />
     </LinearLayout>
 </LinearLayout>

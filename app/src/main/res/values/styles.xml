@@ -4,6 +4,16 @@
     <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
         <!-- Customize your theme here. -->
         <item name="windowNoTitle">true</item>
+
+    </style>
+
+    <style name="backButton">
+            <item name="android:background">@mipmap/back</item>
+            <item name="android:layout_height">30dp</item>
+            <item name="android:layout_width">30dp</item>
+            <item name="android:layout_marginTop">22dp</item>
+            <item name="android:layout_marginLeft">10dp</item>
+            <item name="android:gravity">center_vertical</item>
     </style>
 
 

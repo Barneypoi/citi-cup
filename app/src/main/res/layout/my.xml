@@ -115,14 +115,16 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="取现" />
+                android:text="取现"/>
+                <!--android:background="@color/titlecolor"-->
 
             <Button
                 android:id="@+id/button7"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="充值" />
+                android:text="充值"/>
+                <!--android:background="@color/titlecolor"-->
 
         </LinearLayout>
 
