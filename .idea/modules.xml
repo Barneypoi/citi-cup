@@ -3,6 +3,7 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/citi-cup.iml" filepath="$PROJECT_DIR$/citi-cup.iml" />
       <module fileurl="file://$PROJECT_DIR$/citi-cup-master.iml" filepath="$PROJECT_DIR$/citi-cup-master.iml" />
     </modules>
   </component>
