@@ -119,6 +119,7 @@ public class MainActivity extends FragmentActivity implements OnClickListener {
             transaction.hide(mFragAddress);
         }
     }
+
     //跳转到搜索页面
     public void jumpToSearch(View view) {
         Intent intent = new Intent(this, SearchActivity.class);
@@ -137,6 +138,11 @@ public class MainActivity extends FragmentActivity implements OnClickListener {
     //跳转到净值
     public void jumpToNet(View view) {
         Intent intent = new Intent(this, NetActivity.class);
+        startActivity(intent);
+    }
+    //跳转到设置界面
+    public void jumpToSetting(View view) {
+        Intent intent = new Intent(this, SettingActivity.class);
         startActivity(intent);
     }
 }

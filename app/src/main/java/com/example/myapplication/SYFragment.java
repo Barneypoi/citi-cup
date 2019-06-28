@@ -30,6 +30,7 @@ public class SYFragment extends Fragment{
     private View view;
     @Nullable
     @Override
+<<<<<<< HEAD
     public View onCreateView(final LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         view = inflater.inflate(R.layout.tab1, container, false);
 
@@ -84,6 +85,10 @@ public class SYFragment extends Fragment{
 
         lv.setAdapter(baseAdapter);
 
+=======
+    public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
+        View view = inflater.inflate(R.layout.tab1, container, false);
+>>>>>>> 92b1034e77dd6854f73323432f9976ed66d2f167
         return view;
     }
 }

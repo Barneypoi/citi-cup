@@ -22,6 +22,8 @@
         <activity android:name=".NetActivity">
         </activity>
         <activity android:name=".ReturnActivity">
+    </activity>
+        <activity android:name=".SettingActivity">
         </activity>
     </application>
 </manifest>
