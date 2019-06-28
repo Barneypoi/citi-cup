@@ -1044,10 +1044,15 @@ drawable ic_mtrl_chip_checked_black
 drawable ic_mtrl_chip_checked_circle
 drawable ic_mtrl_chip_close_circle
 drawable image1
+drawable image10
 drawable image2
 drawable image3
 drawable image4
 drawable image5
+drawable image6
+drawable image7
+drawable image8
+drawable image9
 drawable mtrl_snackbar_background
 drawable mtrl_tabs_default_indicator
 drawable navigation_empty_icon
@@ -1190,9 +1195,6 @@ id id_tab_frd_img
 id id_tab_frd_text
 id ifRoom
 id image
-id imageButton6
-id imageButton7
-id imageButton8
 id imageView
 id imageView2
 id imageView3
@@ -1458,6 +1460,7 @@ layout select_dialog_item_material
 layout select_dialog_multichoice_material
 layout select_dialog_singlechoice_material
 layout support_simple_spinner_dropdown_item
+layout sy_viewpager
 layout tab1
 layout tab2
 layout tab3
