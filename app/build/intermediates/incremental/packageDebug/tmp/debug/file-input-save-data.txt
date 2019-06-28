@@ -1,5 +1,5 @@
 #Internal package file, do not edit.
-#Fri Jun 28 15:39:13 CST 2019
+#Fri Jun 28 19:55:31 CST 2019
 0.baseType=DIRECTORY
 0.base=C\:\\Users\\14764\\Downloads\\citi-cup-master\\app\\build\\intermediates\\dex\\debug\\mergeDexDebug\\out
 0.path=classes.dex

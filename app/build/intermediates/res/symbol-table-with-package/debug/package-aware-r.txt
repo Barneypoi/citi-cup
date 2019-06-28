@@ -1144,9 +1144,6 @@ id id_tab_frd
 id id_tab_frd_img
 id ifRoom
 id image
-id imageButton6
-id imageButton7
-id imageButton8
 id imageView
 id imageView2
 id imageView3
