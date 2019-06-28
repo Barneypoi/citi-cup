@@ -1,4 +1,4 @@
-#Fri Jun 28 11:20:30 CST 2019
-base.0=C\:\\Users\\14764\\Downloads\\citi-cup-master\\app\\build\\intermediates\\dex\\debug\\mergeDexDebug\\out
+#Fri Jun 28 14:51:47 CST 2019
+base.0=F\:\\AndroidProject\\citi-cup\\app\\build\\intermediates\\dex\\debug\\mergeDexDebug\\out
 path.0=classes.dex
 renamed.0=classes.dex

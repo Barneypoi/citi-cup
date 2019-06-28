@@ -32,7 +32,7 @@ public class FundInfoActivity extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_fundinfo);
 
-        lv.findViewById(R.id.lv_fundinfo);
+        lv = findViewById(R.id.lv_fundinfo);
 
         for (int i = 0; i < 5; i++) {
             Integer integer = new Integer(i);//给实体类赋值
@@ -53,16 +53,16 @@ public class FundInfoActivity extends Activity {
                 View view;
 
                 if(convertView == null){
-                    view = inflater.inflate(R.layout.listitem,null);
+                    view = inflater.inflate(R.layout.listitem_fundinfo,null);
                 }else{
                     view = convertView;
                     Log.i("info","有缓存，不需要重新生成"+position);
                 }
 
-                tv1.findViewById(R.id.tv1_list);
+                tv1 = findViewById(R.id.tv1_list);
                 tv1.setText(dataList.get(position));
 
-                tv2.findViewById(R.id.tv2_list);
+                tv2 = findViewById(R.id.tv2_list);
                 tv2.setText(dataList.get(position));
                 return view;
             }
