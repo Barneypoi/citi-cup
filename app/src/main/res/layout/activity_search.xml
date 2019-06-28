@@ -31,13 +31,13 @@
             android:textSize="18sp" />
     </RelativeLayout>
 
-    <com.example.myapplication.MyPosterViewPager
-        android:layout_width="match_parent"
-        android:layout_height="250dp" />
-
     <SearchView
         android:layout_width="match_parent"
         android:layout_height="wrap_content" />
+
+    <com.example.myapplication.MyPosterViewPager
+        android:layout_width="match_parent"
+        android:layout_height="250dp" />
 
     <ListView
         android:layout_width="wrap_content"

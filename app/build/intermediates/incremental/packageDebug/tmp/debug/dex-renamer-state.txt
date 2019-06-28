@@ -1,4 +1,4 @@
-#Thu Jun 27 20:30:08 CST 2019
+#Fri Jun 28 09:45:40 CST 2019
 base.0=C\:\\Users\\14764\\Downloads\\citi-cup-master\\app\\build\\intermediates\\dex\\debug\\mergeDexDebug\\out
 path.0=classes.dex
 renamed.0=classes.dex

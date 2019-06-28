@@ -1078,6 +1078,7 @@ id button5
 id button6
 id button7
 id button8
+id button9
 id buttonJJ
 id buttonJZ
 id buttonPanel
@@ -1219,6 +1220,7 @@ id spinner
 id spinner2
 id spinner3
 id spinner4
+id spinner5
 id split_action_bar
 id spread
 id spread_inside
@@ -1250,6 +1252,7 @@ id textView15
 id textView16
 id textView17
 id textView18
+id textView19
 id textView2
 id textView3
 id textView4
