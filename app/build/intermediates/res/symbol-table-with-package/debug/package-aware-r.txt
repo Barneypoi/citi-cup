@@ -632,6 +632,7 @@ color foreground_material_dark
 color foreground_material_light
 color highlighted_text_material_dark
 color highlighted_text_material_light
+color highlighttext
 color main
 color material_blue_grey_800
 color material_blue_grey_900
@@ -689,6 +690,7 @@ color secondary_text_default_material_light
 color secondary_text_disabled_material_dark
 color secondary_text_disabled_material_light
 color subtitlecolor
+color subtitledarkercolor
 color switch_thumb_disabled_material_dark
 color switch_thumb_disabled_material_light
 color switch_thumb_material_dark
@@ -1156,6 +1158,7 @@ id line3
 id listMode
 id list_item
 id lv_fundinfo
+id lv_mainwin
 id masked
 id message
 id middle
@@ -1241,7 +1244,6 @@ id textSpacerNoTitle
 id textStart
 id textView
 id textView1
-id textView10
 id textView11
 id textView12
 id textView13
@@ -1255,9 +1257,6 @@ id textView3
 id textView4
 id textView5
 id textView6
-id textView7
-id textView8
-id textView9
 id text_input_password_toggle
 id textinput_counter
 id textinput_error
@@ -1276,6 +1275,10 @@ id transition_scene_layoutid_cache
 id transition_transform
 id tv1_list
 id tv2_list
+id tv_mainwin_fundName
+id tv_mainwin_fundRate
+id tv_mainwin_info1
+id tv_mainwin_info2
 id uniform
 id unlabeled
 id up
@@ -1357,7 +1360,8 @@ layout design_navigation_menu_item
 layout design_text_input_password_icon
 layout fundinfo
 layout layout_viewpager
-layout listitem
+layout listitem_fundinfo
+layout listitem_mainwin
 layout mtrl_layout_snackbar
 layout mtrl_layout_snackbar_include
 layout my

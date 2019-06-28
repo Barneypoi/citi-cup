@@ -7,5 +7,7 @@
     <color name="modulecolor">#8484F5</color>
     <color name="titlecolor">#FFFFFF</color>
     <color name="subtitlecolor">#E0E0FF</color>
-    <color name="exitcolor">#FF7043</color>
+    <color name="subtitledarkercolor">#A1A1AA</color>
+    <color name="highlighttext">#FF7043</color>
+    <color name="exitcolor">#FF3030</color>
 </resources>

@@ -1492,6 +1492,10 @@
         "source": "C:\\Users\\Jiaqing\\.gradle\\caches\\transforms-2\\files-2.1\\fadb559f568696c3feaf3268726477ee\\res\\drawable-xxxhdpi-v4\\abc_ic_star_half_black_16dp.png"
     },
     {
+        "merged": "F:\\AndroidProject\\citi-cup\\app\\build\\intermediates\\res\\merged\\debug\\layout_listitem_fundinfo.xml.flat",
+        "source": "F:\\AndroidProject\\citi-cup\\app\\src\\main\\res\\layout\\listitem_fundinfo.xml"
+    },
+    {
         "merged": "F:\\AndroidProject\\citi-cup\\app\\build\\intermediates\\res\\merged\\debug\\drawable_abc_list_selector_holo_light.xml.flat",
         "source": "C:\\Users\\Jiaqing\\.gradle\\caches\\transforms-2\\files-2.1\\fadb559f568696c3feaf3268726477ee\\res\\drawable\\abc_list_selector_holo_light.xml"
     },
@@ -1666,10 +1670,6 @@
     {
         "merged": "F:\\AndroidProject\\citi-cup\\app\\build\\intermediates\\res\\merged\\debug\\anim_design_bottom_sheet_slide_out.xml.flat",
         "source": "C:\\Users\\Jiaqing\\.gradle\\caches\\transforms-2\\files-2.1\\972da9040ca8ddf755ccf24dc483b4bd\\res\\anim\\design_bottom_sheet_slide_out.xml"
-    },
-    {
-        "merged": "F:\\AndroidProject\\citi-cup\\app\\build\\intermediates\\res\\merged\\debug\\layout_listitem.xml.flat",
-        "source": "F:\\AndroidProject\\citi-cup\\app\\src\\main\\res\\layout\\listitem.xml"
     },
     {
         "merged": "F:\\AndroidProject\\citi-cup\\app\\build\\intermediates\\res\\merged\\debug\\drawable-ldrtl-mdpi-v17_abc_spinner_mtrl_am_alpha.9.png.flat",
@@ -1958,6 +1958,10 @@
     {
         "merged": "F:\\AndroidProject\\citi-cup\\app\\build\\intermediates\\res\\merged\\debug\\layout_abc_activity_chooser_view_list_item.xml.flat",
         "source": "C:\\Users\\Jiaqing\\.gradle\\caches\\transforms-2\\files-2.1\\fadb559f568696c3feaf3268726477ee\\res\\layout\\abc_activity_chooser_view_list_item.xml"
+    },
+    {
+        "merged": "F:\\AndroidProject\\citi-cup\\app\\build\\intermediates\\res\\merged\\debug\\layout_listitem_mainwin.xml.flat",
+        "source": "F:\\AndroidProject\\citi-cup\\app\\src\\main\\res\\layout\\listitem_mainwin.xml"
     },
     {
         "merged": "F:\\AndroidProject\\citi-cup\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi-v4_abc_list_selector_disabled_holo_dark.9.png.flat",
