@@ -1,10 +1,10 @@
 {
     "logs": [
         {
-            "outputFile": "F:\\Android\\citi\\1\\citi-cup\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-v24\\values-v24.xml",
+            "outputFile": "C:\\Users\\14764\\Downloads\\citi-cup-master\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-v24\\values-v24.xml",
             "map": [
                 {
-                    "source": "E:\\.gradle\\caches\\transforms-2\\files-2.1\\254225ace00609852d4ce171f8f2a6a9\\res\\values-v24\\values-v24.xml",
+                    "source": "C:\\Users\\14764\\.gradle\\caches\\transforms-2\\files-2.1\\e007fba4b470df46c6673acb402ab0ef\\res\\values-v24\\values-v24.xml",
                     "from": {
                         "startLines": "2,3",
                         "startColumns": "4,4",
