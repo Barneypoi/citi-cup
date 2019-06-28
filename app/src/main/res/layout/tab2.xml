@@ -27,7 +27,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:background="@color/modulecolor"
+            android:background="@color/titlecolor"
             android:text="基金" />
 
         <Button
@@ -35,7 +35,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:background="@color/modulecolor"
+            android:background="@color/titlecolor"
             android:text="净值" />
 
         <Button
@@ -43,7 +43,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:background="@color/modulecolor"
+            android:background="@color/titlecolor"
             android:text="加入后涨幅" />
     </LinearLayout>
 

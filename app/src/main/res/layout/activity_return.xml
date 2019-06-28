@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        android:background="@color/main">
+
+        <Button
+            android:id="@+id/button5"
+            android:layout_width="53dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="10dp"
+            android:background="?attr/homeAsUpIndicator"
+            android:gravity="center_vertical"
+            android:onClick="backToMain" />
+
+        <TextView
+            android:id="@+id/textView15"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="175dp"
+            android:layout_marginTop="25dp"
+            android:gravity="center_horizontal"
+            android:text="基金回报率"
+            android:textColor="@color/titlecolor"
+            android:textSize="18sp" />
+    </RelativeLayout>
+
+    <android.support.v7.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="153dp"
+        android:layout_centerInParent="true"
+        app:cardCornerRadius="12dp"
+        app:cardElevation="12dp">
+
+        <TextView
+            android:id="@+id/textView19"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="20dp"
+            android:text="基金回报率" />
+
+        <Spinner
+            android:id="@+id/spinner5"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="125dp"
+            android:layout_marginTop="20dp" />
+
+        <Button
+            android:id="@+id/button9"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="275dp"
+            android:layout_marginTop="80dp"
+            android:background="@color/modulecolor"
+            android:text="筛选" />
+    </android.support.v7.widget.CardView>
+
+    <ListView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+</LinearLayout>
