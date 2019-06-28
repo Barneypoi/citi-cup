@@ -32,7 +32,8 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:text="用户名"
-                android:textSize="30sp" />
+                android:textSize="30sp"
+                android:onClick="jumpToSetting"/>
 
         </LinearLayout>
 

@@ -1,10 +1,10 @@
 {
     "logs": [
         {
-            "outputFile": "C:\\Users\\14764\\Downloads\\citi-cup-master\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-sw600dp-v13\\values-sw600dp-v13.xml",
+            "outputFile": "F:\\Android\\citi\\1\\citi-cup\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-sw600dp-v13\\values-sw600dp-v13.xml",
             "map": [
                 {
-                    "source": "C:\\Users\\14764\\.gradle\\caches\\transforms-2\\files-2.1\\14bbbd6ef664063cfd96ab5ac21c9dec\\res\\values-sw600dp-v13\\values-sw600dp-v13.xml",
+                    "source": "E:\\.gradle\\caches\\transforms-2\\files-2.1\\3d66600da33b25c436ae1f2d3395903b\\res\\values-sw600dp-v13\\values-sw600dp-v13.xml",
                     "from": {
                         "startLines": "2,3,4,5,6,7,8,10,11,12",
                         "startColumns": "4,4,4,4,4,4,4,4,4,4",
@@ -23,7 +23,7 @@
                     }
                 },
                 {
-                    "source": "C:\\Users\\14764\\.gradle\\caches\\transforms-2\\files-2.1\\e007fba4b470df46c6673acb402ab0ef\\res\\values-sw600dp-v13\\values-sw600dp-v13.xml",
+                    "source": "E:\\.gradle\\caches\\transforms-2\\files-2.1\\254225ace00609852d4ce171f8f2a6a9\\res\\values-sw600dp-v13\\values-sw600dp-v13.xml",
                     "from": {
                         "startLines": "2,3,4,5,6,7,8,9",
                         "startColumns": "4,4,4,4,4,4,4,4",
