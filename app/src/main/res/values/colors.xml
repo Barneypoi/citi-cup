@@ -9,11 +9,13 @@
     <color name="titlecolor">#FFFFFF</color>
     <color name="subtitlecolor">#E0E0FF</color>
     <color name= "black">#000000</color>
-    <color name="bottomcolor">#E4F1F1F1</color>
+    <color name="bottomcolor">#E4FDFDFD</color>
+    <!--E4F1F1F1-->
     <color name="subtitledarkercolor">#A1A1AA</color>
     <color name="highlighttext">#FF7043</color>
     <color name="exitcolor">#FF3030</color>
     <color name="background">#F0F0F2</color>
     <color name="settingTitleColor">#98A5AB</color>
     <color name="settingSubtitleColor">#607D8B</color>
+    <color name="myButtonTextColor">#03A9F4</color>
 </resources>

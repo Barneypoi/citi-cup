@@ -4,7 +4,7 @@ android {
     compileSdkVersion 28
     defaultConfig {
         applicationId "com.example.myapplication"
-        minSdkVersion 24
+        minSdkVersion 22
         targetSdkVersion 28
         versionCode 1
         versionName "1.0"
@@ -32,5 +32,5 @@ dependencies {
     implementation 'com.android.support:recyclerview-v7:28.0.0'
     implementation 'com.android.support:cardview-v7:28.0.0'
     implementation 'com.lucasurbas:listitemview:1.1.1'
-
+    implementation 'com.squareup.okhttp3:okhttp:4.0.0'
 }

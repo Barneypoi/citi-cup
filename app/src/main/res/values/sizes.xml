@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="myZhSize">14dp</dimen>
+    <dimen name="myMoneySize">25dp</dimen>
+    <dimen name="myButtonTextSize">18dp</dimen>
+</resources>
