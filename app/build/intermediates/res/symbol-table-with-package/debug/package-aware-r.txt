@@ -1220,6 +1220,9 @@ id list_item
 id list_test_1
 id list_test_2
 id list_test_3
+id lv1_search
+id lv2_search
+id lv3_search
 id lv_fundinfo
 id lv_mainwin
 id masked
@@ -1302,6 +1305,7 @@ id stretch
 id submenuarrow
 id submit_area
 id subtitle_view
+id sv_searchActivity
 id tabMode
 id tag_transition_group
 id tag_unhandled_key_event_manager

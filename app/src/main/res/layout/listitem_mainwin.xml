@@ -4,35 +4,38 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="80dp">
-    
+
     <LinearLayout
-        android:paddingLeft="10dp"
-        android:orientation="vertical"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_weight="0.5">
+        android:layout_weight="0.5"
+        android:orientation="vertical"
+        android:paddingLeft="10dp">
+
         <TextView
             android:id="@+id/tv_mainwin_fundName"
             android:layout_width="150dp"
             android:layout_height="wrap_content"
-            android:textSize="20sp"
             android:paddingLeft="20dp"
-            android:text="FundName"/>
+            android:text="FundName"
+            android:textSize="20sp" />
+
         <TextView
             android:id="@+id/tv_mainwin_fundRate"
             android:layout_width="150dp"
             android:layout_height="wrap_content"
-            android:textSize="25sp"
-            android:text="5.2%"
             android:paddingLeft="40dp"
-            android:textColor="@color/highlighttext"/>
+            android:text="5.2%"
+            android:textColor="@color/highlighttext"
+            android:textSize="25sp" />
+
         <TextView
             android:layout_width="150dp"
             android:layout_height="wrap_content"
-            android:textSize="10sp"
             android:paddingLeft="30dp"
             android:text="七日年化收益率"
-            android:textColor="@color/subtitlecolor"/>
+            android:textColor="@color/subtitlecolor"
+            android:textSize="10sp" />
 
 
     </LinearLayout>
