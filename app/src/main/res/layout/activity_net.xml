@@ -5,7 +5,7 @@
 
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="70dp"
+        android:layout_height="50dp"
         android:background="@color/main">
 
         <Button
@@ -18,7 +18,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="175dp"
-            android:layout_marginTop="25dp"
+            android:layout_marginTop="17dp"
             android:gravity="center_horizontal"
             android:text="基金净值"
             android:textColor="@color/titlecolor"
