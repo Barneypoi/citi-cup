@@ -1452,6 +1452,7 @@ layout layout_viewpager
 layout listitem_fundinfo
 layout listitem_mainwin
 layout listitem_setting
+layout listitem_src_fundinfo
 layout liv_action_item_layout
 layout liv_action_item_overflow_layout
 layout liv_list_item_layout

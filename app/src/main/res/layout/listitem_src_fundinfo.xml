@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    android:orientation="horizontal"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <TextView
+        android:id="@+id/tv1_list"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_weight="0.6"
+        android:gravity="left"
+        android:text="基金信息"
+        android:textSize="18sp" />
+    <TextView
+        android:id="@+id/tv2_list"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_weight="0.4"
+        android:text="基金信息内容"
+        android:textSize="18sp"
+        android:gravity="right"/>
+</LinearLayout>

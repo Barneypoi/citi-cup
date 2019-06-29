@@ -58,7 +58,7 @@ public class SearchActivity extends AppCompatActivity {
                 View view;
 
                 if(convertView == null){
-                    view = li1.inflate(R.layout.listitem_fundinfo,null);
+                    view = li1.inflate(R.layout.listitem_src_fundinfo,null);
                 }else
                 {
                     view = convertView;
@@ -66,10 +66,10 @@ public class SearchActivity extends AppCompatActivity {
                 }
 
                 //传入基金信息
-                tv1 = findViewById(R.id.tv1_list);
+                /*tv1 = findViewById(R.id.tv1_list);
                 tv1.setText("OK");
                 tv2 = findViewById(R.id.tv2_list);
-                tv2.setText("OK");
+                tv2.setText("OK");*/
 
                 return view;
             }
