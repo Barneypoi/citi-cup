@@ -3,14 +3,15 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical"
     android:layout_width="match_parent"
-    android:layout_height="160dp"
-    android:background="@color/modulecolor">
+    android:layout_height="140dp"
+    android:background="@color/modulecolor"
+    android:layout_margin="5dp">
 
     <TextView
         android:layout_width="240dp"
         android:layout_height="30dp"
         android:layout_gravity="center"
-        android:layout_marginTop="25dp"
+        android:layout_marginTop="15dp"
         android:text="FundName"
         android:textAlignment="center"
         android:textSize="25sp"
@@ -19,7 +20,7 @@
         android:layout_width="200dp"
         android:layout_height="30dp"
         android:layout_gravity="center"
-        android:layout_marginTop="25dp"
+        android:layout_marginTop="5dp"
         android:text="期望年化收益率"
         android:textAlignment="center"
         android:textSize="20sp"
@@ -31,5 +32,5 @@
         android:text="Rate"
         android:textAlignment="center"
         android:textSize="35sp"
-        android:textColor="@color/titlecolor"/>
+        android:textColor="@color/highlighttext"/>
 </LinearLayout>

@@ -653,6 +653,7 @@ color highlighted_text_material_light
 color highlighttext
 color liv_gray_active_icon
 color main
+color main_pressed
 color material_blue_grey_800
 color material_blue_grey_900
 color material_blue_grey_950
@@ -1072,8 +1073,11 @@ drawable notification_template_icon_bg
 drawable notification_template_icon_low_bg
 drawable notification_tile_bg
 drawable notify_panel_notification_icon_bg
+drawable selector_mainbtn
 drawable shape_dot_focus
 drawable shape_dot_unfocus
+drawable shape_npre_mainbtn
+drawable shape_pre_mainbtn
 drawable tooltip_frame_dark
 drawable tooltip_frame_light
 drawable vd_checkbox_checked
@@ -1219,6 +1223,9 @@ id list_item
 id list_test_1
 id list_test_2
 id list_test_3
+id lv1_search
+id lv2_search
+id lv3_search
 id lv_fundinfo
 id lv_mainwin
 id masked
@@ -1302,6 +1309,7 @@ id stretch
 id submenuarrow
 id submit_area
 id subtitle_view
+id sv_searchActivity
 id tabMode
 id tag_transition_group
 id tag_unhandled_key_event_manager
@@ -1448,6 +1456,7 @@ layout layout_viewpager
 layout listitem_fundinfo
 layout listitem_mainwin
 layout listitem_setting
+layout listitem_src_fundinfo
 layout liv_action_item_layout
 layout liv_action_item_overflow_layout
 layout liv_list_item_layout
@@ -1470,8 +1479,10 @@ layout tab2
 layout tab3
 layout user_info
 mipmap back
+mipmap fund_seleccted1
 mipmap fund_selected
 mipmap fund_unselected
+mipmap fund_unselected1
 mipmap home_selected
 mipmap home_unselected
 mipmap ic_launcher

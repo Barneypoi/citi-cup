@@ -4,6 +4,7 @@
     <color name="colorPrimaryDark">#00574B</color>
     <color name="colorAccent">#D81B60</color>
     <color name= "main">#9E40FF</color>
+    <color name= "main_pressed">#7000EB</color>
     <color name="modulecolor">#8484F5</color>
     <color name="titlecolor">#FFFFFF</color>
     <color name="subtitlecolor">#E0E0FF</color>

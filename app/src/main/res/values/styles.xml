@@ -11,7 +11,7 @@
             <item name="android:background">@mipmap/back</item>
             <item name="android:layout_height">30dp</item>
             <item name="android:layout_width">30dp</item>
-            <item name="android:layout_marginTop">22dp</item>
+            <item name="android:layout_marginTop">15dp</item>
             <item name="android:layout_marginLeft">10dp</item>
             <item name="android:gravity">center_vertical</item>
     </style>
