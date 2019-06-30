@@ -1479,6 +1479,7 @@ layout tab2
 layout tab3
 layout user_info
 mipmap back
+mipmap filter_main
 mipmap fund_seleccted1
 mipmap fund_selected
 mipmap fund_unselected
@@ -1489,7 +1490,10 @@ mipmap ic_launcher
 mipmap ic_launcher_round
 mipmap mine_selected
 mipmap mine_unselected
+mipmap netweigh_main
 mipmap next_page
+mipmap return_main
+mipmap search_main
 string abc_action_bar_home_description
 string abc_action_bar_up_description
 string abc_action_menu_overflow_description

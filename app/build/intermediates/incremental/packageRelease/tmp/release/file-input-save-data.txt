@@ -1,7 +1,0 @@
-#Internal package file, do not edit.
-#Wed Jun 26 15:43:04 CST 2019
-0.baseType=DIRECTORY
-0.base=C\:\\Users\\14764\\Downloads\\citi-cup-master\\app\\build\\intermediates\\dex\\release\\mergeDexRelease\\out
-0.path=classes.dex
-0.set=DEX
-count=1
