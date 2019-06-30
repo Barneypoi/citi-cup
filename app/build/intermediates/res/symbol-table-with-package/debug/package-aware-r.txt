@@ -1042,6 +1042,7 @@ drawable design_ic_visibility
 drawable design_ic_visibility_off
 drawable design_password_eye
 drawable design_snackbar_background
+drawable filter_main
 drawable ic_action_next
 drawable ic_launcher_background
 drawable ic_launcher_foreground
@@ -1061,6 +1062,7 @@ drawable image9
 drawable mtrl_snackbar_background
 drawable mtrl_tabs_default_indicator
 drawable navigation_empty_icon
+drawable netweigh_main
 drawable notification_action_background
 drawable notification_bg
 drawable notification_bg_low
@@ -1073,6 +1075,8 @@ drawable notification_template_icon_bg
 drawable notification_template_icon_low_bg
 drawable notification_tile_bg
 drawable notify_panel_notification_icon_bg
+drawable returnrate_main
+drawable search_main
 drawable selector_mainbtn
 drawable shape_dot_focus
 drawable shape_dot_unfocus
@@ -1494,6 +1498,7 @@ layout tab2
 layout tab3
 layout user_info
 mipmap back
+mipmap filter_main
 mipmap fund_seleccted1
 mipmap fund_selected
 mipmap fund_unselected
@@ -1504,7 +1509,10 @@ mipmap ic_launcher
 mipmap ic_launcher_round
 mipmap mine_selected
 mipmap mine_unselected
+mipmap netweigh_main
 mipmap next_page
+mipmap return_main
+mipmap search_main
 string abc_action_bar_home_description
 string abc_action_bar_up_description
 string abc_action_menu_overflow_description

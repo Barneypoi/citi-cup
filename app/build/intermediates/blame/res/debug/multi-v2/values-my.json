@@ -1,10 +1,10 @@
 {
     "logs": [
         {
-            "outputFile": "C:\\Users\\14764\\Downloads\\citi-cup-master\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-my\\values-my.xml",
+            "outputFile": "F:\\AndroidProject\\citi-cup\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-my\\values-my.xml",
             "map": [
                 {
-                    "source": "C:\\Users\\14764\\.gradle\\caches\\transforms-2\\files-2.1\\e007fba4b470df46c6673acb402ab0ef\\res\\values-my\\values-my.xml",
+                    "source": "C:\\Users\\Jiaqing\\.gradle\\caches\\transforms-2\\files-2.1\\fadb559f568696c3feaf3268726477ee\\res\\values-my\\values-my.xml",
                     "from": {
                         "startLines": "2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29",
                         "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",
@@ -14,7 +14,7 @@
                     }
                 },
                 {
-                    "source": "C:\\Users\\14764\\.gradle\\caches\\transforms-2\\files-2.1\\7e308e215f23d5b17f60f8dd8f9afcab\\res\\values-my\\values-my.xml",
+                    "source": "C:\\Users\\Jiaqing\\.gradle\\caches\\transforms-2\\files-2.1\\5d0bc58295c7e9c5298f2411d487a8e7\\res\\values-my\\values-my.xml",
                     "from": {
                         "startLines": "2",
                         "startColumns": "4",
