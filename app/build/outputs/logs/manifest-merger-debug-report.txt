@@ -1,9 +1,9 @@
 -- Merging decision tree log ---
 manifest
-ADDED from C:\Users\14764\Downloads\citi-cup-master\app\src\main\AndroidManifest.xml:2:1-29:12
-INJECTED from C:\Users\14764\Downloads\citi-cup-master\app\src\main\AndroidManifest.xml:2:1-29:12
-INJECTED from C:\Users\14764\Downloads\citi-cup-master\app\src\main\AndroidManifest.xml:2:1-29:12
-INJECTED from C:\Users\14764\Downloads\citi-cup-master\app\src\main\AndroidManifest.xml:2:1-29:12
+ADDED from C:\Users\14764\Downloads\citi-cup-master\app\src\main\AndroidManifest.xml:2:1-33:12
+INJECTED from C:\Users\14764\Downloads\citi-cup-master\app\src\main\AndroidManifest.xml:2:1-33:12
+INJECTED from C:\Users\14764\Downloads\citi-cup-master\app\src\main\AndroidManifest.xml:2:1-33:12
+INJECTED from C:\Users\14764\Downloads\citi-cup-master\app\src\main\AndroidManifest.xml:2:1-33:12
 MERGED from [com.android.support:design:28.0.0] C:\Users\14764\.gradle\caches\transforms-2\files-2.1\14bbbd6ef664063cfd96ab5ac21c9dec\AndroidManifest.xml:17:1-24:12
 MERGED from [com.android.support:appcompat-v7:28.0.0] C:\Users\14764\.gradle\caches\transforms-2\files-2.1\e007fba4b470df46c6673acb402ab0ef\AndroidManifest.xml:17:1-22:12
 MERGED from [com.android.support.constraint:constraint-layout:1.1.3] C:\Users\14764\.gradle\caches\transforms-2\files-2.1\b8c1cb3f87abd316b8a31f847434d756\AndroidManifest.xml:2:1-11:12
@@ -37,25 +37,25 @@ MERGED from [com.android.support:interpolator:28.0.0] C:\Users\14764\.gradle\cac
 MERGED from [android.arch.lifecycle:livedata:1.1.1] C:\Users\14764\.gradle\caches\transforms-2\files-2.1\877c98d114431a1fb39ab39653d45cc9\AndroidManifest.xml:17:1-22:12
 MERGED from [android.arch.lifecycle:livedata-core:1.1.1] C:\Users\14764\.gradle\caches\transforms-2\files-2.1\db014f14473b08b85082db497e3ccee0\AndroidManifest.xml:17:1-22:12
 MERGED from [android.arch.core:runtime:1.1.1] C:\Users\14764\.gradle\caches\transforms-2\files-2.1\f205acda508966bead2c13cd7a5706c3\AndroidManifest.xml:17:1-22:12
-INJECTED from C:\Users\14764\Downloads\citi-cup-master\app\src\main\AndroidManifest.xml:2:1-29:12
-INJECTED from C:\Users\14764\Downloads\citi-cup-master\app\src\main\AndroidManifest.xml:2:1-29:12
-INJECTED from C:\Users\14764\Downloads\citi-cup-master\app\src\main\AndroidManifest.xml:2:1-29:12
+INJECTED from C:\Users\14764\Downloads\citi-cup-master\app\src\main\AndroidManifest.xml:2:1-33:12
+INJECTED from C:\Users\14764\Downloads\citi-cup-master\app\src\main\AndroidManifest.xml:2:1-33:12
+INJECTED from C:\Users\14764\Downloads\citi-cup-master\app\src\main\AndroidManifest.xml:2:1-33:12
 	package
 		ADDED from C:\Users\14764\Downloads\citi-cup-master\app\src\main\AndroidManifest.xml:3:5-40
 		INJECTED from C:\Users\14764\Downloads\citi-cup-master\app\src\main\AndroidManifest.xml
 		INJECTED from C:\Users\14764\Downloads\citi-cup-master\app\src\main\AndroidManifest.xml
 	android:versionName
 		INJECTED from C:\Users\14764\Downloads\citi-cup-master\app\src\main\AndroidManifest.xml
-		ADDED from C:\Users\14764\Downloads\citi-cup-master\app\src\main\AndroidManifest.xml:2:1-29:12
+		ADDED from C:\Users\14764\Downloads\citi-cup-master\app\src\main\AndroidManifest.xml:2:1-33:12
 		INJECTED from C:\Users\14764\Downloads\citi-cup-master\app\src\main\AndroidManifest.xml
 	android:versionCode
 		INJECTED from C:\Users\14764\Downloads\citi-cup-master\app\src\main\AndroidManifest.xml
-		ADDED from C:\Users\14764\Downloads\citi-cup-master\app\src\main\AndroidManifest.xml:2:1-29:12
+		ADDED from C:\Users\14764\Downloads\citi-cup-master\app\src\main\AndroidManifest.xml:2:1-33:12
 		INJECTED from C:\Users\14764\Downloads\citi-cup-master\app\src\main\AndroidManifest.xml
 	xmlns:android
 		ADDED from C:\Users\14764\Downloads\citi-cup-master\app\src\main\AndroidManifest.xml:2:11-69
 application
-ADDED from C:\Users\14764\Downloads\citi-cup-master\app\src\main\AndroidManifest.xml:4:5-28:19
+ADDED from C:\Users\14764\Downloads\citi-cup-master\app\src\main\AndroidManifest.xml:4:5-32:19
 MERGED from [com.android.support:design:28.0.0] C:\Users\14764\.gradle\caches\transforms-2\files-2.1\14bbbd6ef664063cfd96ab5ac21c9dec\AndroidManifest.xml:22:5-20
 MERGED from [com.android.support:design:28.0.0] C:\Users\14764\.gradle\caches\transforms-2\files-2.1\14bbbd6ef664063cfd96ab5ac21c9dec\AndroidManifest.xml:22:5-20
 MERGED from [com.android.support.constraint:constraint-layout:1.1.3] C:\Users\14764\.gradle\caches\transforms-2\files-2.1\b8c1cb3f87abd316b8a31f847434d756\AndroidManifest.xml:9:5-20
@@ -114,6 +114,14 @@ activity#com.example.myapplication.SettingActivity
 ADDED from C:\Users\14764\Downloads\citi-cup-master\app\src\main\AndroidManifest.xml:26:9-27:20
 	android:name
 		ADDED from C:\Users\14764\Downloads\citi-cup-master\app\src\main\AndroidManifest.xml:26:19-50
+activity#com.example.myapplication.UserInfoActivity
+ADDED from C:\Users\14764\Downloads\citi-cup-master\app\src\main\AndroidManifest.xml:28:9-29:20
+	android:name
+		ADDED from C:\Users\14764\Downloads\citi-cup-master\app\src\main\AndroidManifest.xml:28:19-51
+activity#com.example.myapplication.AddCardActivity
+ADDED from C:\Users\14764\Downloads\citi-cup-master\app\src\main\AndroidManifest.xml:30:9-31:20
+	android:name
+		ADDED from C:\Users\14764\Downloads\citi-cup-master\app\src\main\AndroidManifest.xml:30:19-50
 uses-sdk
 INJECTED from C:\Users\14764\Downloads\citi-cup-master\app\src\main\AndroidManifest.xml reason: use-sdk injection requested
 INJECTED from C:\Users\14764\Downloads\citi-cup-master\app\src\main\AndroidManifest.xml

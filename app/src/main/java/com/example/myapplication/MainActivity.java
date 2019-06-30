@@ -8,11 +8,19 @@ import android.os.Bundle;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.view.Window;
+import android.widget.AdapterView;
 import android.widget.ImageButton;
 import android.widget.LinearLayout;
 import android.content.Intent;
 import android.widget.ListView;
+import android.widget.SimpleAdapter;
 import android.widget.TextView;
+import android.widget.Toast;
+
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 
 public class MainActivity extends FragmentActivity implements OnClickListener {
     //声明Tab的布局文件
@@ -34,11 +42,13 @@ public class MainActivity extends FragmentActivity implements OnClickListener {
         setContentView(R.layout.activity_main);
         initViews();//初始化控件
         initEvents();//初始化事件
+
         selectTab(0);//默认选中第一个Tab
         ImageButton imageButton1 = (ImageButton)findViewById(R.id.id_tab_SY_img);
         imageButton1.setImageResource(R.mipmap.home_selected);
         TextView textView1 = (TextView)findViewById(R.id.id_tab_SY_text);
         textView1.setTextColor(getResources().getColor(R.color.main));
+
     }
 
     private void initEvents() {
@@ -144,6 +154,7 @@ public class MainActivity extends FragmentActivity implements OnClickListener {
         transaction.commit();
     }
 
+
     //将Fragment隐藏
     private void hideFragments(FragmentTransaction transaction) {
         if (mFragSY != null) {
@@ -156,6 +167,7 @@ public class MainActivity extends FragmentActivity implements OnClickListener {
             transaction.hide(mFragAddress);
         }
     }
+
 
     //跳转到搜索页面
     public void jumpToSearch(View view) {

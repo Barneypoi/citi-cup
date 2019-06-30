@@ -16,5 +16,19 @@
             <item name="android:gravity">center_vertical</item>
     </style>
 
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_weight="1"
+    android:text="总资产（元）"
+    android:textSize="@dimen/myZhSize"
+    android:textColor="@color/titlecolor"
+    <style name="myZhText">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_weight">1</item>
+        <item name="android:textSize">@dimen/myZhSize</item>
+        <item name="android:textColor">@color/titlecolor</item>
+    </style>
+
 
 </resources>

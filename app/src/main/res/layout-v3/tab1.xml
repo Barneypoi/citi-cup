@@ -36,7 +36,10 @@
                         android:layout_weight="1"
                         android:background="@drawable/selector_mainbtn"
                         android:text="基金搜索"
-                        android:layout_margin="5dp"
+                        android:layout_marginTop="3dp"
+                        android:layout_marginBottom="1.5dp"
+                        android:layout_marginLeft="4dp"
+                        android:layout_marginRight="2dp"
                         android:textColor="@color/titlecolor"
                         android:onClick="jumpToSearch"/>
                     <Button
@@ -46,7 +49,10 @@
                         android:layout_weight="1"
                         android:background="@drawable/selector_mainbtn"
                         android:text="基金筛选"
-                        android:layout_margin="5dp"
+                        android:layout_marginBottom="3dp"
+                        android:layout_marginTop="1.5dp"
+                        android:layout_marginRight="4dp"
+                        android:layout_marginLeft="2dp"
                         android:textColor="@color/titlecolor"
                         android:onClick="jumpToFilter"/>
             </LinearLayout>
@@ -62,7 +68,10 @@
                         android:layout_weight="1"
                         android:background="@drawable/selector_mainbtn"
                         android:text="查回报率"
-                        android:layout_margin="5dp"
+                        android:layout_marginTop="3dp"
+                        android:layout_marginBottom="1.5dp"
+                        android:layout_marginLeft="4dp"
+                        android:layout_marginRight="2dp"
                         android:textColor="@color/titlecolor"
                         android:onClick="jumpToReturn"/>
                     <Button
@@ -72,7 +81,10 @@
                         android:layout_weight="1"
                         android:background="@drawable/selector_mainbtn"
                         android:text="基金净值"
-                        android:layout_margin="5dp"
+                        android:layout_marginBottom="3dp"
+                        android:layout_marginTop="1.5dp"
+                        android:layout_marginRight="4dp"
+                        android:layout_marginLeft="2dp"
                         android:textColor="@color/titlecolor"
                         android:onClick="jumpToNet"/>
             </LinearLayout>
