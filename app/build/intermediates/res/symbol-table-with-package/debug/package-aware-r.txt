@@ -1375,6 +1375,8 @@ id transition_scene_layoutid_cache
 id transition_transform
 id tv1_list
 id tv2_list
+id tv_big_fundName
+id tv_big_fundRate
 id tv_mainwin_fundName
 id tv_mainwin_fundRate
 id tv_mainwin_info1
