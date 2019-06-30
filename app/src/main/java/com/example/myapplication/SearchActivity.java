@@ -2,6 +2,8 @@ package com.example.myapplication;
 
 import android.content.Context;
 import android.content.Intent;
+import android.support.annotation.NonNull;
+import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
@@ -13,72 +15,40 @@ import android.widget.ListView;
 import android.widget.SearchView;
 import android.widget.TextView;
 
+import java.util.ArrayList;
+import java.util.Collection;
+import java.util.Iterator;
+import java.util.List;
+import java.util.ListIterator;
+
 public class SearchActivity extends AppCompatActivity {
 
     //三个ListView分别对应 热门基金 搜索历史 涨幅排行
     private ListView lv1, lv2, lv3;
     //搜索框
     private SearchView sv;
-    //列表适配器
-    private BaseAdapter baseAdapter;
     //单个列表单元基金信息显示
     private TextView tv1;
     private TextView tv2;
 
+    private ArrayList<FundInfoObject> fundInfoList = new ArrayList<FundInfoObject>() ;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+        initFundInfo();
+        FundinfoListitemAdapter adapter = new FundinfoListitemAdapter(SearchActivity.this,R.layout.listitem_fundinfo,fundInfoList);
         setContentView(R.layout.activity_search);
         lv1 = findViewById(R.id.lv1_search);
         lv2 = findViewById(R.id.lv2_search);
         lv3 = findViewById(R.id.lv3_search);
+
         sv = findViewById(R.id.sv_searchActivity);
 
-        baseAdapter = new BaseAdapter() {
-
-            int num = 4;
-            @Override
-            public int getCount() {
-                return num;
-            }
-
-            @Override
-            public Object getItem(int position) {
-                return null;
-            }
-
-            @Override
-            public long getItemId(int position) {
-                return 0;
-            }
-
-            @Override
-            public View getView(int position, View convertView, ViewGroup parent) {
-                LayoutInflater li1 = SearchActivity.this.getLayoutInflater();
-                View view;
-
-                if(convertView == null){
-                    view = li1.inflate(R.layout.listitem_src_fundinfo,null);
-                }else
-                {
-                    view = convertView;
-                    Log.i("info","有缓存，不需要重新生成"+position);
-                }
-
-                //传入基金信息
-                /*tv1 = findViewById(R.id.tv1_list);
-                tv1.setText("OK");
-                tv2 = findViewById(R.id.tv2_list);
-                tv2.setText("OK");*/
-
-                return view;
-            }
-        };
-        lv1.setAdapter(baseAdapter);
-        lv2.setAdapter(baseAdapter);
-        lv3.setAdapter(baseAdapter);
-
-
+        lv1.setAdapter(adapter);
+        lv2.setAdapter(adapter);
+        lv3.setAdapter(adapter);
     }
 
     public void backToMain(View view) {
@@ -86,5 +56,17 @@ public class SearchActivity extends AppCompatActivity {
         intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
         startActivity(intent);
     }
+    //此函数初始化列表项，将基金信息在此函数中初始化
+    public void initFundInfo(){
+        FundInfoObject fund1 = new FundInfoObject("华夏成长混合","000001");
+        fundInfoList.add(0,fund1);
+        FundInfoObject fund2 = new FundInfoObject("广发理财七天债券A","000002");
+        fundInfoList.add(1,fund2);
+        FundInfoObject fund3 = new FundInfoObject("广发理财七天债券B","000003");
+        fundInfoList.add(2,fund3);
+        FundInfoObject fund4 = new FundInfoObject("嘉实美国成长股票人民币","000004");
+        fundInfoList.add(3,fund4);
+    }
+
 }
 
