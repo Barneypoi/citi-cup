@@ -1203,6 +1203,7 @@ id id_tab_frd_img
 id id_tab_frd_text
 id ifRoom
 id image
+id imageTouXiang
 id imageView
 id imageView3
 id imageView4
@@ -1213,6 +1214,7 @@ id invisible
 id italic
 id item_layout
 id item_touch_helper_previous_elevation
+id key
 id labeled
 id largeLabel
 id left
@@ -1223,6 +1225,11 @@ id list_item
 id list_test_1
 id list_test_2
 id list_test_3
+id list_userinfo
+id list_userinfo_1
+id list_userinfo_2
+id list_userinfo_3
+id list_userinfo_4
 id lv1_search
 id lv2_search
 id lv3_search
@@ -1259,6 +1266,7 @@ id radio
 id right
 id right_icon
 id right_side
+id safeTouXiang
 id save_image_matrix
 id save_non_transition_alpha
 id save_scale_type
@@ -1321,6 +1329,7 @@ id textSpacerNoTitle
 id textStart
 id textView
 id textView1
+id textView10
 id textView11
 id textView12
 id textView13
@@ -1334,6 +1343,7 @@ id textView2
 id textView20
 id textView21
 id textView22
+id textView23
 id textView3
 id textView4
 id textView5
@@ -1370,6 +1380,7 @@ id uniform
 id unlabeled
 id up
 id useLogo
+id value
 id view_offset_helper
 id viewpager
 id visible
@@ -1435,6 +1446,7 @@ layout activity_net
 layout activity_return
 layout activity_search
 layout activity_setting
+layout activity_userinfo
 layout add_card
 layout block_bottom
 layout block_fundinfo
@@ -1456,7 +1468,10 @@ layout layout_viewpager
 layout listitem_fundinfo
 layout listitem_mainwin
 layout listitem_setting
+layout listitem_settinguserinfo
 layout listitem_src_fundinfo
+layout listitem_userinfo
+layout listitem_usertouxiang
 layout liv_action_item_layout
 layout liv_action_item_overflow_layout
 layout liv_list_item_layout

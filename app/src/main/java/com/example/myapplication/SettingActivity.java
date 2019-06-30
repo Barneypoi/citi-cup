@@ -1,6 +1,7 @@
 package com.example.myapplication;
 
 import android.content.Intent;
+import android.media.Image;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
@@ -22,12 +23,48 @@ public class SettingActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_setting);
 
+        initUserInfoList();
         initList1();
         initList2();
         initList3();
 
+
     }
 
+    private void initUserInfoList(){
+        int[] images = new int[]{R.drawable.image10};
+        String[] titles1 = new String[]{"GKD"};
+        String[] subtitles1 = new String[]{"99XXXXXXXX001"};
+        String[] subtitles2 = new String[]{"去绑卡"};
+        final List<Map<String, Object>> listitem = new ArrayList<Map<String, Object>>();
+        for (int i = 0; i < titles1.length; i++) {
+            Map<String, Object> showitem = new HashMap<String, Object>();
+            showitem.put("image",images[i]);
+            showitem.put("titles1", titles1[i]);
+            showitem.put("subtitles1", subtitles1[i]);
+            showitem.put("subtitles2",subtitles2[i]);
+            listitem.add(showitem);
+        }
+
+        //创建一个simpleAdapter
+        SimpleAdapter myAdapter = new SimpleAdapter(getApplicationContext(), listitem, R.layout.listitem_settinguserinfo,
+                new String[]{"image","titles1", "subtitles1","subtitles2"}, new int[]{R.id.imageView5, R.id.textView7,R.id.textView8,R.id.textView9});
+        final ListView listView = (ListView) findViewById(R.id.list_userinfo);
+        listView.setAdapter(myAdapter);
+        listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+
+                String location = "位置："+listView.getItemIdAtPosition(position);
+                Map<String, Object> item = (Map<String, Object>)listView.getItemAtPosition(position);
+                String l = "   内容，"+item.get("titles1");
+                Toast.makeText(SettingActivity.this, l  + location, Toast.LENGTH_SHORT).show();
+                jumpToUserInfo(view);
+                //Toast.makeText(SettingActivity.this, "我是onclick事件显示的", Toast.LENGTH_SHORT).show();
+            }
+
+        } );
+    }
     private void initList3() {
         String[] titles1 = new String[]{"密码管理","安全保护问题","手机令牌"};
         String[] subtitles1 = new String[]{"可设置微信、短信等方式","微信关注“陆金所微服务”",""};
@@ -123,6 +160,10 @@ public class SettingActivity extends AppCompatActivity {
         startActivity(intent);
     }
 
-
+    //跳转到设置界面
+    public void jumpToUserInfo(View view) {
+        Intent intent = new Intent(this, UserInfoActivity.class);
+        startActivity(intent);
+    }
 
 }

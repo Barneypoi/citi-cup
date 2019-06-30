@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/background"
+        android:orientation="vertical">
+
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:background="@color/main">
+
+            <Button
+                android:id="@+id/button5"
+                style="@style/backButton"
+                android:onClick="backToMain" />
+
+            <TextView
+                android:id="@+id/textView15"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="175dp"
+                android:layout_marginTop="17dp"
+                android:gravity="center_horizontal"
+                android:text="个人信息"
+                android:textColor="@color/titlecolor"
+                android:textSize="18sp" />
+        </RelativeLayout>
+
+        <ListView
+            android:id="@+id/list_userinfo_1"
+            android:layout_width="match_parent"
+            android:layout_height="51dp"
+            android:background="@color/titlecolor"/>
+
+        <ListView
+            android:id="@+id/list_userinfo_2"
+            android:layout_width="match_parent"
+            android:layout_height="153dp"
+            android:layout_marginTop="30dp"
+            android:background="@color/titlecolor"/>
+
+        <ListView
+            android:id="@+id/list_userinfo_3"
+            android:layout_width="match_parent"
+            android:layout_height="51dp"
+            android:layout_marginTop="11dp"
+            android:background="@color/titlecolor"/>
+
+        <ListView
+            android:id="@+id/list_userinfo_4"
+            android:layout_width="match_parent"
+            android:layout_height="51dp"
+            android:layout_marginTop="11dp"
+            android:background="@color/titlecolor">
+
+        </ListView>
+
+
+    </LinearLayout>
+</android.support.constraint.ConstraintLayout>
