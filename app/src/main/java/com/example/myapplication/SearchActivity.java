@@ -31,14 +31,18 @@ public class SearchActivity extends AppCompatActivity {
     private TextView tv1;
     private TextView tv2;
 
-    private ArrayList<FundInfoObject> fundInfoList = new ArrayList<FundInfoObject>() ;
+    private ArrayList<FundInfoObject> fundInfoList1 = new ArrayList<FundInfoObject>() ;
+    private ArrayList<FundInfoObject> fundInfoList2 = new ArrayList<FundInfoObject>() ;
+    private ArrayList<FundInfoObject> fundInfoList3 = new ArrayList<FundInfoObject>() ;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
         initFundInfo();
-        FundinfoListitemAdapter adapter = new FundinfoListitemAdapter(SearchActivity.this,R.layout.listitem_fundinfo,fundInfoList);
+        FundinfoListitemAdapter adapter1 = new FundinfoListitemAdapter(SearchActivity.this,R.layout.listitem_fundinfo,fundInfoList1);
+        FundinfoListitemAdapter adapter2 = new FundinfoListitemAdapter(SearchActivity.this,R.layout.listitem_fundinfo,fundInfoList2);
+        FundinfoListitemAdapter adapter3 = new FundinfoListitemAdapter(SearchActivity.this,R.layout.listitem_fundinfo,fundInfoList3);
         setContentView(R.layout.activity_search);
         lv1 = findViewById(R.id.lv1_search);
         lv2 = findViewById(R.id.lv2_search);
@@ -46,9 +50,9 @@ public class SearchActivity extends AppCompatActivity {
 
         sv = findViewById(R.id.sv_searchActivity);
 
-        lv1.setAdapter(adapter);
-        lv2.setAdapter(adapter);
-        lv3.setAdapter(adapter);
+        lv1.setAdapter(adapter1);
+        lv2.setAdapter(adapter2);
+        lv3.setAdapter(adapter3);
     }
 
     public void backToMain(View view) {
@@ -59,13 +63,29 @@ public class SearchActivity extends AppCompatActivity {
     //此函数初始化列表项，将基金信息在此函数中初始化
     public void initFundInfo(){
         FundInfoObject fund1 = new FundInfoObject("华夏成长混合","000001");
-        fundInfoList.add(0,fund1);
+        fundInfoList1.add(0,fund1);
         FundInfoObject fund2 = new FundInfoObject("广发理财七天债券A","000002");
-        fundInfoList.add(1,fund2);
+        fundInfoList1.add(1,fund2);
         FundInfoObject fund3 = new FundInfoObject("广发理财七天债券B","000003");
-        fundInfoList.add(2,fund3);
+        fundInfoList1.add(2,fund3);
         FundInfoObject fund4 = new FundInfoObject("嘉实美国成长股票人民币","000004");
-        fundInfoList.add(3,fund4);
+        fundInfoList1.add(3,fund4);
+        FundInfoObject fund21 = new FundInfoObject("嘉实增强信用定期债券","000005");
+        fundInfoList2.add(0,fund21);
+        FundInfoObject fund22 = new FundInfoObject("西部利得量化成长混合","000006");
+        fundInfoList2.add(1,fund22);
+        FundInfoObject fund23 = new FundInfoObject("全新好","000007");
+        fundInfoList2.add(2,fund23);
+        FundInfoObject fund24 = new FundInfoObject("嘉实中证500ETF联接","000008");
+        fundInfoList2.add(3,fund24);
+        FundInfoObject fund31 = new FundInfoObject("易方达天天理财货币A","000009");
+        fundInfoList3.add(0,fund31);
+        FundInfoObject fund32 = new FundInfoObject("易方达天天理财货币B","000010");
+        fundInfoList3.add(1,fund32);
+        FundInfoObject fund33 = new FundInfoObject("华夏大盘精选混合","000011");
+        fundInfoList3.add(2,fund33);
+        FundInfoObject fund34 = new FundInfoObject("华夏大盘精选混合（后端）","0000012");
+        fundInfoList3.add(3,fund34);
     }
 
 }
