@@ -1,5 +1,6 @@
 package com.example.myapplication;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
@@ -7,9 +8,11 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
 import android.widget.BaseAdapter;
 import android.widget.ListView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -45,6 +48,22 @@ public class SYFragment extends Fragment {
         initFundInfo();
         FundinfoListitem_main_Adapter baseAdapter = new FundinfoListitem_main_Adapter(getContext() ,R.layout.listitem_mainwin,fundInfoList);
         lv.setAdapter(baseAdapter);
+
+        //获取当前ListView点击的行数，并且得到该数据
+        lv.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+
+                tv1 = view.findViewById(R.id.tv_mainwin_fundName);//找到Textviewname
+                str = tv1.getText().toString();//得到数据
+
+                Intent i = new Intent(getContext(),FundInfoActivity.class);
+                startActivity(i);
+
+                Toast.makeText(getContext(), "" + str, Toast.LENGTH_SHORT).show();//显示数据
+            }
+        });
+
 
         return view;
     }

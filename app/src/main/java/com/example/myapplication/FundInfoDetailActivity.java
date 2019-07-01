@@ -20,6 +20,7 @@ public class FundInfoDetailActivity extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_fundinfo_detail);
 
+        initFundInfo();
         lv = findViewById(R.id.lv_fundInfo_detail);
         //实例化adapter
         adapter = new FundDetailInfoListitemAdapter(FundInfoDetailActivity.this ,R.layout.listitem_src_fundinfo ,infoDetailList);

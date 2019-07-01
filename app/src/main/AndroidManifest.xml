@@ -29,5 +29,9 @@
         </activity>
         <activity android:name=".AddCardActivity">
         </activity>
+        <activity android:name=".FundInfoActivity">
+        </activity>
+        <activity android:name=".FundInfoDetailActivity">
+        </activity>
     </application>
 </manifest>

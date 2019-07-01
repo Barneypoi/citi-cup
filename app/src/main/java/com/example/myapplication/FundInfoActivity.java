@@ -1,6 +1,7 @@
 package com.example.myapplication;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.util.Log;
@@ -59,12 +60,18 @@ public class FundInfoActivity extends Activity {
         fundInfoList.add(fund2);
         FundInfoObject fund3 = new FundInfoObject("广发理财七天债券B","000003");
         fundInfoList.add(fund3);
-        FundInfoObject fund4 = new FundInfoObject("嘉实美国成长股票人民币","000004");
+        FundInfoObject fund4 = new FundInfoObject("嘉实美国成长股票","000004");
         fundInfoList.add(fund4);
         FundInfoObject fund5 = new FundInfoObject("广发理财七天债券B","000003");
-        fundInfoList.add(fund3);
+        fundInfoList.add(fund5);
         FundInfoObject fund6 = new FundInfoObject("嘉实美国成长股票","000004");
-        fundInfoList.add(fund4);
+        fundInfoList.add(fund6);
+    }
+
+    //跳转至详细信息界面
+    public void jumpToDetailTest(View view){
+        Intent intent = new Intent(FundInfoActivity.this,FundInfoDetailActivity.class);
+        startActivity(intent);
     }
 
 }

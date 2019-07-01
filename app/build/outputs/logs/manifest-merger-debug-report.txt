@@ -1,9 +1,9 @@
 -- Merging decision tree log ---
 manifest
-ADDED from F:\AndroidProject\citi-cup\app\src\main\AndroidManifest.xml:2:1-33:12
-INJECTED from F:\AndroidProject\citi-cup\app\src\main\AndroidManifest.xml:2:1-33:12
-INJECTED from F:\AndroidProject\citi-cup\app\src\main\AndroidManifest.xml:2:1-33:12
-INJECTED from F:\AndroidProject\citi-cup\app\src\main\AndroidManifest.xml:2:1-33:12
+ADDED from F:\AndroidProject\citi-cup\app\src\main\AndroidManifest.xml:2:1-37:12
+INJECTED from F:\AndroidProject\citi-cup\app\src\main\AndroidManifest.xml:2:1-37:12
+INJECTED from F:\AndroidProject\citi-cup\app\src\main\AndroidManifest.xml:2:1-37:12
+INJECTED from F:\AndroidProject\citi-cup\app\src\main\AndroidManifest.xml:2:1-37:12
 MERGED from [com.android.support:design:28.0.0] C:\Users\Jiaqing\.gradle\caches\transforms-2\files-2.1\972da9040ca8ddf755ccf24dc483b4bd\AndroidManifest.xml:17:1-24:12
 MERGED from [com.android.support:appcompat-v7:28.0.0] C:\Users\Jiaqing\.gradle\caches\transforms-2\files-2.1\fadb559f568696c3feaf3268726477ee\AndroidManifest.xml:17:1-22:12
 MERGED from [com.android.support.constraint:constraint-layout:1.1.3] C:\Users\Jiaqing\.gradle\caches\transforms-2\files-2.1\caae2792e3bb3adf502c7b4aa0114778\AndroidManifest.xml:2:1-11:12
@@ -37,25 +37,25 @@ MERGED from [com.android.support:interpolator:28.0.0] C:\Users\Jiaqing\.gradle\c
 MERGED from [android.arch.lifecycle:livedata:1.1.1] C:\Users\Jiaqing\.gradle\caches\transforms-2\files-2.1\695f67e9bb5b5252069f050121930a68\AndroidManifest.xml:17:1-22:12
 MERGED from [android.arch.lifecycle:livedata-core:1.1.1] C:\Users\Jiaqing\.gradle\caches\transforms-2\files-2.1\f7ee158e9824ba1de050d4dfeb6188d4\AndroidManifest.xml:17:1-22:12
 MERGED from [android.arch.core:runtime:1.1.1] C:\Users\Jiaqing\.gradle\caches\transforms-2\files-2.1\ac6d9fd3780637c39cd29f714d08f2ec\AndroidManifest.xml:17:1-22:12
-INJECTED from F:\AndroidProject\citi-cup\app\src\main\AndroidManifest.xml:2:1-33:12
-INJECTED from F:\AndroidProject\citi-cup\app\src\main\AndroidManifest.xml:2:1-33:12
-INJECTED from F:\AndroidProject\citi-cup\app\src\main\AndroidManifest.xml:2:1-33:12
+INJECTED from F:\AndroidProject\citi-cup\app\src\main\AndroidManifest.xml:2:1-37:12
+INJECTED from F:\AndroidProject\citi-cup\app\src\main\AndroidManifest.xml:2:1-37:12
+INJECTED from F:\AndroidProject\citi-cup\app\src\main\AndroidManifest.xml:2:1-37:12
 	package
 		ADDED from F:\AndroidProject\citi-cup\app\src\main\AndroidManifest.xml:3:5-40
 		INJECTED from F:\AndroidProject\citi-cup\app\src\main\AndroidManifest.xml
 		INJECTED from F:\AndroidProject\citi-cup\app\src\main\AndroidManifest.xml
 	android:versionName
 		INJECTED from F:\AndroidProject\citi-cup\app\src\main\AndroidManifest.xml
-		ADDED from F:\AndroidProject\citi-cup\app\src\main\AndroidManifest.xml:2:1-33:12
+		ADDED from F:\AndroidProject\citi-cup\app\src\main\AndroidManifest.xml:2:1-37:12
 		INJECTED from F:\AndroidProject\citi-cup\app\src\main\AndroidManifest.xml
 	android:versionCode
 		INJECTED from F:\AndroidProject\citi-cup\app\src\main\AndroidManifest.xml
-		ADDED from F:\AndroidProject\citi-cup\app\src\main\AndroidManifest.xml:2:1-33:12
+		ADDED from F:\AndroidProject\citi-cup\app\src\main\AndroidManifest.xml:2:1-37:12
 		INJECTED from F:\AndroidProject\citi-cup\app\src\main\AndroidManifest.xml
 	xmlns:android
 		ADDED from F:\AndroidProject\citi-cup\app\src\main\AndroidManifest.xml:2:11-69
 application
-ADDED from F:\AndroidProject\citi-cup\app\src\main\AndroidManifest.xml:4:5-32:19
+ADDED from F:\AndroidProject\citi-cup\app\src\main\AndroidManifest.xml:4:5-36:19
 MERGED from [com.android.support:design:28.0.0] C:\Users\Jiaqing\.gradle\caches\transforms-2\files-2.1\972da9040ca8ddf755ccf24dc483b4bd\AndroidManifest.xml:22:5-20
 MERGED from [com.android.support:design:28.0.0] C:\Users\Jiaqing\.gradle\caches\transforms-2\files-2.1\972da9040ca8ddf755ccf24dc483b4bd\AndroidManifest.xml:22:5-20
 MERGED from [com.android.support.constraint:constraint-layout:1.1.3] C:\Users\Jiaqing\.gradle\caches\transforms-2\files-2.1\caae2792e3bb3adf502c7b4aa0114778\AndroidManifest.xml:9:5-20
@@ -122,6 +122,14 @@ activity#com.example.myapplication.AddCardActivity
 ADDED from F:\AndroidProject\citi-cup\app\src\main\AndroidManifest.xml:30:9-31:20
 	android:name
 		ADDED from F:\AndroidProject\citi-cup\app\src\main\AndroidManifest.xml:30:19-50
+activity#com.example.myapplication.FundInfoActivity
+ADDED from F:\AndroidProject\citi-cup\app\src\main\AndroidManifest.xml:32:9-33:20
+	android:name
+		ADDED from F:\AndroidProject\citi-cup\app\src\main\AndroidManifest.xml:32:19-51
+activity#com.example.myapplication.FundInfoDetailActivity
+ADDED from F:\AndroidProject\citi-cup\app\src\main\AndroidManifest.xml:34:9-35:20
+	android:name
+		ADDED from F:\AndroidProject\citi-cup\app\src\main\AndroidManifest.xml:34:19-57
 uses-sdk
 INJECTED from F:\AndroidProject\citi-cup\app\src\main\AndroidManifest.xml reason: use-sdk injection requested
 INJECTED from F:\AndroidProject\citi-cup\app\src\main\AndroidManifest.xml
