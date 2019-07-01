@@ -21,7 +21,6 @@ public class FundInfoActivity extends Activity {
     private ListView lv;
     private TextView tv1;
     private TextView tv2;
-    private BaseAdapter baseAdapter;
     private String str;
 
     private ArrayList<FundInfoObject> fundInfoList = new ArrayList<>();
@@ -35,7 +34,7 @@ public class FundInfoActivity extends Activity {
         initFundInfo();
         FundinfoListitemAdapter adapter = new FundinfoListitemAdapter(FundInfoActivity.this,R.layout.listitem_src_fundinfo,fundInfoList);
         lv = findViewById(R.id.lv_fundinfo);
-        lv.setAdapter(baseAdapter);
+        lv.setAdapter(adapter);
 
 
         //获取当前ListView点击的行数，并且得到该数据

@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    //状态栏
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:background="@color/main">
+        <Button
+            android:id="@+id/btn_backfundinfo"
+            style="@style/backButton"
+            android:onClick="backToMain" />
+        <TextView
+            android:id="@+id/textView15"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="175dp"
+            android:layout_marginTop="17dp"
+            android:gravity="center_horizontal"
+            android:text="基金简介"
+            android:textColor="@color/titlecolor"
+            android:textSize="18sp"
+            android:layout_marginStart="175dp" />
+    </RelativeLayout>
+    //基金折线图
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" 
+        android:src="@drawable/image2"/>
+
+    <ListView
+        android:id="@+id/lv_fundInfo_detail"
+        android:layout_width="match_parent"
+        android:layout_height="320dp" />
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:text="other information"/>
+
+</LinearLayout>

@@ -1237,6 +1237,7 @@ id list_userinfo_4
 id lv1_search
 id lv2_search
 id lv3_search
+id lv_fundInfo_detail
 id lv_fundinfo
 id lv_mainwin
 id masked
@@ -1447,6 +1448,7 @@ layout abc_select_dialog_material
 layout abc_tooltip
 layout activity_filter
 layout activity_fundinfo
+layout activity_fundinfo_detail
 layout activity_main
 layout activity_net
 layout activity_return

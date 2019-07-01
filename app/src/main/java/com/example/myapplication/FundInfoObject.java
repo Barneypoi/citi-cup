@@ -7,6 +7,9 @@ public class FundInfoObject {
     private String fundOtherInfo1;
     private String fundOtherInfo2;
 
+    //更多信息接着定义----用于基金详细信息界面
+
+
     public FundInfoObject(String name,String info){
         this.fundName = name;
         this.fundInfo = info;
