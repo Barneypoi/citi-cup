@@ -53,6 +53,7 @@ public class FundInfoActivity extends Activity {
 
     //此函数初始化列表项，将基金信息在此函数中初始化
     public void initFundInfo(){
+        //缺乏鲁棒性，若名字过长，导致基金条数不显示
         FundInfoObject fund1 = new FundInfoObject("华夏成长混合","000001");
         fundInfoList.add(fund1);
         FundInfoObject fund2 = new FundInfoObject("广发理财七天债券A","000002");
@@ -63,7 +64,7 @@ public class FundInfoActivity extends Activity {
         fundInfoList.add(fund4);
         FundInfoObject fund5 = new FundInfoObject("广发理财七天债券B","000003");
         fundInfoList.add(fund3);
-        FundInfoObject fund6 = new FundInfoObject("嘉实美国成长股票人民币","000004");
+        FundInfoObject fund6 = new FundInfoObject("嘉实美国成长股票","000004");
         fundInfoList.add(fund4);
     }
 

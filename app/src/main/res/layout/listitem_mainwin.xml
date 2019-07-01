@@ -18,7 +18,7 @@
             android:layout_height="wrap_content"
             android:paddingLeft="20dp"
             android:text="FundName"
-            android:textSize="20sp" />
+            android:textSize="15sp" />
 
         <TextView
             android:id="@+id/tv_mainwin_fundRate"
