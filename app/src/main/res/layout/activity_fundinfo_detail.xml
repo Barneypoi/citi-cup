@@ -26,10 +26,11 @@
             android:layout_marginStart="175dp" />
     </RelativeLayout>
     //基金折线图
-    <ImageView
+    <com.github.mikephil.charting.charts.LineChart
+        android:id="@+id/lineChart"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content" 
-        android:src="@drawable/image2"/>
+        android:layout_height="300dp"
+        android:layout_centerInParent="true"/>
 
     <ListView
         android:id="@+id/lv_fundInfo_detail"
