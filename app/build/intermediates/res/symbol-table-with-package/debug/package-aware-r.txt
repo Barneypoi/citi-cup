@@ -1042,6 +1042,7 @@ drawable design_ic_visibility
 drawable design_ic_visibility_off
 drawable design_password_eye
 drawable design_snackbar_background
+drawable filter_main
 drawable ic_action_next
 drawable ic_launcher_background
 drawable ic_launcher_foreground
@@ -1061,6 +1062,7 @@ drawable image9
 drawable mtrl_snackbar_background
 drawable mtrl_tabs_default_indicator
 drawable navigation_empty_icon
+drawable netweigh_main
 drawable notification_action_background
 drawable notification_bg
 drawable notification_bg_low
@@ -1073,6 +1075,8 @@ drawable notification_template_icon_bg
 drawable notification_template_icon_low_bg
 drawable notification_tile_bg
 drawable notify_panel_notification_icon_bg
+drawable returnrate_main
+drawable search_main
 drawable selector_mainbtn
 drawable shape_dot_focus
 drawable shape_dot_unfocus
@@ -1220,6 +1224,7 @@ id largeLabel
 id left
 id line1
 id line3
+id lineChart
 id listMode
 id list_item
 id list_test_1
@@ -1233,6 +1238,7 @@ id list_userinfo_4
 id lv1_search
 id lv2_search
 id lv3_search
+id lv_fundInfo_detail
 id lv_fundinfo
 id lv_mainwin
 id masked
@@ -1443,6 +1449,7 @@ layout abc_select_dialog_material
 layout abc_tooltip
 layout activity_filter
 layout activity_fundinfo
+layout activity_fundinfo_detail
 layout activity_main
 layout activity_net
 layout activity_return
@@ -1466,6 +1473,7 @@ layout design_navigation_item_subheader
 layout design_navigation_menu
 layout design_navigation_menu_item
 layout design_text_input_password_icon
+layout detail
 layout layout_viewpager
 layout listitem_fundinfo
 layout listitem_mainwin
@@ -2142,3 +2150,4 @@ styleable Toolbar android_gravity android_minHeight buttonGravity collapseConten
 styleable View android_theme android_focusable paddingEnd paddingStart theme
 styleable ViewBackgroundHelper android_background backgroundTint backgroundTintMode
 styleable ViewStubCompat android_id android_layout android_inflatedId
+xml network_security_config
