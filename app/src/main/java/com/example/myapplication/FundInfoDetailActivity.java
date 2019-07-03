@@ -2,14 +2,18 @@ package com.example.myapplication;
 
 import android.annotation.SuppressLint;
 import android.app.Activity;
+import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
 import android.support.annotation.Nullable;
-import android.widget.TextView;
+import android.view.View;
+import android.widget.ListView;
 import android.widget.Toast;
 
 import com.github.mikephil.charting.charts.LineChart;
+import com.github.mikephil.charting.components.Description;
 import com.github.mikephil.charting.components.XAxis;
 import com.github.mikephil.charting.data.Entry;
 import com.github.mikephil.charting.data.LineData;
@@ -31,46 +35,53 @@ import okhttp3.Request;
 import okhttp3.Response;
 
 public class FundInfoDetailActivity extends Activity {
-
+    public String start;
     public JSONObject object;
-
-    private String fundId, fundScale, fundEstablishTime, fundCompany, fundManager, fundAlloc;
-    private TextView tv_scale, tv_esttime, tv_company, tv_manager, tv_alloc;
-
+    private ListView lv;
+    //ListView适配器
+    private FundDetailInfoListitemAdapter adapter;
     //储存基金详细信息arraylist（数据接口）
     private ArrayList<FundDetailInfoObject> infoDetailList = new ArrayList<>();
     public ArrayList<Map<String, Object>> mainlist=new ArrayList<Map<String,Object>>();
+    Context context;
+
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
         setContentView(R.layout.activity_fundinfo_detail);
-
-        fundId = getIntent().getExtras().getString("fundName");
-
-        tv_scale = findViewById(R.id.tv_fundInfo_scale);
-        tv_scale.setText(fundScale);
-
-        tv_esttime = findViewById(R.id.tv_fundInfo_esttime);
-        tv_esttime.setText(fundEstablishTime);
-
-        tv_company =findViewById(R.id.tv_fundInfo_company);
-        tv_company.setText(fundCompany);
-
-        tv_manager = findViewById(R.id.tv_fundInfo_manager);
-        tv_manager.setText(fundManager);
-
-        tv_alloc =findViewById(R.id.tv_fundInfo_alloc);
-        tv_alloc.setText(fundAlloc);
-
         init();
+        initFundInfo();
+        lv = findViewById(R.id.lv_fundInfo_detail);
+        //实例化adapter
+        adapter = new FundDetailInfoListitemAdapter(FundInfoDetailActivity.this ,R.layout.listitem_src_fundinfo ,infoDetailList);
+        //为ListView添加adapter
+        lv.setAdapter(adapter);
         //mainlist = (ArrayList<Map<String, Object>>)getIntent().getExtras().get("key");
+        context=this;
+    }
 
-
+    public void initFundInfo(){
+        //默认展示八条信息(根据需求更改)
+        //字母处改为该信息名称 数字处为信息具体内容
+        FundDetailInfoObject fund1 = new FundDetailInfoObject("A","1");
+        infoDetailList.add(fund1);
+        FundDetailInfoObject fund2 = new FundDetailInfoObject("B","2");
+        infoDetailList.add(fund2);
+        FundDetailInfoObject fund3 = new FundDetailInfoObject("C","3");
+        infoDetailList.add(fund3);
+        FundDetailInfoObject fund4 = new FundDetailInfoObject("D","4");
+        infoDetailList.add(fund4);
+        FundDetailInfoObject fund5 = new FundDetailInfoObject("E","5");
+        infoDetailList.add(fund5);
+        FundDetailInfoObject fund6 = new FundDetailInfoObject("F","6");
+        infoDetailList.add(fund6);
+        FundDetailInfoObject fund7 = new FundDetailInfoObject("G","7");
+        infoDetailList.add(fund7);
+        FundDetailInfoObject fund8 = new FundDetailInfoObject("H","8");
+        infoDetailList.add(fund8);
     }
 
 
-    //建立服务器连接，获取JSON数据
     private void init() {
         mainlist.clear();
         //lv=(ListView) findViewById(R.id.lv);
@@ -82,7 +93,7 @@ public class FundInfoDetailActivity extends Activity {
                 //服务器返回的地址
                 Request request=new Request.Builder()
                         .get()
-                        .url("http://47.100.120.235:8081/detailInfo?fundId="+fundId).build();
+                        .url("http://47.100.120.235:8081/check?value1=1").build();
                 try {
                     Response response=okHttpClient.newCall(request).execute();
                     //获取到数据
@@ -97,7 +108,7 @@ public class FundInfoDetailActivity extends Activity {
                 }
 
             }
-        }).start();
+        }).start();;
 
     }
 
@@ -114,23 +125,21 @@ public class FundInfoDetailActivity extends Activity {
                 //获取到json数据中里的activity数组内容
                 JSONArray resultJsonArray = new JSONArray(date);
                 //遍历
-                for(int i=4241;i<resultJsonArray.length();i++){
+                for(int i=0;i<resultJsonArray.length();i++){
                     object=resultJsonArray.getJSONObject(i);
 
                     Map<String, Object> map=new HashMap<String, Object>();
 
                     try {
                         //获取到json数据中的activity数组里的内容name
-                        fundScale = object.getString("fundScale");
-                        //获取到json数据中的activity数组里的内容startTime
-                        fundEstablishTime = object.getString("fundEstablishTime");
-                        fundCompany = object.getString("fundCompany");
-                        fundManager = object.getString("fundManager");
-                        fundAlloc = object.getString("fundAlloc");
-
                         String name = object.getString("1");
-                        String shijian = object.getString("po");
-
+                        if(i==0){
+                            start=name;
+                            Intent intent = new Intent(FundInfoDetailActivity.this,DetailsMarkerView.class);
+                            DetailsMarkerView.a=start;
+                        }
+                        //获取到json数据中的activity数组里的内容startTime
+                        String shijian=object.getString("po");
                         //存入map
                         map.put("1", name);
                         map.put("po", shijian);
@@ -164,24 +173,26 @@ public class FundInfoDetailActivity extends Activity {
     //Handler运行在主线程中(UI线程中)，  它与子线程可以通过Message对象来传递数据
     @SuppressLint("HandlerLeak")
     public Handler handler = new Handler() {
+
+
         @Override
         public void handleMessage(Message msg) {
             switch (msg.what) {
                 case 1:
                     //Mybaseadapter list_item=new Mybaseadapter();
                     //lv.setAdapter(list_item);
-                    Toast.makeText(getApplicationContext(),"zahuishine",Toast.LENGTH_SHORT).show();
+                    Toast.makeText(getApplicationContext(),"",Toast.LENGTH_SHORT).show();
                     LineChart mLineChart = (LineChart) findViewById(R.id.lineChart);
                     //显示边界
                     mLineChart.setDrawBorders(true);
                     //设置数据
                     List<Entry> entries = new ArrayList<>();
-                    for (int i = 0; i < 10; i++) {
+                    for (int i = 0; i < mainlist.size(); i++) {
                         entries.add(new Entry(i,Float.parseFloat((String) mainlist.get(i).get("po")) ) );
                     }
                     //准备好每个点对应的x轴数值
                     List<String> list = new ArrayList<>();
-                    for (int i = 0; i < 10; i++) {
+                    for (int i = 0; i < mainlist.size(); i++) {
                         list.add(TimeStamp2Date((String) mainlist.get(i).get("1")));
                     }
                     XAxis xAxis = mLineChart.getXAxis();
@@ -193,7 +204,13 @@ public class FundInfoDetailActivity extends Activity {
                     LineData data = new LineData(lineDataSet);
                     mLineChart.clear();
                     mLineChart.setData(data);
-
+                    Description desc= new Description();
+                    desc.setText("");
+                    mLineChart.setDescription(desc);
+                    //一定要设置这个玩意，不然到点击到最边缘的时候不会自动调整布局
+                    DetailsMarkerView detailsMarkerView = new DetailsMarkerView(context,R.layout.detail);
+                    detailsMarkerView.setChartView(mLineChart);
+                    mLineChart.setMarker(detailsMarkerView);
                     break;
             }
 
@@ -206,5 +223,11 @@ public class FundInfoDetailActivity extends Activity {
         //String date = new java.text.SimpleDateFormat("yyyy-MM-dd HH:mm:ss").format(new java.util.Date(timestamp));
         String date = new java.text.SimpleDateFormat("yyyy-MM-dd").format(new java.util.Date(timestamp));
         return date;
+    }
+
+    public void backToMain(View view) {
+        Intent intent = new Intent(this, FundInfoActivity.class);
+        intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+        startActivity(intent);
     }
 }
