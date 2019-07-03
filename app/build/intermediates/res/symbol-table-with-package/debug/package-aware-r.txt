@@ -1224,6 +1224,7 @@ id largeLabel
 id left
 id line1
 id line3
+id lineChart
 id listMode
 id list_item
 id list_test_1
@@ -1237,8 +1238,6 @@ id list_userinfo_4
 id lv1_search
 id lv2_search
 id lv3_search
-id lv_fundInfo_detail
-id lv_fundinfo
 id lv_mainwin
 id masked
 id menu_view
@@ -1375,9 +1374,29 @@ id transition_position
 id transition_scene_layoutid_cache
 id transition_transform
 id tv1_list
+id tv1_src_list
 id tv2_list
+id tv2_src_list
 id tv_big_fundName
 id tv_big_fundRate
+id tv_fundInfo_alloc
+id tv_fundInfo_allocLabel
+id tv_fundInfo_company
+id tv_fundInfo_companyLabel
+id tv_fundInfo_esttime
+id tv_fundInfo_esttimeLabel
+id tv_fundInfo_id
+id tv_fundInfo_idLabel
+id tv_fundInfo_manager
+id tv_fundInfo_managerLabel
+id tv_fundInfo_netweigh
+id tv_fundInfo_netweighLabel
+id tv_fundInfo_risk
+id tv_fundInfo_riskLabel
+id tv_fundInfo_scale
+id tv_fundInfo_scaleLabel
+id tv_fundInfo_type
+id tv_fundInfo_typeLabel
 id tv_mainwin_fundName
 id tv_mainwin_fundRate
 id tv_mainwin_info1
@@ -1474,6 +1493,7 @@ layout design_navigation_menu_item
 layout design_text_input_password_icon
 layout layout_viewpager
 layout listitem_fundinfo
+layout listitem_jumptodetail
 layout listitem_mainwin
 layout listitem_setting
 layout listitem_settinguserinfo
@@ -2148,3 +2168,4 @@ styleable Toolbar android_gravity android_minHeight buttonGravity collapseConten
 styleable View android_theme android_focusable paddingEnd paddingStart theme
 styleable ViewBackgroundHelper android_background backgroundTint backgroundTintMode
 styleable ViewStubCompat android_id android_layout android_inflatedId
+xml network_security_config

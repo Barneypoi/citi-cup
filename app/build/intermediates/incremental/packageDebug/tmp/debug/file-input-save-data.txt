@@ -1,5 +1,5 @@
 #Internal package file, do not edit.
-#Mon Jul 01 00:43:29 CST 2019
+#Tue Jul 02 11:14:22 CST 2019
 1.base=F\:\\AndroidProject\\citi-cup\\app\\build\\intermediates\\dex\\debug\\mergeProjectDexDebug\\out
 0.baseType=DIRECTORY
 1.baseType=DIRECTORY

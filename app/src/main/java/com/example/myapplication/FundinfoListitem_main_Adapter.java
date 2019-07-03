@@ -31,9 +31,9 @@ public class FundinfoListitem_main_Adapter extends ArrayAdapter<FundInfoObject> 
         TextView tv4 = view.findViewById(R.id.tv_mainwin_info2);
 
         tv1.setText(fundinfo.getFundName());
-        tv2.setText(fundinfo.getFundInfo());
-        tv3.setText(fundinfo.getFundOtherInfo1());
-        tv4.setText(fundinfo.getFundOtherInfo2());
+        tv2.setText(fundinfo.getFundIncre());
+        tv3.setText(fundinfo.getFundId());
+        tv4.setText(fundinfo.getFundType());
         return view;
     }
 }

@@ -29,7 +29,7 @@ public class FundinfoListitemAdapter extends ArrayAdapter<FundInfoObject> {
         TextView tv2 = view.findViewById(R.id.tv2_list);
 
         tv1.setText(fundinfo.getFundName());
-        tv2.setText(fundinfo.getFundInfo());
+        tv2.setText(fundinfo.getFundId());
         return view;
     }
 }

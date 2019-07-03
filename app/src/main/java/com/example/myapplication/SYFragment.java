@@ -2,6 +2,8 @@ package com.example.myapplication;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.Handler;
+import android.os.Message;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.util.Log;
@@ -9,25 +11,46 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
-import android.widget.BaseAdapter;
 import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
+
+import java.io.IOException;
 import java.util.ArrayList;
-import java.util.List;
+import java.util.Map;
+
+import okhttp3.OkHttpClient;
+import okhttp3.Request;
+import okhttp3.Response;
 
 public class SYFragment extends Fragment {
 
+    //JSON数据对象
+    public JSONObject object;
     //接受基金信息的TextView tv1为基金名称 tv2为七日年化收益率 tv3，tv4为其他可选添加信息
-    private TextView tv1;
-    private TextView tv2;
-    private FundinfoListitem_main_Adapter baseAdapter;
-    private ListView lv;
-    private String str;
+    private TextView tv1, tv2, tv3, tv4;
 
+    private FundinfoListitem_main_Adapter baseAdapter;
+
+    private ListView lv;
+
+    //标识当前单击单元格的基金名称
+    private String fundName_onclick;
+
+    //从服务器获取的信息
+    private String fundName, fundId, fundType, fundRisk, fundIncre, fundNetweigh;
+
+    //推荐基金名称接口，用于储存推荐基金的名称
+    private ArrayList<String> fundNameList = new ArrayList<>();
     //改变该条目数据对象内容，将数据显示在ListView中
     private ArrayList<FundInfoObject> fundInfoList = new ArrayList<>();
+
+    //字符串到JSON对象的映射
+    public ArrayList<Map<String, Object>> mainlist = new ArrayList<>();
 
     private View view;
 
@@ -38,6 +61,8 @@ public class SYFragment extends Fragment {
 
         lv = view.findViewById(R.id.lv_mainwin);
 
+        //block_fund_main的两个TextView
+        //设置暂时未确定
         tv1 = view.findViewById(R.id.tv_big_fundName);
         tv1.setText("国富潜力组合混合A");
 
@@ -45,38 +70,193 @@ public class SYFragment extends Fragment {
         tv2.setText("5.29%");
 
 
-        initFundInfo();
-        FundinfoListitem_main_Adapter baseAdapter = new FundinfoListitem_main_Adapter(getContext() ,R.layout.listitem_mainwin,fundInfoList);
-        lv.setAdapter(baseAdapter);
+        //测试数据
+        fundNameList.add("中海可转债债券A");
+        fundNameList.add("嘉实中证500ETF联");
+        fundNameList.add("华夏纯债债券A");
+        fundNameList.add("长城核心优选混合");
 
-        //获取当前ListView点击的行数，并且得到该数据
-        lv.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-            @Override
-            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-
-                tv1 = view.findViewById(R.id.tv_mainwin_fundName);//找到Textviewname
-                str = tv1.getText().toString();//得到数据
-
-                Intent i = new Intent(getContext(),FundInfoActivity.class);
-                startActivity(i);
-
-                Toast.makeText(getContext(), "" + str, Toast.LENGTH_SHORT).show();//显示数据
-            }
-        });
-
+        //initFundInfo();
+        initConnection();
 
         return view;
     }
 
-    public void initFundInfo(){
-        FundInfoObject fund1 = new FundInfoObject("博时鑫瑞混合A","1.41%","002558","管理人：前海开源基金");
-        fundInfoList.add(fund1);
-        FundInfoObject fund2 = new FundInfoObject("安信新回报混合A","1.91%","002770","管理人：安信基金");
-        fundInfoList.add(fund2);
-        FundInfoObject fund3 = new FundInfoObject("广发理财七天债券B","1.67%","270007","管理人：华安基金");
-        fundInfoList.add(fund3);
-        FundInfoObject fund4 = new FundInfoObject("嘉实美国成长股票","1.94%","001071","管理人：华安基金");
-        fundInfoList.add(fund4);
+    //建立服务器连接，获取当前基金的基本信息并生成基本信息
+    public void initConnection() {
+        new Thread(new Runnable() {
+            @Override
+            public void run() {
+
+                OkHttpClient okHttpClient = new OkHttpClient();
+
+                //获取推荐基金名称列表
+                String str_fundNameList = "";
+                for (int i = 0; i < fundNameList.size(); i++) {
+                    if (i == 0)
+                        str_fundNameList += fundNameList.get(i);
+                    else
+                        str_fundNameList += ("@" + fundNameList.get(i));
+                }
+
+                //服务器返回地址，填入请求数据参数
+                //传入的参数为全部推荐基金的名称，若无推荐基金，则返回值传入参数为空字符串""
+                Request request = new Request.Builder()
+                        .get()
+                        .url("http://47.100.120.235:8081/mainInfo?fundName=" + str_fundNameList).build();
+
+                try {
+                    Response response = null;
+                    response = okHttpClient.newCall(request).execute();
+                    assert response.body() != null;
+                    String data = null;
+                    data = response.body().string();
+                    //把数据传入解析JSON数据方法
+                    jsonJX(data);
+
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+
+                //createList();
+            }
+        }).start();
+    }
+
+    private void jsonJX(String data) {
+        //判断数据是空
+        if (data != null) {
+            try {
+                JSONArray resultJsonArray = new JSONArray(data);
+                //遍历
+                for (int i = 0; i < resultJsonArray.length(); i++) {
+                    //JSON数据对象
+                    object = resultJsonArray.getJSONObject(i);
+                    try {
+                        FundInfoObject temp_fund;
+
+                        //获取到json数据中的activity数组里的内容fundId
+                        String temp_name = object.getString("fundName");
+                        fundName = temp_name;
+                        Log.v(getActivity().toString(), fundName);
+
+                        //获取到json数据中的activity数组里的内容fundId
+                        String temp_id = object.getString("fundId");
+                        fundId = temp_id;
+                        Log.v(getActivity().toString(), fundId);
+
+                        //获取到json数据中的activity数组里的内容fundType
+                        String temp_type = object.optString("fundType");
+                        fundType = temp_type;
+                        Log.v(getActivity().toString(), fundType);
+
+                        //获取到json数据中的activity数组里的内容fundIncre
+                        String temp_incre = object.getString("fundIncre");
+                        fundIncre = temp_incre;
+                        Log.v(getActivity().toString(), fundIncre);
+
+                        //获取到json数据中的activity数组里的内容fundRisk
+                        String temp_risk = object.getString("fundRisk");
+                        fundRisk = temp_risk;
+                        Log.v(getActivity().toString(), fundRisk);
+
+                        /*String temp_netweigh = object.getString("fundNetweigh");
+                        fundNetweigh = temp_netweigh;
+                        Log.v(getActivity().toString(),fundNetweigh);
+                        */
+
+                        //创建基金信息对象
+                        temp_fund = new FundInfoObject(fundName, fundIncre, convertId(fundId), fundType);
+                        fundInfoList.add(temp_fund);
+
+                        //存入map
+                        /*map.put("fundId", fundId);
+                        map.put("fundType",fundType);
+                        map.put("fundIncre",fundIncre);
+                        map.put("fundRisk",fundRisk);
+                        //ArrayList集合
+                        mainlist.add(map);*/
+
+                    } catch (JSONException e) {
+                        // TODO Auto-generated catch block
+                        e.printStackTrace();
+                    }
+                }
+                //执行完数据线程再执行UI线程防止引用空对象
+                getActivity().runOnUiThread(
+                        new Runnable() {
+                            @Override
+                            public void run() {
+                                createList();
+                            }
+                        }
+                );
+                //通过handler可以通过子线程与UI线程进行信息传递
+                Message message = new Message();
+                //传递的信息
+                message.what = 1;
+                handler.sendMessage(message);
+                // }
+            } catch (JSONException e) {
+                e.printStackTrace();
+            }
+        }
+
+    }
+
+    public void createList() {
+
+        //初始化ListView展示基金信息
+        baseAdapter = new FundinfoListitem_main_Adapter(getContext(), R.layout.listitem_mainwin, fundInfoList);
+        lv.setAdapter(baseAdapter);
+
+        //获取当前ListView点击的行数，并且得到该数据信息
+        lv.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                tv1 = view.findViewById(R.id.tv_mainwin_fundName);
+                fundName = tv1.getText().toString();//得到数据
+
+                tv2 = view.findViewById(R.id.tv_mainwin_fundRate);
+                fundIncre = tv2.getText().toString();
+
+                tv3 = view.findViewById(R.id.tv_mainwin_info1);
+                fundId = tv3.getText().toString();
+
+                tv4 = view.findViewById(R.id.tv_mainwin_info2);
+                fundType = tv4.getText().toString();
+
+                Intent i = new Intent(getContext(), FundInfoActivity.class);
+                Bundle bundle = new Bundle();
+                bundle.putString("fundName", fundName);
+                bundle.putString("fundIncre", fundIncre);
+                bundle.putString("fundId", fundId);
+                bundle.putString("fundType", fundType);
+                bundle.putString("fundNetweigh", fundNetweigh);
+
+                i.putExtras(bundle);
+                startActivity(i);
+
+                Toast.makeText(getContext(), "" + fundName, Toast.LENGTH_SHORT).show();//显示数据
+            }
+        });
+    }
+
+    public Handler handler = new Handler() {
+        @Override
+        public void handleMessage(Message msg) {
+            super.handleMessage(msg);
+        }
+    };
+
+    public String convertId(String orig_id){
+        int orig_length = orig_id.length();
+        int result_length = 6 - orig_length;
+        String zero ="";
+        for(int i=0;i<result_length;i++){
+            zero += "0";
+        }
+        return zero + orig_id ;
     }
 
 }

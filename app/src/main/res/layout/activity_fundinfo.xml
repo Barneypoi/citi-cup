@@ -14,7 +14,7 @@
     <Button
         android:id="@+id/btn_backfundinfo"
         style="@style/backButton"
-        android:onClick="backToMain" />
+        android:onClick="backToMainWin" />
     <TextView
         android:id="@+id/textView15"
         android:layout_width="wrap_content"
@@ -29,19 +29,99 @@
     </RelativeLayout>
 
     <include layout="@layout/block_fundinfo"/>
-    <ListView
-        android:id="@+id/lv_fundinfo"
-        android:layout_width="match_parent"
-        android:layout_height="250dp"
-        >
 
-    </ListView>
+    <include layout="@layout/listitem_jumptodetail"/>
 
-    <Button
+    <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="50dp"
-        android:text="Detail Information"
-        android:onClick="jumpToDetailTest"/>
+        android:layout_height="wrap_content">
+        <TextView
+        android:id="@+id/tv_fundInfo_idLabel"
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:layout_margin="5dp"
+        android:textSize="20dp"
+            android:padding="5dp"
+            android:text="基金代号"
+        />
+
+        <TextView
+            android:id="@+id/tv_fundInfo_id"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@id/tv_fundInfo_idLabel"
+            android:layout_margin="5dp"
+            android:textSize="20dp"
+            android:padding="5dp"
+            />
+        <TextView
+            android:id="@+id/tv_fundInfo_typeLabel"
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/tv_fundInfo_idLabel"
+            android:layout_margin="5dp"
+            android:textSize="20dp"
+            android:padding="5dp"
+            android:text="基金类型"
+            />
+
+        <TextView
+            android:id="@+id/tv_fundInfo_type"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:layout_below="@id/tv_fundInfo_id"
+            android:layout_toRightOf="@id/tv_fundInfo_typeLabel"
+            android:textSize="20dp"
+            android:padding="5dp" />
+        <TextView
+            android:id="@+id/tv_fundInfo_riskLabel"
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/tv_fundInfo_typeLabel"
+            android:layout_margin="5dp"
+            android:textSize="20dp"
+            android:padding="5dp"
+            android:text="风险类型"
+            />
+
+        <TextView
+            android:id="@+id/tv_fundInfo_risk"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:layout_below="@id/tv_fundInfo_type"
+            android:layout_toRightOf="@id/tv_fundInfo_riskLabel"
+            android:textSize="20dp"
+            android:padding="5dp"/>
+        <TextView
+            android:id="@+id/tv_fundInfo_netweighLabel"
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/tv_fundInfo_riskLabel"
+            android:layout_margin="5dp"
+            android:textSize="20dp"
+            android:padding="5dp"
+            android:text="基金净值"
+            />
+
+        <TextView
+            android:id="@+id/tv_fundInfo_netweigh"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:layout_below="@id/tv_fundInfo_risk"
+            android:layout_toRightOf="@id/tv_fundInfo_netweighLabel"
+            android:textSize="20dp"
+            android:padding="5dp"/>
+
+    </RelativeLayout>
+
+<Button
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="50dp"
+    android:text="加入自选"/>
 
 
 </LinearLayout>

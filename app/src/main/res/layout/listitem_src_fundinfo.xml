@@ -6,7 +6,7 @@
     android:layout_height="40dp">
 
     <TextView
-        android:id="@+id/tv1_list"
+        android:id="@+id/tv1_src_list"
         android:layout_width="match_parent"
         android:layout_height="40dp"
         android:layout_marginLeft="10dp"
@@ -16,7 +16,7 @@
         android:textSize="15sp" />
 
     <TextView
-        android:id="@+id/tv2_list"
+        android:id="@+id/tv2_src_list"
         android:layout_width="match_parent"
         android:layout_height="40dp"
         android:layout_weight="0.4"

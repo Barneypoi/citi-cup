@@ -1,12 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
-
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:orientation="vertical">
+    android:layout_height="match_parent">
 
     //状态栏
-
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="50dp"
@@ -21,14 +19,15 @@
             android:id="@+id/textView15"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="175dp"
             android:layout_marginLeft="175dp"
             android:layout_marginTop="17dp"
             android:gravity="center_horizontal"
             android:text="基金简介"
             android:textColor="@color/titlecolor"
-            android:textSize="18sp" />
+            android:textSize="18sp"
+            android:layout_marginStart="175dp" />
     </RelativeLayout>
+
 
     <ScrollView
         android:layout_width="match_parent"
@@ -39,21 +38,126 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
             //基金折线图
-
-            <ImageView
+            <com.github.mikephil.charting.charts.LineChart
+                android:id="@+id/lineChart"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:src="@drawable/image2" />
+                android:layout_height="300dp"
+                android:layout_centerInParent="true"/>
 
-            <ListView
-                android:id="@+id/lv_fundInfo_detail"
+            <RelativeLayout
                 android:layout_width="match_parent"
-                android:layout_height="320dp" />
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:id="@+id/tv_fundInfo_scaleLabel"
+                    android:layout_width="150dp"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="5dp"
+                    android:textSize="20dp"
+                    android:padding="5dp"
+                    android:text="基金规模"
+                    />
+
+                <TextView
+                    android:id="@+id/tv_fundInfo_scale"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_toRightOf="@id/tv_fundInfo_scaleLabel"
+                    android:layout_margin="5dp"
+                    android:textSize="20dp"
+                    android:padding="5dp"
+                    />
+                <TextView
+                    android:id="@+id/tv_fundInfo_esttimeLabel"
+                    android:layout_width="150dp"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/tv_fundInfo_scaleLabel"
+                    android:layout_margin="5dp"
+                    android:textSize="20dp"
+                    android:padding="5dp"
+                    android:text="成立时间"
+                    />
+
+                <TextView
+                    android:id="@+id/tv_fundInfo_esttime"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="5dp"
+                    android:layout_below="@id/tv_fundInfo_scale"
+                    android:layout_toRightOf="@id/tv_fundInfo_esttimeLabel"
+                    android:textSize="20dp"
+                    android:padding="5dp" />
+
+                <TextView
+                    android:id="@+id/tv_fundInfo_companyLabel"
+                    android:layout_width="150dp"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/tv_fundInfo_esttimeLabel"
+                    android:layout_margin="5dp"
+                    android:textSize="20dp"
+                    android:padding="5dp"
+                    android:text="公司名称"
+                    />
+                <TextView
+                    android:id="@+id/tv_fundInfo_company"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="5dp"
+                    android:layout_below="@id/tv_fundInfo_esttime"
+                    android:layout_toRightOf="@id/tv_fundInfo_companyLabel"
+                    android:textSize="20dp"
+                    android:padding="5dp"/>
+
+                <TextView
+                    android:id="@+id/tv_fundInfo_managerLabel"
+                    android:layout_width="150dp"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/tv_fundInfo_companyLabel"
+                    android:layout_margin="5dp"
+                    android:textSize="20dp"
+                    android:padding="5dp"
+                    android:text="基金经理"
+                    />
+                <TextView
+                    android:id="@+id/tv_fundInfo_manager"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="5dp"
+                    android:layout_below="@id/tv_fundInfo_company"
+                    android:layout_toRightOf="@id/tv_fundInfo_managerLabel"
+                    android:textSize="20dp"
+                    android:padding="5dp"/>
+
+                <TextView
+                    android:id="@+id/tv_fundInfo_allocLabel"
+                    android:layout_width="150dp"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/tv_fundInfo_managerLabel"
+                    android:layout_margin="5dp"
+                    android:textSize="20dp"
+                    android:padding="5dp"
+                    android:text="基金净值"
+                    />
+
+                <TextView
+                    android:id="@+id/tv_fundInfo_alloc"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="5dp"
+                    android:layout_below="@id/tv_fundInfo_manager"
+                    android:layout_toRightOf="@id/tv_fundInfo_allocLabel"
+                    android:textSize="20dp"
+                    android:padding="5dp"/>
+
+
+
+            </RelativeLayout>
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="200dp"
-                android:text="other information" />
+                android:text="other information"
+                android:padding="10dp"/>
         </LinearLayout>
     </ScrollView>
 </LinearLayout>
