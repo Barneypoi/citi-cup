@@ -33,10 +33,13 @@
                 android:textSize="18sp" />
         </RelativeLayout>
 
-        <SearchView
+        <android.support.v7.widget.SearchView
             android:id="@+id/sv_searchActivity"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"/>
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="10dp"
+            android:inputType="textNoSuggestions" />
 
         <com.example.myapplication.MyPosterViewPager
             android:layout_width="match_parent"

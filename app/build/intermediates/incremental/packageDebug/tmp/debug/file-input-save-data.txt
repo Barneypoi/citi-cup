@@ -1,11 +1,11 @@
 #Internal package file, do not edit.
-#Tue Jul 02 11:18:31 CST 2019
-1.base=C\:\\Users\\14764\\Downloads\\citi-cup-master\\app\\build\\intermediates\\dex\\debug\\mergeExtDexDebug\\out
+#Thu Jul 04 16:05:11 CST 2019
+1.base=F\:\\AndroidProject\\citi-cup\\app\\build\\intermediates\\dex\\debug\\mergeProjectDexDebug\\out
 0.baseType=DIRECTORY
 1.baseType=DIRECTORY
 count=2
 1.set=DEX
 0.path=classes.dex
 0.set=DEX
-0.base=C\:\\Users\\14764\\Downloads\\citi-cup-master\\app\\build\\intermediates\\dex\\debug\\mergeProjectDexDebug\\out
+0.base=F\:\\AndroidProject\\citi-cup\\app\\build\\intermediates\\dex\\debug\\mergeExtDexDebug\\out
 1.path=classes.dex

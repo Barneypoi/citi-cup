@@ -25,8 +25,9 @@ public class FundinfoListitemAdapter extends ArrayAdapter<FundInfoObject> {
         //获取当前项的实例
         View view = LayoutInflater.from(getContext()).inflate(resourceId, parent, false);
 
-        TextView tv1 = view.findViewById(R.id.tv1_list);
-        TextView tv2 = view.findViewById(R.id.tv2_list);
+        //listitem_fundinfo
+        TextView tv1 = view.findViewById(R.id.tv1_src_list);
+        TextView tv2 = view.findViewById(R.id.tv2_src_list);
 
         tv1.setText(fundinfo.getFundName());
         tv2.setText(fundinfo.getFundId());

@@ -4,28 +4,24 @@ import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
-import android.util.Log;
-import android.view.LayoutInflater;
 import android.view.View;
-import android.view.ViewGroup;
-import android.widget.AdapterView;
-import android.widget.BaseAdapter;
 import android.widget.ListView;
 import android.widget.TextView;
-import android.widget.Toast;
 
-import com.github.mikephil.charting.charts.LineChart;
-import com.github.mikephil.charting.components.XAxis;
-import com.github.mikephil.charting.data.Entry;
-import com.github.mikephil.charting.data.LineData;
-import com.github.mikephil.charting.data.LineDataSet;
-import com.github.mikephil.charting.formatter.IndexAxisValueFormatter;
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
 
+import java.io.IOException;
 import java.util.ArrayList;
-import java.util.List;
-import java.util.Map;
+
+import okhttp3.OkHttpClient;
+import okhttp3.Request;
+import okhttp3.Response;
 
 public class FundInfoActivity extends Activity {
+
+    private JSONObject jsobject;
 
     private ListView lv;
     private TextView tv1;
@@ -34,58 +30,126 @@ public class FundInfoActivity extends Activity {
 
     private ArrayList<FundInfoObject> fundInfoList = new ArrayList<>();
 
+    private String fundName, fundIncre, fundId, fundType, fundRisk, fundNetweigh;
+
+    private TextView tv_id, tv_type, tv_risk, tv_netweigh;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_fundinfo);
 
-        initFundInfo();
-        FundinfoListitemAdapter adapter = new FundinfoListitemAdapter(FundInfoActivity.this,R.layout.listitem_src_fundinfo,fundInfoList);
-        lv = findViewById(R.id.lv_fundinfo);
-        lv.setAdapter(adapter);
+        //获取首页列表视图点击单元格的基金信息
+        fundName = getIntent().getExtras().getString("fundName");
+        fundIncre = getIntent().getExtras().getString("fundIncre");
+        fundId = getIntent().getExtras().getString("fundId");
+        fundType = getIntent().getExtras().getString("fundType");
 
 
-        //获取当前ListView点击的行数，并且得到该数据
-        lv.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-            @Override
-            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+        //initFundInfo();
+        initConnection();
 
-                tv1 = view.findViewById(R.id.tv1_list);//找到Textviewname
-                str = tv1.getText().toString();//得到数据
-                Toast.makeText(FundInfoActivity.this, "" + str, Toast.LENGTH_SHORT).show();//显示数据
-            }
-        });
+        //基金名称与七日年化信息放置在大框体中
+        tv1 = findViewById(R.id.tv_big_fundName);
+        tv1.setText(fundName);
+        tv2 = findViewById(R.id.tv_big_fundRate);
+        tv2.setText(fundIncre);
 
+        //其他信息放置在Textview中
+        tv_id = findViewById(R.id.tv_fundInfo_id);
+        tv_id.setText(fundId);
 
+        tv_type = findViewById(R.id.tv_fundInfo_type);
+        tv_type.setText(fundType);
 
-    }
+        tv_risk = findViewById(R.id.tv_fundInfo_risk);
+        tv_risk.setText(fundRisk);
 
-    //此函数初始化列表项，将基金信息在此函数中初始化
-    public void initFundInfo(){
-        //缺乏鲁棒性，若名字过长，导致基金条数不显示
-        FundInfoObject fund1 = new FundInfoObject("华夏成长混合","000001");
-        fundInfoList.add(fund1);
-        FundInfoObject fund2 = new FundInfoObject("广发理财七天债券A","000002");
-        fundInfoList.add(fund2);
-        FundInfoObject fund3 = new FundInfoObject("广发理财七天债券B","000003");
-        fundInfoList.add(fund3);
-        FundInfoObject fund4 = new FundInfoObject("嘉实美国成长股票","000004");
-        fundInfoList.add(fund4);
-        FundInfoObject fund5 = new FundInfoObject("广发理财七天债券B","000003");
-        fundInfoList.add(fund5);
-        FundInfoObject fund6 = new FundInfoObject("嘉实美国成长股票","000004");
-        fundInfoList.add(fund6);
+        tv_netweigh = findViewById(R.id.tv_fundInfo_netweigh);
+        tv_netweigh.setText(fundNetweigh);
+
     }
 
     //跳转至详细信息界面
     public void jumpToDetailTest(View view){
         Intent intent = new Intent(FundInfoActivity.this,FundInfoDetailActivity.class);
+
+        Bundle bundle = new Bundle();
+        bundle.putString("fundId",fundId);
+        intent.putExtras(bundle);
+
         startActivity(intent);
     }
-    public void backToMain(View view) {
-        Intent intent = new Intent(this, MainActivity.class);
+
+    public void initConnection(){
+        new Thread(new Runnable() {
+            @Override
+            public void run() {
+
+                OkHttpClient okHttpClient = new OkHttpClient();
+
+                //服务器返回地址，填入请求数据参数
+                //传入的参数为全部推荐基金的名称，若无推荐基金，则返回值传入参数为空字符串""
+                Request request = new Request.Builder()
+                        .get()
+                        .url("http://47.100.120.235:8081/basicInfo?fundId="+fundId).build();
+                try{
+                    Response response = okHttpClient.newCall(request).execute();
+                    assert response.body() != null;
+                    String data = response.body().string();
+                    //把数据传入解析JSON数据方法
+                    jsonJX(data);
+
+                }catch(IOException e){
+                    e.printStackTrace();
+                }
+
+            }
+        }).start();
+    }
+
+    private void jsonJX(String data){
+        //判断数据是空
+        if(data!=null){
+            try {
+
+                JSONArray resultJsonArray = new JSONArray(data);
+                //遍历
+                for(int i=0;i<resultJsonArray.length();i++){
+                    //JSON数据对象
+                    jsobject=resultJsonArray.getJSONObject(i);
+
+                    try {
+
+                        FundInfoObject temp_fund;
+
+                        //获取到json数据中的activity数组里的内容fundRisk
+                        String temp_risk = jsobject.getString("fundRisk");
+                        fundRisk = temp_risk;
+
+                        //获取到json数据中的activity数组里的内容fundNetweigh
+                        String temp_netweigh = jsobject.getString("fundNetweigh");
+                        fundNetweigh = temp_netweigh;
+
+                        //TODO将基金信息显示在列表中
+
+                    } catch (JSONException e) {
+                        // TODO Auto-generated catch block
+                        e.printStackTrace();
+                    }
+                }
+
+            } catch (JSONException e) {
+                e.printStackTrace();
+            }
+
+        }
+    }
+
+    public void backToMainWin(View view){
+        Intent intent= new Intent(this, MainActivity.class);
         intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
         startActivity(intent);
     }
+
 }

@@ -1239,6 +1239,7 @@ id lv1_search
 id lv2_search
 id lv3_search
 id lv_mainwin
+id lv_src_view
 id masked
 id menu_view
 id message
@@ -1472,6 +1473,7 @@ layout activity_main
 layout activity_net
 layout activity_return
 layout activity_search
+layout activity_searchview
 layout activity_setting
 layout activity_userinfo
 layout add_card
