@@ -43,7 +43,7 @@
                 android:text="基金" />
 
             <Button
-                android:id="@+id/button11"
+                android:id="@+id/netView_netWeightSortButton"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
@@ -51,7 +51,7 @@
                 android:text="净值" />
 
             <Button
-                android:id="@+id/button12"
+                android:id="@+id/netView_increSortButton"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
@@ -61,6 +61,7 @@
     </android.support.v7.widget.CardView>
 
     <ListView
+        android:id="@+id/lv_net"
         android:layout_width="match_parent"
         android:layout_height="match_parent" />
 </LinearLayout>

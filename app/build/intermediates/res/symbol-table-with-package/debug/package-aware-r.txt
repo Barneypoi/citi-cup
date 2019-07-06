@@ -1092,6 +1092,7 @@ drawable vd_radiobutton_unchecked
 id ALT
 id CTRL
 id FUNCTION
+id LoginButton
 id META
 id SHIFT
 id SYM
@@ -1128,10 +1129,7 @@ id beginning
 id blocking
 id bottom
 id btn_backfundinfo
-id button
 id button10
-id button11
-id button12
 id button2
 id button3
 id button4
@@ -1184,6 +1182,7 @@ id fill
 id fill_horizontal
 id fill_vertical
 id filled
+id filterButton
 id fixed
 id forever
 id ghost_view
@@ -1235,10 +1234,13 @@ id list_userinfo_1
 id list_userinfo_2
 id list_userinfo_3
 id list_userinfo_4
+id loginWeb
 id lv1_search
 id lv2_search
 id lv3_search
+id lv_favourite
 id lv_mainwin
+id lv_net
 id lv_src_view
 id masked
 id menu_view
@@ -1251,6 +1253,11 @@ id multiply
 id myListView
 id name
 id navigation_header_container
+id netListFundIncre
+id netListFundName
+id netListFundNetWeight
+id netView_increSortButton
+id netView_netWeightSortButton
 id never
 id none
 id normal
@@ -1349,6 +1356,7 @@ id textView20
 id textView21
 id textView22
 id textView23
+id textView24
 id textView3
 id textView4
 id textView5
@@ -1469,6 +1477,7 @@ layout abc_tooltip
 layout activity_filter
 layout activity_fundinfo
 layout activity_fundinfo_detail
+layout activity_login
 layout activity_main
 layout activity_net
 layout activity_return
@@ -1498,6 +1507,7 @@ layout layout_viewpager
 layout listitem_fundinfo
 layout listitem_jumptodetail
 layout listitem_mainwin
+layout listitem_net
 layout listitem_setting
 layout listitem_settinguserinfo
 layout listitem_src_fundinfo
@@ -1506,6 +1516,7 @@ layout listitem_usertouxiang
 layout liv_action_item_layout
 layout liv_action_item_overflow_layout
 layout liv_list_item_layout
+layout loginweb
 layout mtrl_layout_snackbar
 layout mtrl_layout_snackbar_include
 layout my

@@ -48,6 +48,7 @@
     </LinearLayout>
 
     <ListView
+        android:id="@+id/lv_favourite"
         android:layout_width="match_parent"
         android:layout_height="match_parent" />
 
