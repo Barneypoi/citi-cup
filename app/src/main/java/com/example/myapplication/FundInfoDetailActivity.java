@@ -35,7 +35,7 @@ public class FundInfoDetailActivity extends Activity {
 
     public JSONObject object;
 
-    private String fundId, fundScale, fundEstablishTime, fundCompany, fundManager, stockRatio, bondRatio, cashRatio;
+    private String fundId, fundScale, fundEstablishTime, fundCompany, fundManager, stockRatio, bondRatio, cashRatio, netWeigh;
     private TextView tv_scale, tv_esttime, tv_company, tv_manager, tv_stock, tv_bond, tv_cash;
 
     //储存基金详细信息arraylist（数据接口）
@@ -115,18 +115,17 @@ public class FundInfoDetailActivity extends Activity {
                     stockRatio = object.optString("stockRatio");
                     bondRatio = object.optString("bondRatio");
                     cashRatio = object.optString("cashRatio");
-                    Object netWeighobj = object.optString("netWeigh");
 
-                        /*
-                        String time = netWeighobj.getString("1");
-                        String netWeigh = netWeighobj.getString("po");
 
-                        //存入map
-                        map.put("1", time);
-                        map.put("po", netWeigh);
-                        //ArrayList集合
-                        mainlist.add(map);
-                        */
+                    String time = object.getString("1");
+                    String netWeigh = object.getString("po");
+
+                    //存入map
+                    map.put("1", time);
+                    map.put("po", netWeigh);
+                    //ArrayList集合
+                    mainlist.add(map);
+
                     runOnUiThread(new Runnable() {
                         @Override
                         public void run() {
@@ -134,16 +133,12 @@ public class FundInfoDetailActivity extends Activity {
                         }
                     });
 
-
                 }
 
-                /*
                 Message message = new Message();
                 message.what = 1;
                 handler.sendMessage(message);
-                // }
 
-                */
             } catch (JSONException e) {
                 e.printStackTrace();
             }
