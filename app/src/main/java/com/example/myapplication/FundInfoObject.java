@@ -16,16 +16,17 @@ public class FundInfoObject {
     //更多信息接着定义----用于基金详细信息界面
 
 
-    public FundInfoObject(String name,String incre){
+    public FundInfoObject(String name,String id){
         this.fundName = name;
-        this.fundIncre = incre;
+        this.fundId = id;
     }
     //主界面需要的构造器
-    public FundInfoObject(String name, String incre, String id, String type){
+    public FundInfoObject(String name, String incre, String id, String type, String risk){
         this.fundName = name;
         this.fundIncre = incre;
         this.fundId = id;
         this.fundType = type;
+        this.fundRisk = risk;
     }
     //基金基本信息界面额外需要的构造器
     public FundInfoObject(String name, String risk, String netweigh){

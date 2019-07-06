@@ -3,8 +3,6 @@ package com.example.myapplication;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
-import android.os.Handler;
-import android.os.Message;
 import android.support.annotation.Nullable;
 import android.view.View;
 import android.widget.AdapterView;
@@ -23,6 +21,8 @@ import okhttp3.OkHttpClient;
 import okhttp3.Request;
 import okhttp3.Response;
 
+import static java.lang.String.valueOf;
+
 
 public class SearchViewActivity extends Activity {
 
@@ -30,13 +30,14 @@ public class SearchViewActivity extends Activity {
     String fundNameorId, fundName, fundId;
     ArrayList<FundInfoObject> fundInfoList = new ArrayList<>();
     ListView lv;
-    FundinfoListitemAdapter adapter = new FundinfoListitemAdapter(SearchViewActivity.this,R.layout.listitem_fundinfo, fundInfoList);
+    FundinfoListitemAdapter adapter;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         //初始化活动界面
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_searchview);
+        adapter = new FundinfoListitemAdapter(SearchViewActivity.this,R.layout.listitem_fundinfo, fundInfoList);
 
         //获取用户输入字符串，执行网络请求
         fundNameorId = getIntent().getExtras().getString("fundNameorId");
@@ -55,6 +56,7 @@ public class SearchViewActivity extends Activity {
 
                 //服务器返回地址，填入请求数据参数
                 //传入的参数为全部推荐基金的名称，若无推荐基金，则返回值传入参数为空字符串""
+                //搜索信息后台方法提供模糊查询
                 Request request = new Request.Builder()
                         .get()
                         .url("http://47.100.120.235:8081/srcInfo?fundNameorId=" + fundNameorId).build();
@@ -76,6 +78,7 @@ public class SearchViewActivity extends Activity {
         }).start();
     }
 
+
     public void jsonJX(String data) {
         if (data != null) {
             try {
@@ -96,7 +99,7 @@ public class SearchViewActivity extends Activity {
                         fundId = temp_id;
 
                         //创建基金信息对象
-                        temp_fund = new FundInfoObject(fundName, convertId(fundId));
+                        temp_fund = new FundInfoObject(fundName, fundId);
                         fundInfoList.add(temp_fund);
 
                     } catch (JSONException e) {
@@ -115,18 +118,12 @@ public class SearchViewActivity extends Activity {
                         }
                 );
 
-                //通过handler可以通过子线程与UI线程进行信息传递
-                Message message = new Message();
-                //传递的信息
-                message.what = 1;
-                handler.sendMessage(message);
-                // }
             } catch (JSONException e) {
                 e.printStackTrace();
             }
         }
         else {
-            //TODO 查询数据为空的反馈
+            //查询数据为空的反馈
             Toast.makeText(SearchViewActivity.this,"您输入的基金代号/名称不存在！", Toast.LENGTH_SHORT).show();
             Intent intent = new Intent(SearchViewActivity.this,SearchActivity.class);
             startActivity(intent);
@@ -155,7 +152,7 @@ public class SearchViewActivity extends Activity {
                 Intent intent = new Intent(SearchViewActivity.this,FundInfoActivity.class);
                 Bundle bundle = new Bundle();
                 bundle.putString("fundName", fundName);
-                bundle.putString("fundId", fundId);
+                bundle.putString("fundId", simplyfyId(fundId));
                 intent.putExtras(bundle);
 
                 startActivity(intent);
@@ -164,22 +161,10 @@ public class SearchViewActivity extends Activity {
         });
     }
 
-
-    public Handler handler = new Handler() {
-        @Override
-        public void handleMessage(Message msg) {
-            super.handleMessage(msg);
-        }
-    };
-
-    public String convertId(String orig_id){
-        int orig_length = orig_id.length();
-        int result_length = 6 - orig_length;
-        String zero ="";
-        for(int i=0;i<result_length;i++){
-            zero += "0";
-        }
-        return zero + orig_id ;
+    //将自动补0的Id号去首字符0
+    public String simplyfyId(String id){
+        String result = valueOf(Integer.parseInt(id));
+        return result;
     }
 
 }

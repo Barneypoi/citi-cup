@@ -25,8 +25,8 @@
                 android:layout_height="wrap_content"
                 android:layout_alignParentBottom="true"
                 android:layout_marginLeft="175dp"
-                android:layout_marginTop="15dp"
-                android:layout_marginBottom="11dp"
+                android:layout_marginTop="25dp"
+                android:layout_marginBottom="10dp"
                 android:gravity="center_horizontal"
                 android:text="基金搜索"
                 android:textColor="@color/titlecolor"
@@ -53,6 +53,8 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_alignParentStart="true"
+            android:layout_marginTop="25dp"
+            android:layout_marginBottom="10dp"
             android:text="热门基金"
             android:textColor="#000000"
             android:textSize="24sp" />
@@ -68,6 +70,8 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="搜索历史"
+            android:layout_marginTop="25dp"
+            android:layout_marginBottom="10dp"
             android:textColor="#000000"
             android:textSize="24sp" />
         //嵌入listitem_fundinfo 默认显示条数：4
@@ -82,6 +86,8 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="涨幅排行"
+            android:layout_marginTop="25dp"
+            android:layout_marginBottom="10dp"
             android:textColor="#000000"
             android:textSize="24sp" />
         //嵌入listitem_fundinfo 默认显示条数：4

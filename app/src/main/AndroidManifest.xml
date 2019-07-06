@@ -20,6 +20,8 @@
         </activity>
         <activity android:name=".SearchActivity">
         </activity>
+        <activity android:name=".SearchViewActivity">
+        </activity>
         <activity android:name=".FilterActivity">
         </activity>
         <activity android:name=".NetActivity">

@@ -32,8 +32,18 @@ public class FundinfoListitem_main_Adapter extends ArrayAdapter<FundInfoObject> 
 
         tv1.setText(fundinfo.getFundName());
         tv2.setText(fundinfo.getFundIncre());
-        tv3.setText(fundinfo.getFundId());
+        tv3.setText(convertId(fundinfo.getFundId()));
         tv4.setText(fundinfo.getFundType());
         return view;
+    }
+
+    public String convertId(String orig_id){
+        int orig_length = orig_id.length();
+        int result_length = 6 - orig_length;
+        String zero ="";
+        for(int i=0;i<result_length;i++){
+            zero += "0";
+        }
+        return zero + orig_id ;
     }
 }

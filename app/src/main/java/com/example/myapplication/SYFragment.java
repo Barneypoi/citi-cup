@@ -6,6 +6,7 @@ import android.os.Handler;
 import android.os.Message;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
+import android.text.TextUtils;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -42,10 +43,10 @@ public class SYFragment extends Fragment {
     private String fundName_onclick;
 
     //从服务器获取的信息
-    private String fundName, fundId, fundType, fundRisk, fundIncre, fundNetweigh;
+    private String fundName, fundId, fundType, fundRisk, fundIncre;
 
     //推荐基金名称接口，用于储存推荐基金的名称
-    private ArrayList<String> fundNameList = new ArrayList<>();
+    private ArrayList<String> fundIdList = new ArrayList<>();
     //改变该条目数据对象内容，将数据显示在ListView中
     private ArrayList<FundInfoObject> fundInfoList = new ArrayList<>();
 
@@ -65,16 +66,15 @@ public class SYFragment extends Fragment {
         //设置暂时未确定
         tv1 = view.findViewById(R.id.tv_big_fundName);
         tv1.setText("国富潜力组合混合A");
-
         tv2 = view.findViewById(R.id.tv_big_fundRate);
         tv2.setText("5.29%");
 
 
         //测试数据
-        fundNameList.add("中海可转债债券A");
-        fundNameList.add("嘉实中证500ETF联");
-        fundNameList.add("华夏纯债债券A");
-        fundNameList.add("长城核心优选混合");
+        fundIdList.add("136");
+        fundIdList.add("142");
+        fundIdList.add("165");
+        fundIdList.add("173");
 
         //initFundInfo();
         initConnection();
@@ -91,19 +91,19 @@ public class SYFragment extends Fragment {
                 OkHttpClient okHttpClient = new OkHttpClient();
 
                 //获取推荐基金名称列表
-                String str_fundNameList = "";
-                for (int i = 0; i < fundNameList.size(); i++) {
+                String str_fundIdList = "";
+                for (int i = 0; i < fundIdList.size(); i++) {
                     if (i == 0)
-                        str_fundNameList += fundNameList.get(i);
+                        str_fundIdList += fundIdList.get(i);
                     else
-                        str_fundNameList += ("@" + fundNameList.get(i));
+                        str_fundIdList += ("@" + fundIdList.get(i));
                 }
 
                 //服务器返回地址，填入请求数据参数
                 //传入的参数为全部推荐基金的名称，若无推荐基金，则返回值传入参数为空字符串""
                 Request request = new Request.Builder()
                         .get()
-                        .url("http://47.100.120.235:8081/mainInfo?fundName=" + str_fundNameList).build();
+                        .url("http://47.100.120.235:8081/mainInfo?fundId=" + str_fundIdList).build();
 
                 try {
                     Response response = null;
@@ -127,7 +127,7 @@ public class SYFragment extends Fragment {
         //判断数据是空
         if (data != null) {
             try {
-                JSONArray resultJsonArray = new JSONArray(data);
+                JSONArray resultJsonArray = new JSONArray(removeBOM(data));
                 //遍历
                 for (int i = 0; i < resultJsonArray.length(); i++) {
                     //JSON数据对象
@@ -160,22 +160,10 @@ public class SYFragment extends Fragment {
                         fundRisk = temp_risk;
                         Log.v(getActivity().toString(), fundRisk);
 
-                        /*String temp_netweigh = object.getString("fundNetweigh");
-                        fundNetweigh = temp_netweigh;
-                        Log.v(getActivity().toString(),fundNetweigh);
-                        */
 
                         //创建基金信息对象
-                        temp_fund = new FundInfoObject(fundName, fundIncre, convertId(fundId), fundType);
+                        temp_fund = new FundInfoObject(fundName, fundIncre, fundId, fundType, fundRisk);
                         fundInfoList.add(temp_fund);
-
-                        //存入map
-                        /*map.put("fundId", fundId);
-                        map.put("fundType",fundType);
-                        map.put("fundIncre",fundIncre);
-                        map.put("fundRisk",fundRisk);
-                        //ArrayList集合
-                        mainlist.add(map);*/
 
                     } catch (JSONException e) {
                         // TODO Auto-generated catch block
@@ -231,8 +219,8 @@ public class SYFragment extends Fragment {
                 bundle.putString("fundName", fundName);
                 bundle.putString("fundIncre", fundIncre);
                 bundle.putString("fundId", fundId);
+                //bundle.putString("fundRisk",fundRisk);
                 bundle.putString("fundType", fundType);
-                bundle.putString("fundNetweigh", fundNetweigh);
 
                 i.putExtras(bundle);
                 startActivity(i);
@@ -249,14 +237,15 @@ public class SYFragment extends Fragment {
         }
     };
 
-    public String convertId(String orig_id){
-        int orig_length = orig_id.length();
-        int result_length = 6 - orig_length;
-        String zero ="";
-        for(int i=0;i<result_length;i++){
-            zero += "0";
+    public static final String removeBOM(String data) {
+        if (TextUtils.isEmpty(data)) {
+            return data;
         }
-        return zero + orig_id ;
+        if (data.startsWith("\ufeff")) {
+            return data.substring(1);
+        } else {
+            return data;
+        }
     }
 
 }

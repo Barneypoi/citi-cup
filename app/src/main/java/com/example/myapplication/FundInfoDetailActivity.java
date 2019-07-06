@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
 import android.support.annotation.Nullable;
+import android.util.Log;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -34,55 +35,41 @@ public class FundInfoDetailActivity extends Activity {
 
     public JSONObject object;
 
-    private String fundId, fundScale, fundEstablishTime, fundCompany, fundManager, fundAlloc;
-    private TextView tv_scale, tv_esttime, tv_company, tv_manager, tv_alloc;
+    private String fundId, fundScale, fundEstablishTime, fundCompany, fundManager, stockRatio, bondRatio, cashRatio;
+    private TextView tv_scale, tv_esttime, tv_company, tv_manager, tv_stock, tv_bond, tv_cash;
 
     //储存基金详细信息arraylist（数据接口）
-    private ArrayList<FundDetailInfoObject> infoDetailList = new ArrayList<>();
+    //private ArrayList<FundDetailInfoObject> infoDetailList = new ArrayList<>();
     public ArrayList<Map<String, Object>> mainlist=new ArrayList<Map<String,Object>>();
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
         setContentView(R.layout.activity_fundinfo_detail);
 
-        fundId = getIntent().getExtras().getString("fundName");
-
-        tv_scale = findViewById(R.id.tv_fundInfo_scale);
-        tv_scale.setText(fundScale);
-
-        tv_esttime = findViewById(R.id.tv_fundInfo_esttime);
-        tv_esttime.setText(fundEstablishTime);
-
-        tv_company =findViewById(R.id.tv_fundInfo_company);
-        tv_company.setText(fundCompany);
-
-        tv_manager = findViewById(R.id.tv_fundInfo_manager);
-        tv_manager.setText(fundManager);
-
-        tv_alloc =findViewById(R.id.tv_fundInfo_alloc);
-        tv_alloc.setText(fundAlloc);
+        fundId = getIntent().getExtras().getString("fundId");
+        Log.v("FundInfoDetailActivity", fundId);
 
         init();
-        //mainlist = (ArrayList<Map<String, Object>>)getIntent().getExtras().get("key");
-
 
     }
 
 
     //建立服务器连接，获取JSON数据
     private void init() {
-        mainlist.clear();
+        //mainlist.clear();
         //lv=(ListView) findViewById(R.id.lv);
         new Thread(new Runnable() {
             @Override
             public void run() {
 
                 OkHttpClient okHttpClient=new OkHttpClient();
+
+                //先转换成Int值再转换成String消除补上的0
+                String temp_Id = String.valueOf(Integer.parseInt(fundId));
                 //服务器返回的地址
                 Request request=new Request.Builder()
                         .get()
-                        .url("http://47.100.120.235:8081/detailInfo?fundId="+fundId).build();
+                        .url("http://47.100.120.235:8081/detailInfo?fundId="+temp_Id).build();
                 try {
                     Response response=okHttpClient.newCall(request).execute();
                     //获取到数据
@@ -114,51 +101,55 @@ public class FundInfoDetailActivity extends Activity {
                 //获取到json数据中里的activity数组内容
                 JSONArray resultJsonArray = new JSONArray(date);
                 //遍历
-                for(int i=4241;i<resultJsonArray.length();i++){
+                for(int i=0;i<resultJsonArray.length();i++){
                     object=resultJsonArray.getJSONObject(i);
 
-                    Map<String, Object> map=new HashMap<String, Object>();
+                    Map<String, Object> map = new HashMap<String, Object>();
 
-                    try {
-                        //获取到json数据中的activity数组里的内容name
-                        fundScale = object.getString("fundScale");
-                        //获取到json数据中的activity数组里的内容startTime
-                        fundEstablishTime = object.getString("fundEstablishTime");
-                        fundCompany = object.getString("fundCompany");
-                        fundManager = object.getString("fundManager");
-                        fundAlloc = object.getString("fundAlloc");
+                    //获取到json数据中的activity数组里的内容name
+                    fundScale = object.optString("fundScale");
+                    //获取到json数据中的activity数组里的内容establishTime
+                    fundEstablishTime = object.optString("fundEstablishTime");
+                    fundCompany = object.optString("fun.Company");
+                    fundManager = object.optString("fundManager");
+                    stockRatio = object.optString("stockRatio");
+                    bondRatio = object.optString("bondRatio");
+                    cashRatio = object.optString("cashRatio");
+                    Object netWeighobj = object.optString("netWeigh");
 
-                        String name = object.getString("1");
-                        String shijian = object.getString("po");
+                        /*
+                        String time = netWeighobj.getString("1");
+                        String netWeigh = netWeighobj.getString("po");
 
                         //存入map
-                        map.put("1", name);
-                        map.put("po", shijian);
+                        map.put("1", time);
+                        map.put("po", netWeigh);
                         //ArrayList集合
                         mainlist.add(map);
+                        */
+                    runOnUiThread(new Runnable() {
+                        @Override
+                        public void run() {
+                            setUIView();
+                        }
+                    });
 
-
-                    } catch (JSONException e) {
-                        // TODO Auto-generated catch block
-                        e.printStackTrace();
-                    }
 
                 }
 
+                /*
                 Message message = new Message();
                 message.what = 1;
                 handler.sendMessage(message);
                 // }
 
+                */
             } catch (JSONException e) {
                 e.printStackTrace();
             }
 
 
         }
-
-
-
 
     }
     //Handler运行在主线程中(UI线程中)，  它与子线程可以通过Message对象来传递数据
@@ -200,6 +191,30 @@ public class FundInfoDetailActivity extends Activity {
 
         }
     };
+
+    public void setUIView(){
+
+        tv_scale = findViewById(R.id.tv_fundInfo_scale);
+        tv_scale.setText(fundScale);
+
+        tv_esttime = findViewById(R.id.tv_fundInfo_esttime);
+        tv_esttime.setText(fundEstablishTime);
+
+        tv_company =findViewById(R.id.tv_fundInfo_company);
+        tv_company.setText(fundCompany);
+
+        tv_manager = findViewById(R.id.tv_fundInfo_manager);
+        tv_manager.setText(fundManager);
+
+        tv_stock =findViewById(R.id.tv_fundInfo_stock);
+        tv_stock.setText(stockRatio);
+
+        tv_bond = findViewById(R.id.tv_fundInfo_bond);
+        tv_bond.setText(bondRatio);
+
+        tv_cash = findViewById(R.id.tv_fundInfo_cash);
+        tv_cash.setText(cashRatio);
+    }
 
     public String TimeStamp2Date(String timestampString){
         Long timestamp = Long.parseLong(timestampString);
