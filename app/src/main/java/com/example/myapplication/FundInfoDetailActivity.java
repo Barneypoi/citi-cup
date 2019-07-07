@@ -2,6 +2,7 @@ package com.example.myapplication;
 
 import android.annotation.SuppressLint;
 import android.app.Activity;
+import android.content.Context;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
@@ -11,6 +12,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.github.mikephil.charting.charts.LineChart;
+import com.github.mikephil.charting.components.Description;
 import com.github.mikephil.charting.components.XAxis;
 import com.github.mikephil.charting.data.Entry;
 import com.github.mikephil.charting.data.LineData;
@@ -41,10 +43,12 @@ public class FundInfoDetailActivity extends Activity {
     //储存基金详细信息arraylist（数据接口）
     //private ArrayList<FundDetailInfoObject> infoDetailList = new ArrayList<>();
     public ArrayList<Map<String, Object>> mainlist=new ArrayList<Map<String,Object>>();
+    Context context;
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_fundinfo_detail);
+        context = this;
 
         fundId = getIntent().getExtras().getString("fundId");
         Log.v("FundInfoDetailActivity", fundId);
@@ -104,27 +108,32 @@ public class FundInfoDetailActivity extends Activity {
                 for(int i=0;i<resultJsonArray.length();i++){
                     object=resultJsonArray.getJSONObject(i);
 
-                    Map<String, Object> map = new HashMap<String, Object>();
-
                     //获取到json数据中的activity数组里的内容name
                     fundScale = object.optString("fundScale");
                     //获取到json数据中的activity数组里的内容establishTime
                     fundEstablishTime = object.optString("fundEstablishTime");
-                    fundCompany = object.optString("fun.Company");
+                    fundCompany = object.optString("funCompany");
                     fundManager = object.optString("fundManager");
                     stockRatio = object.optString("stockRatio");
                     bondRatio = object.optString("bondRatio");
                     cashRatio = object.optString("cashRatio");
 
+                    JSONArray netWeighJSList = object.getJSONArray("netWeigh");
 
-                    String time = object.getString("1");
-                    String netWeigh = object.getString("po");
+                    //for(int tmp = 0; tmp< netWeighJSList.length(); tmp++)
+                    for(int tmp = netWeighJSList.length() - 1; tmp>0; tmp--){
+                        JSONObject tmpJSObject = netWeighJSList.getJSONObject(tmp);
+                        Map<String, Object> map = new HashMap<String, Object>();
+                        String time = tmpJSObject.getString("1");
+                        String netWeigh = tmpJSObject.getString("po");
 
-                    //存入map
-                    map.put("1", time);
-                    map.put("po", netWeigh);
-                    //ArrayList集合
-                    mainlist.add(map);
+
+                        //存入map
+                        map.put("1", time);
+                        map.put("po", netWeigh);
+                        //ArrayList集合
+                        mainlist.add(map);
+                    }
 
                     runOnUiThread(new Runnable() {
                         @Override
@@ -142,8 +151,6 @@ public class FundInfoDetailActivity extends Activity {
             } catch (JSONException e) {
                 e.printStackTrace();
             }
-
-
         }
 
     }
@@ -156,18 +163,18 @@ public class FundInfoDetailActivity extends Activity {
                 case 1:
                     //Mybaseadapter list_item=new Mybaseadapter();
                     //lv.setAdapter(list_item);
-                    Toast.makeText(getApplicationContext(),"zahuishine",Toast.LENGTH_SHORT).show();
+                    Toast.makeText(getApplicationContext(),"显示详细基金信息",Toast.LENGTH_SHORT).show();
                     LineChart mLineChart = (LineChart) findViewById(R.id.lineChart);
                     //显示边界
                     mLineChart.setDrawBorders(true);
                     //设置数据
                     List<Entry> entries = new ArrayList<>();
-                    for (int i = 0; i < 10; i++) {
+                    for (int i = 0; i < mainlist.size(); i++) {
                         entries.add(new Entry(i,Float.parseFloat((String) mainlist.get(i).get("po")) ) );
                     }
                     //准备好每个点对应的x轴数值
                     List<String> list = new ArrayList<>();
-                    for (int i = 0; i < 10; i++) {
+                    for (int i = 0; i < mainlist.size(); i++) {
                         list.add(TimeStamp2Date((String) mainlist.get(i).get("1")));
                     }
                     XAxis xAxis = mLineChart.getXAxis();
@@ -180,6 +187,13 @@ public class FundInfoDetailActivity extends Activity {
                     mLineChart.clear();
                     mLineChart.setData(data);
 
+                    DetailsMarkerView detailsMarkerView = new DetailsMarkerView(context,R.layout.detail);
+                    //一定要设置这个玩意，不然到点击到最边缘的时候不会自动调整布局
+                    detailsMarkerView.setChartView(mLineChart);
+                    mLineChart.setMarker(detailsMarkerView);
+                    Description desc= new Description();
+                    desc.setText("");
+                    mLineChart.setDescription(desc);
                     break;
             }
 

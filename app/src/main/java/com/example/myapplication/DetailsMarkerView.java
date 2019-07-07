@@ -1,9 +1,6 @@
 package com.example.myapplication;
 
 import android.content.Context;
-import android.content.Intent;
-import android.os.Handler;
-import android.text.format.DateUtils;
 import android.widget.TextView;
 
 import com.github.mikephil.charting.components.MarkerView;
@@ -12,10 +9,6 @@ import com.github.mikephil.charting.highlight.Highlight;
 import com.github.mikephil.charting.utils.MPPointF;
 
 import java.math.BigDecimal;
-import java.text.ParseException;
-import java.text.SimpleDateFormat;
-import java.util.Calendar;
-import java.util.Date;
 
 public class DetailsMarkerView extends MarkerView {
 
@@ -39,6 +32,7 @@ public class DetailsMarkerView extends MarkerView {
             if (e.getY() == 0) {
                 mTvChart1.setText("暂无数据");
             } else {
+                mTvMonth.setText(concat(e.getX(),"日期："));
                 mTvChart1.setText(concat(e.getY(), "净值："));
             }
             long b =86400000*(long)e.getX()+Long.parseLong(a);
