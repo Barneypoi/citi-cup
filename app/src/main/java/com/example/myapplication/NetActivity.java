@@ -42,9 +42,9 @@ public class NetActivity extends AppCompatActivity {
     //界面内ListView的响应器
     private NetListitemAdapter baseAdapter;
 
-    //推荐基金名称接口，用于储存推荐基金的名称
-    private ArrayList<String> fundNameList = new ArrayList<>();
 
+    //用于储存显示基金的ID们
+    private ArrayList<String> fundIdList = new ArrayList<>();
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -75,6 +75,7 @@ public class NetActivity extends AppCompatActivity {
                             return -1;
                     }
                 });
+                baseAdapter.notifyDataSetChanged();
             }
         });
         increSortButton = (Button) findViewById(R.id.netView_increSortButton);
@@ -96,9 +97,15 @@ public class NetActivity extends AppCompatActivity {
                             return -1;
                     }
                 });
+                baseAdapter.notifyDataSetChanged();
             }
         });
 
+        //测试数据
+        fundIdList.add("136");
+        fundIdList.add("142");
+        fundIdList.add("165");
+        fundIdList.add("173");
         initConnection();
 
     }
@@ -109,26 +116,29 @@ public class NetActivity extends AppCompatActivity {
             @Override
             public void run() {
 
+
                 OkHttpClient okHttpClient = new OkHttpClient();
                 //服务器返回地址，填入请求数据参数
                 //想要获得所有的基金
-                Request request = new Request.Builder()
-                        .get()
-                        .url("http://47.100.120.235:8081/basicInfo?fundId=3").build();
+                for(int i = 0;i<5;i++) {
+                    Request request = new Request.Builder()
+                            .get()
+                            .url("http://47.100.120.235:8081/basicInfo?fundId=" + String.valueOf(136 + i)).build();
 
-                try {
-                    Response response = null;
-                    response = okHttpClient.newCall(request).execute();
-                    assert response.body() != null;
-                    String data = null;
-                    data = response.body().string();
-                    //把数据传入解析JSON数据方法
-                    jsonJX(data);
+                    try {
+                        Response response = null;
+                        response = okHttpClient.newCall(request).execute();
+                        assert response.body() != null;
+                        String data = null;
+                        data = response.body().string();
+                        //把数据传入解析JSON数据方法
+                        jsonJX(data);
 
-                } catch (IOException e) {
-                    e.printStackTrace();
+                    } catch (IOException e) {
+                        e.printStackTrace();
+                    }
+                    //createList();
                 }
-                //createList();
             }
         }).start();
     }
@@ -150,7 +160,7 @@ public class NetActivity extends AppCompatActivity {
                         fundName = temp_name;
 
                         //获取到json数据中的activity数组里的内容fundNetWeigh
-                        String temp_fundNetWeigh = object.getString("fundNetWeight");
+                        String temp_fundNetWeigh = object.getString("fundNetweigh");
                         fundNetweigh = temp_fundNetWeigh;
 
 
@@ -164,6 +174,8 @@ public class NetActivity extends AppCompatActivity {
                         fundInfoList.add(temp_fund);
 
                         //存入map
+
+
                         /*map.put("fundId", fundId);
                         map.put("fundType",fundType);
                         map.put("fundIncre",fundIncre);

@@ -1082,6 +1082,7 @@ drawable shape_dot_focus
 drawable shape_dot_unfocus
 drawable shape_npre_mainbtn
 drawable shape_pre_mainbtn
+drawable textview_border
 drawable tooltip_frame_dark
 drawable tooltip_frame_light
 drawable vd_checkbox_checked
@@ -1217,6 +1218,7 @@ id invisible
 id italic
 id item_layout
 id item_touch_helper_previous_elevation
+id iv_junpdetail_list
 id key
 id labeled
 id largeLabel
@@ -1382,14 +1384,14 @@ id transition_layout_save
 id transition_position
 id transition_scene_layoutid_cache
 id transition_transform
-id tv1_list
 id tv1_src_list
-id tv2_list
 id tv2_src_list
 id tv_big_fundName
 id tv_big_fundRate
-id tv_fundInfo_alloc
-id tv_fundInfo_allocLabel
+id tv_fundInfo_bond
+id tv_fundInfo_bondLabel
+id tv_fundInfo_cash
+id tv_fundInfo_cashLabel
 id tv_fundInfo_company
 id tv_fundInfo_companyLabel
 id tv_fundInfo_esttime
@@ -1404,8 +1406,11 @@ id tv_fundInfo_risk
 id tv_fundInfo_riskLabel
 id tv_fundInfo_scale
 id tv_fundInfo_scaleLabel
+id tv_fundInfo_stock
+id tv_fundInfo_stockLabel
 id tv_fundInfo_type
 id tv_fundInfo_typeLabel
+id tv_jumpdetail_list
 id tv_mainwin_fundName
 id tv_mainwin_fundRate
 id tv_mainwin_info1

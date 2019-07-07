@@ -6,6 +6,7 @@
 
     <ListView
         android:id="@+id/lv_src_view"
+        android:background="@drawable/textview_border"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:actionViewClass="android.support.v7.widget.SearchView">

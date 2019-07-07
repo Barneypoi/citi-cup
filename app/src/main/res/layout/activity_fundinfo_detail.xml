@@ -53,6 +53,7 @@
                     android:layout_width="150dp"
                     android:layout_height="wrap_content"
                     android:layout_margin="5dp"
+                    android:background="@drawable/textview_border"
                     android:textSize="20dp"
                     android:padding="5dp"
                     android:text="基金规模"
@@ -64,6 +65,7 @@
                     android:layout_height="wrap_content"
                     android:layout_toRightOf="@id/tv_fundInfo_scaleLabel"
                     android:layout_margin="5dp"
+                    android:background="@drawable/textview_border"
                     android:textSize="20dp"
                     android:padding="5dp"
                     />
@@ -73,6 +75,7 @@
                     android:layout_height="wrap_content"
                     android:layout_below="@id/tv_fundInfo_scaleLabel"
                     android:layout_margin="5dp"
+                    android:background="@drawable/textview_border"
                     android:textSize="20dp"
                     android:padding="5dp"
                     android:text="成立时间"
@@ -83,6 +86,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_margin="5dp"
+                    android:background="@drawable/textview_border"
                     android:layout_below="@id/tv_fundInfo_scale"
                     android:layout_toRightOf="@id/tv_fundInfo_esttimeLabel"
                     android:textSize="20dp"
@@ -94,6 +98,7 @@
                     android:layout_height="wrap_content"
                     android:layout_below="@id/tv_fundInfo_esttimeLabel"
                     android:layout_margin="5dp"
+                    android:background="@drawable/textview_border"
                     android:textSize="20dp"
                     android:padding="5dp"
                     android:text="公司名称"
@@ -103,6 +108,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_margin="5dp"
+                    android:background="@drawable/textview_border"
                     android:layout_below="@id/tv_fundInfo_esttime"
                     android:layout_toRightOf="@id/tv_fundInfo_companyLabel"
                     android:textSize="20dp"
@@ -114,6 +120,7 @@
                     android:layout_height="wrap_content"
                     android:layout_below="@id/tv_fundInfo_companyLabel"
                     android:layout_margin="5dp"
+                    android:background="@drawable/textview_border"
                     android:textSize="20dp"
                     android:padding="5dp"
                     android:text="基金经理"
@@ -123,29 +130,76 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_margin="5dp"
+                    android:background="@drawable/textview_border"
                     android:layout_below="@id/tv_fundInfo_company"
                     android:layout_toRightOf="@id/tv_fundInfo_managerLabel"
                     android:textSize="20dp"
                     android:padding="5dp"/>
 
                 <TextView
-                    android:id="@+id/tv_fundInfo_allocLabel"
+                    android:id="@+id/tv_fundInfo_stockLabel"
                     android:layout_width="150dp"
                     android:layout_height="wrap_content"
                     android:layout_below="@id/tv_fundInfo_managerLabel"
                     android:layout_margin="5dp"
+                    android:background="@drawable/textview_border"
                     android:textSize="20dp"
                     android:padding="5dp"
-                    android:text="基金净值"
+                    android:text="股票型占比"
                     />
 
                 <TextView
-                    android:id="@+id/tv_fundInfo_alloc"
+                    android:id="@+id/tv_fundInfo_stock"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_margin="5dp"
+                    android:background="@drawable/textview_border"
                     android:layout_below="@id/tv_fundInfo_manager"
-                    android:layout_toRightOf="@id/tv_fundInfo_allocLabel"
+                    android:layout_toRightOf="@id/tv_fundInfo_stockLabel"
+                    android:textSize="20dp"
+                    android:padding="5dp"/>
+                <TextView
+                    android:id="@+id/tv_fundInfo_bondLabel"
+                    android:layout_width="150dp"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/tv_fundInfo_stockLabel"
+                    android:layout_margin="5dp"
+                    android:background="@drawable/textview_border"
+                    android:textSize="20dp"
+                    android:padding="5dp"
+                    android:text="债券型占比"
+                    />
+
+                <TextView
+                    android:id="@+id/tv_fundInfo_bond"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="5dp"
+                    android:background="@drawable/textview_border"
+                    android:layout_below="@id/tv_fundInfo_stock"
+                    android:layout_toRightOf="@id/tv_fundInfo_bondLabel"
+                    android:textSize="20dp"
+                    android:padding="5dp"/>
+                <TextView
+                    android:id="@+id/tv_fundInfo_cashLabel"
+                    android:layout_width="150dp"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/tv_fundInfo_bondLabel"
+                    android:layout_margin="5dp"
+                    android:background="@drawable/textview_border"
+                    android:textSize="20dp"
+                    android:padding="5dp"
+                    android:text="现金型占比"
+                    />
+
+                <TextView
+                    android:id="@+id/tv_fundInfo_cash"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="5dp"
+                    android:background="@drawable/textview_border"
+                    android:layout_below="@id/tv_fundInfo_bond"
+                    android:layout_toRightOf="@id/tv_fundInfo_cashLabel"
                     android:textSize="20dp"
                     android:padding="5dp"/>
 

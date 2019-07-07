@@ -249,7 +249,7 @@ public class FilterActivity extends AppCompatActivity {
                         */
 
                         //创建基金信息对象
-                        temp_fund = new FundInfoObject(fundName, fundIncre, convertId(fundId), fundType);
+                        temp_fund = new FundInfoObject(fundName, fundIncre, convertId(fundId), 1);
                         fundInfoList.add(temp_fund);
 
                         //存入map

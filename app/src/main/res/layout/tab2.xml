@@ -36,7 +36,7 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:background="@color/titlecolor"
-            android:text="净值" />
+            android:text="净值↑" />
 
         <Button
             android:id="@+id/buttonZF"
