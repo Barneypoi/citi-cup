@@ -1,26 +1,17 @@
 package com.example.myapplication;
 
+import android.content.Intent;
+import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentActivity;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
-import android.os.Bundle;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.view.Window;
-import android.widget.AdapterView;
 import android.widget.ImageButton;
 import android.widget.LinearLayout;
-import android.content.Intent;
-import android.widget.ListView;
-import android.widget.SimpleAdapter;
 import android.widget.TextView;
-import android.widget.Toast;
-
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
 
 public class MainActivity extends FragmentActivity implements OnClickListener {
     //声明Tab的布局文件
@@ -193,5 +184,10 @@ public class MainActivity extends FragmentActivity implements OnClickListener {
     public void jumpToSetting(View view) {
         Intent intent = new Intent(this, SettingActivity.class);
         startActivity(intent);
+    }
+
+    //统一定义单击返回按键执行操作
+    public void backToMain(View view){
+        onBackPressed();
     }
 }

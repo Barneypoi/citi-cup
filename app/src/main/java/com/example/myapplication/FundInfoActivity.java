@@ -37,7 +37,7 @@ public class FundInfoActivity extends Activity {
 
     private String fundName, fundIncre, fundId, fundType, fundRisk, fundNetweigh;
 
-    private TextView tv_id, tv_type, tv_risk, tv_netweigh;
+    private TextView tv_id, tv_type, tv_risk, tv_netweigh, title;
 
     //单元格跳转详细信息的控件
     private TextView tv;
@@ -47,6 +47,9 @@ public class FundInfoActivity extends Activity {
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_fundinfo);
+
+        title = findViewById(R.id.title_tv);
+        title.setText("基金基本信息");
 
         //获取首页列表视图点击单元格的基金代号
         //fundName = getIntent().getExtras().getString("fundName");

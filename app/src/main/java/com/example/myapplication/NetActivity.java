@@ -1,13 +1,13 @@
 package com.example.myapplication;
 
-import android.content.Intent;
+import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
 import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ListView;
+import android.widget.TextView;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -42,13 +42,18 @@ public class NetActivity extends AppCompatActivity {
     //界面内ListView的响应器
     private NetListitemAdapter baseAdapter;
 
-
     //用于储存显示基金的ID们
     private ArrayList<String> fundIdList = new ArrayList<>();
+
+    private TextView title;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_net);
+
+        title = findViewById(R.id.title_tv);
+        title.setText("基金净值");
 
         //测试数据
 //        fundNameList.add("中海可转债债券A");
@@ -254,11 +259,5 @@ public class NetActivity extends AppCompatActivity {
             super.handleMessage(msg);
         }
     };
-
-    public void backToMain(View view){
-        Intent intent= new Intent(this, MainActivity.class);
-        intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
-        startActivity(intent);
-    }
 
 }

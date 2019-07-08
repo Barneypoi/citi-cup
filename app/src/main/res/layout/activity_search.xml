@@ -9,31 +9,10 @@
         android:layout_height="match_parent"
         android:orientation="vertical">
 
-        <RelativeLayout
-            android:layout_width="match_parent"
-            android:layout_height="50dp"
-            android:background="@color/main">
-
-            <Button
-                android:id="@+id/button5"
-                style="@style/backButton"
-                android:onClick="backToMain" />
-
-            <TextView
-                android:id="@+id/textView15"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_alignParentBottom="true"
-                android:layout_marginLeft="175dp"
-                android:layout_marginTop="25dp"
-                android:layout_marginBottom="10dp"
-                android:gravity="center_horizontal"
-                android:text="基金搜索"
-                android:textColor="@color/titlecolor"
-                android:textSize="18sp" />
-        </RelativeLayout>
+        <include layout="@layout/titlebar_for_all"/>
 
         <android.support.v7.widget.SearchView
+            android:background="@drawable/double_border"
             android:id="@+id/sv_searchActivity"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -43,21 +22,23 @@
 
         <com.example.myapplication.MyPosterViewPager
             android:layout_width="match_parent"
-            android:layout_height="200dp">
+            android:layout_height="160dp">
 
         </com.example.myapplication.MyPosterViewPager>
 
 
         <TextView
             android:id="@+id/textView20"
+            android:background="@drawable/double_border"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:padding="5dp"
             android:layout_alignParentStart="true"
-            android:layout_marginTop="25dp"
+            android:layout_marginTop="10dp"
             android:layout_marginBottom="10dp"
             android:text="热门基金"
             android:textColor="#000000"
-            android:textSize="24sp" />
+            android:textSize="17sp" />
 
         //嵌入listitem_fundinfo 默认显示条数：4
         <ListView
@@ -67,14 +48,15 @@
 
         <TextView
             android:id="@+id/textView21"
-            android:layout_width="wrap_content"
+            android:background="@drawable/double_border"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="搜索历史"
-            android:layout_marginTop="25dp"
+            android:padding="5dp"
+            android:layout_marginTop="10dp"
             android:layout_marginBottom="10dp"
             android:textColor="#000000"
-            android:textSize="24sp" />
-        //嵌入listitem_fundinfo 默认显示条数：4
+            android:textSize="17sp" />
 
         <ListView
             android:id="@+id/lv2_search"
@@ -83,14 +65,15 @@
 
         <TextView
             android:id="@+id/textView22"
-            android:layout_width="wrap_content"
+            android:background="@drawable/double_border"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:padding="5dp"
             android:text="涨幅排行"
-            android:layout_marginTop="25dp"
+            android:layout_marginTop="10dp"
             android:layout_marginBottom="10dp"
             android:textColor="#000000"
-            android:textSize="24sp" />
-        //嵌入listitem_fundinfo 默认显示条数：4
+            android:textSize="17sp" />
 
         <ListView
             android:id="@+id/lv3_search"

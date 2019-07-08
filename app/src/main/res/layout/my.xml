@@ -13,28 +13,29 @@
         android:orientation="vertical">
 
         <LinearLayout
+            android:orientation="horizontal"
             android:layout_width="match_parent"
             android:layout_height="50dp"
             android:background="@color/main"
-            android:orientation="horizontal"
             android:onClick="jumpToSetting">
 
             <ImageView
-                android:id="@+id/imageView"
+                android:id="@+id/imageView_user"
                 android:layout_width="50dp"
                 android:layout_height="50dp"
-                android:layout_weight="1"
-                android:src="@drawable/image10" />
+                android:src="@drawable/image10"
+                />
 
             <TextView
-                android:id="@+id/textView1"
+                android:id="@+id/textView1_userName"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:onClick="jumpToSetting"
-                android:text="用户名"
-                android:textSize="30sp"
+                android:layout_gravity="center"
+                android:layout_marginLeft="20dp"
+                android:text="User_Name"
+                android:textSize="20sp"
                 android:textColor="@color/titlecolor"
+                android:onClick="jumpToSetting"
                 />
 
         </LinearLayout>
@@ -113,11 +114,11 @@
                 <TextView
                     android:id="@+id/textView14"
                     android:layout_width="wrap_content"
-                    android:layout_height="50dp"
+                    android:layout_height="40dp"
                     android:paddingLeft="20dp"
                     android:text="0.00"
                     android:textColor="@color/titlecolor"
-                    android:textSize="16dp"/>
+                    android:textSize="@dimen/myMoneySize"/>
             </TableRow>
         </TableLayout>
 
@@ -160,8 +161,6 @@
             android:layout_height="249dp"
             android:layout_weight="1"
             android:orientation="vertical">
-
-            <include layout="@layout/block_fundinfo" />
 
             <ListView
                 android:id="@+id/myListView"

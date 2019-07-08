@@ -1,12 +1,12 @@
 package com.example.myapplication;
 
-import android.content.Intent;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Spinner;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import java.util.ArrayList;
@@ -15,10 +15,15 @@ import java.util.List;
 
 public class ReturnActivity extends AppCompatActivity {
     private Spinner spinner1;
+    private TextView title;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_return);
+        title = findViewById(R.id.title_tv);
+        title.setText("基金回报率");
+
         spinner1 = (Spinner) findViewById(R.id.spinner5);
         ArrayAdapter<String> adapter = new ArrayAdapter<String>(
                 ReturnActivity.this, android.R.layout.simple_spinner_item,
@@ -52,10 +57,5 @@ public class ReturnActivity extends AppCompatActivity {
         return dataList;
     }
 
-    public void backToMain(View view){
-        Intent intent= new Intent(this, MainActivity.class);
-        intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
-        startActivity(intent);
-    }
 
 }

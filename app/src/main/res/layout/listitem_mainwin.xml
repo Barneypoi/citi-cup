@@ -6,18 +6,18 @@
     android:layout_width="match_parent"
     android:layout_height="80dp">
 
-    <LinearLayout
+    <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_weight="0.5"
-        android:orientation="vertical"
+        android:layout_weight="0.25"
         android:paddingLeft="10dp">
 
         <TextView
             android:id="@+id/tv_mainwin_fundName"
             android:layout_width="150dp"
             android:layout_height="wrap_content"
-            android:paddingLeft="20dp"
+            android:textAlignment="center"
+            android:layout_centerHorizontal="true"
             android:paddingTop="10dp"
             android:text="FundName"
             android:textSize="15sp" />
@@ -26,21 +26,25 @@
             android:id="@+id/tv_mainwin_fundRate"
             android:layout_width="150dp"
             android:layout_height="wrap_content"
-            android:paddingLeft="40dp"
+            android:layout_centerHorizontal="true"
+            android:textAlignment="center"
+            android:layout_below="@id/tv_mainwin_fundName"
             android:text="5.2%"
             android:textColor="@color/highlighttext"
-            android:textSize="25sp" />
+            android:textSize="20sp" />
 
         <TextView
             android:layout_width="150dp"
             android:layout_height="wrap_content"
-            android:paddingLeft="30dp"
+            android:layout_centerHorizontal="true"
+            android:textAlignment="center"
+            android:layout_below="@id/tv_mainwin_fundRate"
             android:text="七日年化收益率"
             android:textColor="@color/settingSubtitleColor"
             android:textSize="10sp" />
 
 
-    </LinearLayout>
+    </RelativeLayout>
 
     <LinearLayout
         android:orientation="vertical"
@@ -52,17 +56,19 @@
             android:id="@+id/tv_mainwin_info1"
             android:layout_width="150dp"
             android:layout_height="wrap_content"
-            android:textSize="15sp"
+            android:textSize="13sp"
             android:text="otherinfo1"
             android:gravity="right"
+            android:textAlignment="center"
             android:textColor="@color/subtitledarkercolor"/>
         <TextView
             android:id="@+id/tv_mainwin_info2"
             android:layout_width="150dp"
             android:layout_height="wrap_content"
-            android:textSize="15sp"
+            android:textSize="13sp"
             android:text="otherinfo2"
             android:gravity="right"
+            android:textAlignment="center"
             android:textColor="@color/subtitledarkercolor"/>
     </LinearLayout>
 </LinearLayout>

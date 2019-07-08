@@ -1,7 +1,6 @@
 package com.example.myapplication;
 
 import android.content.Intent;
-import android.media.Image;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
@@ -152,12 +151,6 @@ public class SettingActivity extends AppCompatActivity {
             }
 
         } );
-    }
-
-    public void backToMain(View view){
-        Intent intent= new Intent(this, MainActivity.class);
-        intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
-        startActivity(intent);
     }
 
     //跳转到设置界面

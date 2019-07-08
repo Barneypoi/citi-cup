@@ -1042,6 +1042,7 @@ drawable design_ic_visibility
 drawable design_ic_visibility_off
 drawable design_password_eye
 drawable design_snackbar_background
+drawable double_border
 drawable filter_main
 drawable ic_action_next
 drawable ic_launcher_background
@@ -1129,7 +1130,6 @@ id barrier
 id beginning
 id blocking
 id bottom
-id btn_backfundinfo
 id button10
 id button2
 id button3
@@ -1213,6 +1213,7 @@ id imageView3
 id imageView4
 id imageView5
 id imageView6
+id imageView_user
 id info
 id invisible
 id italic
@@ -1342,7 +1343,6 @@ id textSpacerNoButtons
 id textSpacerNoTitle
 id textStart
 id textView
-id textView1
 id textView10
 id textView11
 id textView12
@@ -1353,6 +1353,7 @@ id textView16
 id textView17
 id textView18
 id textView19
+id textView1_userName
 id textView2
 id textView20
 id textView21
@@ -1375,6 +1376,7 @@ id time
 id title
 id titleDividerNoCustom
 id title_template
+id title_tv
 id title_view
 id top
 id topPanel
@@ -1510,6 +1512,7 @@ layout design_text_input_password_icon
 layout detail
 layout layout_viewpager
 layout listitem_fundinfo
+layout listitem_funditem
 layout listitem_jumptodetail
 layout listitem_mainwin
 layout listitem_net
@@ -1539,13 +1542,12 @@ layout sy_viewpager
 layout tab1
 layout tab2
 layout tab3
+layout titlebar_for_all
 layout user_info
 mipmap back
 mipmap filter_main
-mipmap fund_seleccted1
 mipmap fund_selected
 mipmap fund_unselected
-mipmap fund_unselected1
 mipmap home_selected
 mipmap home_unselected
 mipmap ic_launcher

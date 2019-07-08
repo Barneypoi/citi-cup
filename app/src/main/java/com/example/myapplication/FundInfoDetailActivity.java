@@ -38,7 +38,7 @@ public class FundInfoDetailActivity extends Activity {
     public JSONObject object;
 
     private String fundId, fundScale, fundEstablishTime, fundCompany, fundManager, stockRatio, bondRatio, cashRatio, netWeigh;
-    private TextView tv_scale, tv_esttime, tv_company, tv_manager, tv_stock, tv_bond, tv_cash;
+    private TextView tv_scale, tv_esttime, tv_company, tv_manager, tv_stock, tv_bond, tv_cash, title;
 
     //储存基金详细信息arraylist（数据接口）
     //private ArrayList<FundDetailInfoObject> infoDetailList = new ArrayList<>();
@@ -48,6 +48,10 @@ public class FundInfoDetailActivity extends Activity {
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_fundinfo_detail);
+
+        title = findViewById(R.id.title_tv);
+        title.setText("基金详细信息");
+
         context = this;
 
         fundId = getIntent().getExtras().getString("fundId");

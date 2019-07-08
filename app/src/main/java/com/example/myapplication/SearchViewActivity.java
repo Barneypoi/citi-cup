@@ -27,8 +27,9 @@ import static java.lang.String.valueOf;
 public class SearchViewActivity extends Activity {
 
     JSONObject object;
-    String fundNameorId, fundName, fundId;
+    String fundNameorId, fundName, fundId, onclick_fundName, onclick_fundId;
     ArrayList<FundInfoObject> fundInfoList = new ArrayList<>();
+    TextView title;
     ListView lv;
     FundinfoListitemAdapter adapter;
 
@@ -37,7 +38,10 @@ public class SearchViewActivity extends Activity {
         //初始化活动界面
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_searchview);
-        adapter = new FundinfoListitemAdapter(SearchViewActivity.this,R.layout.listitem_fundinfo, fundInfoList);
+        title = findViewById(R.id.title_tv);
+        title.setText("搜索结果");
+
+        adapter = new FundinfoListitemAdapter(SearchViewActivity.this,R.layout.listitem_funditem, fundInfoList);
 
         //获取用户输入字符串，执行网络请求
         fundNameorId = getIntent().getExtras().getString("fundNameorId");
@@ -143,18 +147,17 @@ public class SearchViewActivity extends Activity {
 
                 //获取单击事件的TextView内容
                 TextView t1 = findViewById(R.id.tv1_src_list);
-                fundName = t1.getText().toString();
+                onclick_fundName = t1.getText().toString();
 
                 TextView t2 = findViewById(R.id.tv2_src_list);
-                fundId = t2.getText().toString();
+                onclick_fundId = t2.getText().toString();
 
                 //跳转至基金基本信息
                 Intent intent = new Intent(SearchViewActivity.this,FundInfoActivity.class);
                 Bundle bundle = new Bundle();
-                bundle.putString("fundName", fundName);
-                bundle.putString("fundId", simplyfyId(fundId));
+                bundle.putString("fundName", onclick_fundName);
+                bundle.putString("fundId", simplyfyId(onclick_fundId));
                 intent.putExtras(bundle);
-
                 startActivity(intent);
 
             }

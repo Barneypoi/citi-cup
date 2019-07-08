@@ -3,27 +3,7 @@
     android:orientation="vertical" android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <RelativeLayout
-        android:layout_width="match_parent"
-        android:layout_height="50dp"
-        android:background="@color/main">
-
-        <Button
-            android:id="@+id/button5"
-            style="@style/backButton"
-            android:onClick="backToMain" />
-
-        <TextView
-            android:id="@+id/textView15"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="175dp"
-            android:layout_marginTop="17dp"
-            android:gravity="center_horizontal"
-            android:text="基金净值"
-            android:textColor="@color/titlecolor"
-            android:textSize="18sp" />
-    </RelativeLayout>
+    <include layout="@layout/titlebar_for_all"/>
 
     <android.support.v7.widget.CardView
         android:layout_width="match_parent"
@@ -36,7 +16,7 @@
 
             <Button
                 android:id="@+id/button10"
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:background="@color/titlecolor"
@@ -44,17 +24,15 @@
 
             <Button
                 android:id="@+id/netView_netWeightSortButton"
-                android:layout_width="wrap_content"
+                android:layout_width="80dp"
                 android:layout_height="match_parent"
-                android:layout_weight="1"
                 android:background="@color/titlecolor"
                 android:text="净值" />
 
             <Button
                 android:id="@+id/netView_increSortButton"
-                android:layout_width="wrap_content"
+                android:layout_width="80dp"
                 android:layout_height="match_parent"
-                android:layout_weight="1"
                 android:background="@color/titlecolor"
                 android:text="涨幅" />
         </LinearLayout>

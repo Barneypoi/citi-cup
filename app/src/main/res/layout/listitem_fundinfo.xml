@@ -14,7 +14,7 @@
         android:padding="5dp"
         android:gravity="left|center_vertical"
         android:text="基金信息"
-        android:textSize="20sp" />
+        android:textSize="15sp" />
     <TextView
         android:id="@+id/tv2_src_list"
         android:layout_width="match_parent"
@@ -22,6 +22,6 @@
         android:layout_weight="0.45"
         android:padding="5dp"
         android:text="基金信息内容"
-        android:textSize="20sp"
+        android:textSize="15sp"
         android:gravity="right|center_vertical"/>
 </LinearLayout>

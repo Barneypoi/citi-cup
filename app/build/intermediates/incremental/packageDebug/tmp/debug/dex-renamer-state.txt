@@ -1,7 +1,7 @@
-#Sat Jul 06 16:20:29 CST 2019
-base.0=F\:\\Android\\citi\\1\\citi-cup\\app\\build\\intermediates\\dex\\debug\\mergeExtDexDebug\\out
+#Mon Jul 08 14:17:03 CST 2019
+base.0=F\:\\AndroidProject\\citi-cup\\app\\build\\intermediates\\dex\\debug\\mergeExtDexDebug\\out
 path.1=classes.dex
 renamed.1=classes2.dex
 path.0=classes.dex
 renamed.0=classes.dex
-base.1=F\:\\Android\\citi\\1\\citi-cup\\app\\build\\intermediates\\dex\\debug\\mergeProjectDexDebug\\out
+base.1=F\:\\AndroidProject\\citi-cup\\app\\build\\intermediates\\dex\\debug\\mergeProjectDexDebug\\out

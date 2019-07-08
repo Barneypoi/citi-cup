@@ -1,7 +1,6 @@
 package com.example.myapplication;
 
 
-import android.app.Fragment;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
@@ -9,6 +8,7 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ListView;
 import android.widget.SimpleAdapter;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import java.util.ArrayList;
@@ -18,10 +18,14 @@ import java.util.Map;
 
 public class UserInfoActivity extends AppCompatActivity {
 
+    private TextView title;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_userinfo);
+        title = findViewById(R.id.title_tv);
+        title.setText("个人信息");
 
         initList1();
         initList2();
@@ -151,13 +155,6 @@ public class UserInfoActivity extends AppCompatActivity {
             }
 
         } );
-    }
-
-
-    public void backToMain(View view){
-        Intent intent= new Intent(this, SettingActivity.class);
-        intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
-        startActivity(intent);
     }
 
     //跳转到设置界面

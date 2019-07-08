@@ -3,7 +3,7 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical"
     android:layout_width="match_parent"
-    android:layout_height="140dp"
+    android:layout_height="120dp"
     android:background="@color/modulecolor"
     android:layout_marginTop="2dp"
     android:layout_marginBottom="2dp"
@@ -15,27 +15,28 @@
         android:layout_width="240dp"
         android:layout_height="30dp"
         android:layout_gravity="center"
-        android:layout_marginTop="15dp"
+        android:layout_marginTop="12dp"
         android:text="FundName"
         android:textAlignment="center"
-        android:textSize="25sp"
+        android:textSize="20sp"
         android:textColor="@color/titlecolor"/>
     <TextView
         android:layout_width="200dp"
-        android:layout_height="30dp"
+        android:layout_height="wrap_content"
         android:layout_gravity="center"
-        android:layout_marginTop="5dp"
+        android:layout_marginTop="8dp"
         android:text="期望年化收益率"
         android:textAlignment="center"
-        android:textSize="20sp"
+        android:textSize="14sp"
         android:textColor="@color/subtitlecolor"/>
+
     <TextView
         android:id="@+id/tv_big_fundRate"
         android:layout_width="160dp"
-        android:layout_height="40dp"
+        android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:text="Rate"
         android:textAlignment="center"
-        android:textSize="35sp"
-        android:textColor="@color/highlighttext"/>
+        android:textColor="@color/highlighttext"
+        android:textSize="30sp" />
 </LinearLayout>

@@ -7,26 +7,7 @@
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
-    <RelativeLayout
-        android:layout_width="match_parent"
-        android:layout_height="50dp"
-        android:background="@color/main">
-    <Button
-        android:id="@+id/btn_backfundinfo"
-        style="@style/backButton"
-        android:onClick="backToMainWin" />
-    <TextView
-        android:id="@+id/textView15"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="175dp"
-        android:layout_marginTop="17dp"
-        android:gravity="center_horizontal"
-        android:text="基金简介"
-        android:textColor="@color/titlecolor"
-        android:textSize="18sp"
-        android:layout_marginStart="175dp" />
-    </RelativeLayout>
+    <include layout="@layout/titlebar_for_all" />
 
     <include layout="@layout/block_fundinfo"/>
 
