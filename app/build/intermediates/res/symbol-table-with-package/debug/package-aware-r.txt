@@ -1257,6 +1257,7 @@ id multiply
 id myListView
 id name
 id navigation_header_container
+id netListFundId
 id netListFundIncre
 id netListFundName
 id netListFundNetWeight
@@ -1343,6 +1344,7 @@ id rg_yearold
 id right
 id right_icon
 id right_side
+id rl_net
 id safeTouXiang
 id save_image_matrix
 id save_non_transition_alpha

@@ -5,12 +5,11 @@
     android:layout_height="match_parent"
     android:orientation="vertical">
 
-    <include layout="@layout/titlebar_for_all"/>
+    <include layout="@layout/titlebar_for_all" />
 
     <android.support.v7.widget.CardView
         android:layout_width="match_parent"
-        android:layout_height="120dp"
-        android:layout_centerInParent="true"
+        android:layout_height="170dp"
         app:cardCornerRadius="12dp"
         app:cardElevation="12dp">
 
@@ -18,48 +17,82 @@
             android:id="@+id/textView6"
             android:layout_width="80dp"
             android:layout_height="30dp"
-            android:textSize="16sp"
-            android:gravity="center"
             android:layout_marginStart="20dp"
             android:layout_marginLeft="20dp"
             android:layout_marginTop="20dp"
-            android:text="基金类型：" />
+            android:gravity="center"
+            android:text="基金类型："
+            android:textSize="16sp" />
 
         <Spinner
             android:id="@+id/spin_fundkind"
-            android:layout_width="wrap_content"
+            android:layout_width="80dp"
             android:layout_height="30dp"
-            android:layout_marginLeft="120dp"
+            android:layout_marginLeft="150dp"
             android:layout_marginTop="20dp"
-            android:spinnerMode="dropdown" />
+            android:spinnerMode="dropdown"
+            />
 
         <TextView
             android:id="@+id/textView16"
             android:layout_width="80dp"
             android:layout_height="30dp"
-            android:layout_marginStart="200dp"
-            android:layout_marginLeft="200dp"
-            android:layout_marginTop="20dp"
+            android:layout_marginStart="20dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="60dp"
             android:gravity="center"
-            android:text="风险类型：" />
+            android:text="风险类型 ："
+            android:textSize="16sp"/>
 
         <Spinner
             android:id="@+id/spin_riskkind"
-            android:layout_width="wrap_content"
+            android:layout_width="80dp"
             android:layout_height="30dp"
-            android:layout_marginLeft="300dp"
-            android:layout_marginTop="20dp"
+            android:layout_marginLeft="150dp"
+            android:layout_marginTop="60dp"
             android:spinnerMode="dropdown" />
 
         <Button
             android:id="@+id/filterButton"
-            android:layout_width="71dp"
-            android:layout_height="40dp"
+            android:layout_width="70dp"
+            android:layout_height="30dp"
             android:layout_marginLeft="280dp"
-            android:layout_marginTop="60dp"
+            android:layout_marginTop="40dp"
             android:background="@color/modulecolor"
             android:text="筛选"
             android:textColor="@color/titlecolor" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:background="@drawable/double_border"
+            android:layout_height="40dp"
+            android:layout_marginTop="120dp"
+            android:layout_marginBottom="10dp"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/button10"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="@color/titlecolor"
+                android:text="基金" />
+
+            <Button
+                android:id="@+id/netView_netWeightSortButton"
+                android:layout_width="80dp"
+                android:layout_height="match_parent"
+                android:background="@color/titlecolor"
+                android:text="净值" />
+
+            <Button
+                android:id="@+id/netView_increSortButton"
+                android:layout_width="80dp"
+                android:layout_height="match_parent"
+                android:background="@color/titlecolor"
+                android:text="涨幅" />
+        </LinearLayout>
+
     </android.support.v7.widget.CardView>
 
     <ListView

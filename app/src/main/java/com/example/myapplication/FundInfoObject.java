@@ -43,12 +43,14 @@ public class FundInfoObject {
         this.fundManager = manager;
         this.fundAlloc = alloc;
     }
-    //基金净值（排序）界面额外需要的构造器
-    public FundInfoObject(String name, String netweigh, String incre,int i){
+    //基金筛选界面额外需要构造器
+    public FundInfoObject(String name, String id, String netweigh, String incre){
         this.fundName = name;
-        this.fundNetweigh = netweigh;
+        this.fundId = id;
         this.fundIncre = incre;
+        this.fundNetweigh = netweigh;
     }
+
 
     public String getFundName(){
         return fundName;

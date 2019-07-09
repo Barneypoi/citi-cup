@@ -1,19 +1,15 @@
 package com.example.myapplication;
 
-import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.AdapterView;
 import android.widget.ListView;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -21,7 +17,6 @@ import org.json.JSONObject;
 
 import java.io.IOException;
 import java.util.ArrayList;
-import java.util.Map;
 
 import okhttp3.OkHttpClient;
 import okhttp3.Request;
@@ -125,7 +120,7 @@ public class ZXFragment extends Fragment{
 
 
                         //创建基金信息对象
-                        temp_fund = new FundInfoObject(fundName, fundNetweigh,fundIncre ,1);
+                        temp_fund = new FundInfoObject(fundName, fundId, fundNetweigh,fundIncre);
                         fundInfoList.add(temp_fund);
 
 
