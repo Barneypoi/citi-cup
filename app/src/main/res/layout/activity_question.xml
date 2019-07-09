@@ -1,0 +1,521 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_height="match_parent"
+    android:layout_width="match_parent">
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:padding="5dp"
+        android:text="请填写问卷完成我们对您的信息采集"
+        android:textColor="#000000"
+        android:textSize="20sp" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:padding="5dp"
+        android:text="我们承诺将对您的隐私严格保密"
+        android:textColor="#000000"
+        android:textSize="20sp" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="#000000"
+        android:layout_margin="5dp"/>
+
+    <TextView
+        android:layout_marginTop="30dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="17sp"
+        android:textColor="#000000"
+        android:text="请选择您的年龄："/>
+
+    <RadioGroup
+        android:id="@+id/rg_yearold"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <RadioButton
+            android:id="@+id/rb_u25"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="小于25岁"
+            android:textSize="12sp" />
+
+        <RadioButton
+            android:id="@+id/rb_u35"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="26-35岁"
+            android:textSize="12sp" />
+
+        <RadioButton
+            android:id="@+id/rb_u45"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="36-45岁"
+            android:textSize="12sp" />
+
+        <RadioButton
+            android:id="@+id/rb_u55"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="46-55岁"
+            android:textSize="12sp" />
+
+        <RadioButton
+            android:id="@+id/rb_g55"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="大于55岁"
+            android:textSize="12sp" />
+
+    </RadioGroup>
+    <TextView
+        android:layout_marginTop="5dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="17sp"
+        android:textColor="#000000"
+        android:text="请选择您的性别："/>
+    <RadioGroup
+        android:id="@+id/rg_sex"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <RadioButton
+            android:id="@+id/rb_male"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="男"
+            android:textSize="12sp"
+            />
+        <RadioButton
+            android:id="@+id/rb_female"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="女"
+            android:textSize="12sp"
+            />
+
+    </RadioGroup>
+
+    <TextView
+        android:layout_marginTop="5dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="17sp"
+        android:textColor="#000000"
+        android:text="请选择您的学历："/>
+    <RadioGroup
+        android:id="@+id/rg_edu"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <RadioButton
+            android:id="@+id/rb_highschool"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="专科及以下"
+            android:textSize="12sp"/>
+        <RadioButton
+            android:id="@+id/rb_college"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="大学本科"
+            android:textSize="12sp"/>
+        <RadioButton
+            android:id="@+id/rb_gcollege"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="研究生，博士生"
+            android:textSize="12sp"/>
+    </RadioGroup>
+
+    <TextView
+        android:layout_marginTop="5dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="17sp"
+        android:textColor="#000000"
+        android:text="请选择您的性别："/>
+
+    <RadioGroup
+        android:id="@+id/rg_district"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <RadioButton
+            android:id="@+id/rb_1city"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="直辖市"
+            android:textSize="12sp"/>
+        <RadioButton
+            android:id="@+id/rb_2city"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="副省级城市及省会城市"
+            android:textSize="12sp"/>
+        <RadioButton
+            android:id="@+id/rb_3city"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="地级或县级城市"
+            android:textSize="12sp"/>
+        <RadioButton
+            android:id="@+id/rb_4city"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="乡镇村"
+            android:textSize="12sp"/>
+        <RadioButton
+            android:id="@+id/rb_5city"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="港澳台或海外"
+            android:textSize="12sp"/>
+
+    </RadioGroup>
+
+    <TextView
+        android:layout_marginTop="5dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="17sp"
+        android:textColor="#000000"
+        android:text="请选择您的财务状况："/>
+    <RadioGroup
+        android:id="@+id/rg_financial"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <RadioButton
+            android:id="@+id/rb_1financial"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="有未到期借款或贷款"
+            android:textSize="12sp"/>
+
+        <RadioButton
+            android:id="@+id/rb_2financial"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="收支相抵"
+            android:textSize="12sp"/>
+        <RadioButton
+            android:id="@+id/rb_3financial"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="有一定积蓄"
+            android:textSize="12sp"/>
+        <RadioButton
+            android:id="@+id/rb_4financial"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="有较丰富的积蓄并有一定的投资"
+            android:textSize="12sp"/>
+        <RadioButton
+            android:id="@+id/rb_5financial"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="比较富裕并有相当投资"
+            android:textSize="12sp"/>
+    </RadioGroup>
+
+    <TextView
+        android:layout_marginTop="5dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="17sp"
+        android:textColor="#000000"
+        android:text="请选择您投资占总资产比例："/>
+    <RadioGroup
+        android:id="@+id/rg_investRatio"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <RadioButton
+        android:id="@+id/rb_u10"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="小于10%"
+            android:textSize="12sp"/>
+
+        <RadioButton
+            android:id="@+id/rb_u20"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="10%-20%"
+            android:textSize="12sp"/>
+        <RadioButton
+            android:id="@+id/rb_u50"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="20%-50%"
+            android:textSize="12sp"/>
+        <RadioButton
+            android:id="@+id/rb_u80"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="50%-80%"
+            android:textSize="12sp"/>
+        <RadioButton
+            android:id="@+id/rb_g80"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="大于80%"
+            android:textSize="12sp"/>
+    </RadioGroup>
+
+    <TextView
+        android:layout_marginTop="5dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="17sp"
+        android:textColor="#000000"
+        android:text="请选择您的投资期限："/>
+
+    <RadioGroup
+        android:id="@+id/rg_investYear"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <RadioButton
+            android:id="@+id/rb_1year"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="没有期限"
+            android:textSize="12sp"/>
+
+        <RadioButton
+            android:id="@+id/rb_2year"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="小于一年"
+            android:textSize="12sp"/>
+        <RadioButton
+            android:id="@+id/rb_3year"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="1-3年"
+            android:textSize="12sp"/>
+        <RadioButton
+            android:id="@+id/rb_4year"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="4-5年"
+            android:textSize="12sp"/>
+        <RadioButton
+            android:id="@+id/rb_5year"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="大于5年"
+            android:textSize="12sp"/>
+    </RadioGroup>
+
+
+    <TextView
+        android:layout_marginTop="5dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="17sp"
+        android:textColor="#000000"
+        android:text="请选择您的购买目的："/>
+
+    <RadioGroup
+        android:id="@+id/rg_intention"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <RadioButton
+            android:id="@+id/rb_1intention"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="平时生活保障"
+            android:textSize="12sp"/>
+
+        <RadioButton
+            android:id="@+id/rb_2intention"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="医疗养老"
+            android:textSize="12sp"/>
+        <RadioButton
+            android:id="@+id/rb_3intention"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="子女教育"
+            android:textSize="12sp"/>
+        <RadioButton
+            android:id="@+id/rb_4intention"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="资产增值"
+            android:textSize="12sp"/>
+        <RadioButton
+            android:id="@+id/rb_5intention"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="家庭富裕"
+            android:textSize="12sp"/>
+    </RadioGroup>
+
+    <TextView
+    android:layout_marginTop="5dp"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:textSize="17sp"
+    android:textColor="#000000"
+    android:text="请选择您的购买经历："/>
+
+    <RadioGroup
+        android:id="@+id/rg_experience"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <RadioButton
+            android:id="@+id/rb_1experience"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="没有经历"
+            android:textSize="12sp"/>
+
+        <RadioButton
+            android:id="@+id/rb_2experience"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="小于一年"
+            android:textSize="12sp"/>
+        <RadioButton
+            android:id="@+id/rb_3experience"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="1-3年"
+            android:textSize="12sp"/>
+        <RadioButton
+            android:id="@+id/rb_4experience"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="3-5年"
+            android:textSize="12sp"/>
+        <RadioButton
+            android:id="@+id/rb_5experience"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="大于5年"
+            android:textSize="12sp"/>
+    </RadioGroup>
+
+
+    <TextView
+    android:layout_marginTop="5dp"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:textSize="17sp"
+    android:textColor="#000000"
+    android:text="请选择您的期望收益："/>
+
+    <RadioGroup
+        android:id="@+id/rg_return"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <RadioButton
+            android:id="@+id/rb_1return"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="相当于储蓄利息"
+            android:textSize="12sp"/>
+
+        <RadioButton
+            android:id="@+id/rb_2return"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="相当于物价上涨"
+            android:textSize="12sp"/>
+        <RadioButton
+            android:id="@+id/rb_3return"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="高于物价上涨，保值并略有增值即可"
+            android:textSize="12sp"/>
+        <RadioButton
+            android:id="@+id/rb_4return"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="接近或相当于股票市场平局收益率"
+            android:textSize="12sp"/>
+        <RadioButton
+            android:id="@+id/rb_5return"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="大大超过股票市场平局收益率"
+            android:textSize="12sp"/>
+    </RadioGroup>
+
+    <TextView
+        android:layout_marginTop="5dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="17sp"
+        android:textColor="#000000"
+        android:text="请选择您购买基金的主要考虑因素："/>
+
+    <RadioGroup
+        android:id="@+id/rg_consideration"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <RadioButton
+            android:id="@+id/rb_1consider"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="基金收益能力"
+            android:textSize="12sp"/>
+
+        <RadioButton
+            android:id="@+id/rb_2consider"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="基金风险水平"
+            android:textSize="12sp"/>
+        <RadioButton
+            android:id="@+id/rb_3consider"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="基金业绩持续性"
+            android:textSize="12sp"/>
+        <RadioButton
+            android:id="@+id/rb_4consider"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="明星基金经理"
+            android:textSize="12sp"/>
+        <RadioButton
+            android:id="@+id/rb_5consider"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="大众评价"
+            android:textSize="12sp"/>
+    </RadioGroup>
+
+    <Button
+        android:id="@+id/btn_question"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="提交"
+        android:textSize="12sp"/>
+</LinearLayout>
+</ScrollView>

@@ -128,8 +128,8 @@ public class FundInfoDetailActivity extends Activity {
                     for(int tmp = netWeighJSList.length() - 1; tmp>0; tmp--){
                         JSONObject tmpJSObject = netWeighJSList.getJSONObject(tmp);
                         Map<String, Object> map = new HashMap<String, Object>();
-                        String time = tmpJSObject.getString("1");
-                        String netWeigh = tmpJSObject.getString("po");
+                        String time = tmpJSObject.getString("time");
+                        String netWeigh = tmpJSObject.getString("netweigh");
 
 
                         //存入map

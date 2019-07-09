@@ -40,7 +40,11 @@
         <activity android:name=".FundInfoDetailActivity">
         </activity>
         <activity android:name=".LoginActivity">
+        </activity>
 
+        <activity android:name=".LoginWeb">
+        </activity>
+        <activity android:name=".QuestionActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -49,21 +53,18 @@
                 <!--<category android:name="android.intent.category.BROWSABLE" />-->
 
                 <!--<data-->
-                    <!--android:scheme="ok"-->
-                    <!--android:host="huaqi"-->
-                    <!--android:port="8888"-->
-                    <!--android:path="/login"-->
-                    <!--android:exported="true"-->
-                    <!--/>-->
+                <!--android:scheme="ok"-->
+                <!--android:host="huaqi"-->
+                <!--android:port="8888"-->
+                <!--android:path="/login"-->
+                <!--android:exported="true"-->
+                <!--/>-->
                 <!--android:host="huaqi"-->
                 <!--android:port="8888"-->
                 <!--android:path="/login"android:exported="true"-->
 
             </intent-filter>
-
         </activity>
 
-        <activity android:name=".LoginWeb">
-        </activity>
     </application>
 </manifest>

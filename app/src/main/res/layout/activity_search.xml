@@ -1,10 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 
-<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent">
-
     <LinearLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical">
@@ -44,7 +41,7 @@
         <ListView
             android:id="@+id/lv1_search"
             android:layout_width="match_parent"
-            android:layout_height="160dp" />
+            android:layout_height="wrap_content" />
 
         <TextView
             android:id="@+id/textView21"
@@ -61,23 +58,6 @@
         <ListView
             android:id="@+id/lv2_search"
             android:layout_width="match_parent"
-            android:layout_height="160dp" />
+            android:layout_height="wrap_content" />
 
-        <TextView
-            android:id="@+id/textView22"
-            android:background="@drawable/double_border"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:padding="5dp"
-            android:text="涨幅排行"
-            android:layout_marginTop="10dp"
-            android:layout_marginBottom="10dp"
-            android:textColor="#000000"
-            android:textSize="17sp" />
-
-        <ListView
-            android:id="@+id/lv3_search"
-            android:layout_width="match_parent"
-            android:layout_height="160dp" />
     </LinearLayout>
-</ScrollView>

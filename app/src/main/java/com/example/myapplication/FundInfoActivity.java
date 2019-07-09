@@ -227,4 +227,9 @@ public class FundInfoActivity extends Activity {
         return result;
     }
 
+    //添加自选按钮监听
+    public void addToCart(){
+
+    }
+
 }

@@ -15,18 +15,17 @@ import android.widget.Toast;
 
 import java.util.ArrayList;
 
-public class SearchActivity extends Activity {
+public class SearchActivity extends Activity implements AdapterView.OnItemClickListener {
 
     private SearchView sv;
     //三个ListView分别对应 热门基金 搜索历史 涨幅排行
-    private ListView lv1, lv2, lv3;
+    private ListView lv1, lv2;
     //单个列表单元基金信息显示
     private TextView tv1,tv2;
     //标题
     private TextView title;
     private ArrayList<FundInfoObject> fundInfoList1 = new ArrayList<>() ;
     private ArrayList<FundInfoObject> fundInfoList2 = new ArrayList<>() ;
-    private ArrayList<FundInfoObject> fundInfoList3 = new ArrayList<>() ;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -88,98 +87,39 @@ public class SearchActivity extends Activity {
         fundInfoList2.add(fund23);
         FundInfoObject fund24 = new FundInfoObject("大成景安短融债券A","128");
         fundInfoList2.add(fund24);
-        FundInfoObject fund31 = new FundInfoObject("博时安盈债券C","85");
-        fundInfoList3.add(fund31);
-        FundInfoObject fund32 = new FundInfoObject("工银信用纯债两年定开债C","79");
-        fundInfoList3.add(fund32);
-        FundInfoObject fund33 = new FundInfoObject("华夏恒生ETF联接现汇","75");
-        fundInfoList3.add(fund33);
-        FundInfoObject fund34 = new FundInfoObject("长盛电子信息主题灵活配","63");
-        fundInfoList3.add(fund34);
     }
 
     public void initList(){
         //List适配器
         FundinfoListitemAdapter adapter1 = new FundinfoListitemAdapter(SearchActivity.this,R.layout.listitem_funditem,fundInfoList1);
         FundinfoListitemAdapter adapter2 = new FundinfoListitemAdapter(SearchActivity.this,R.layout.listitem_funditem,fundInfoList2);
-        FundinfoListitemAdapter adapter3 = new FundinfoListitemAdapter(SearchActivity.this,R.layout.listitem_funditem,fundInfoList3);
         //setContentView(R.layout.activity_search);
         lv1 = findViewById(R.id.lv1_search);
         lv2 = findViewById(R.id.lv2_search);
-        lv3 = findViewById(R.id.lv3_search);
 
         lv1.setAdapter(adapter1);
         lv2.setAdapter(adapter2);
-        lv3.setAdapter(adapter3);
 
         //添加点击事件监听器
-        lv1.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-            @Override
-            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                //将基金名称与代号传入信息界面
-                tv1 = findViewById(R.id.tv1_src_list);
-                String fundName = tv1.getText().toString();
-
-                tv2 = findViewById(R.id.tv2_src_list);
-                String fundId = tv2.getText().toString();
-
-
-                Intent intent = new Intent(SearchActivity.this,FundInfoActivity.class);
-                Bundle bundle = new Bundle();
-                bundle.putString("fundName", fundName);
-                bundle.putString("fundId", fundId);
-                intent.putExtras(bundle);
-                startActivity(intent);
-
-
-            }
-        });
+        lv1.setOnItemClickListener(SearchActivity.this);
         //添加点击事件监听器
-        lv2.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-            @Override
-            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                //将基金名称与代号传入信息界面
-                tv1 = findViewById(R.id.tv1_src_list);
-                String fundName = tv1.getText().toString();
-
-                tv2 = findViewById(R.id.tv2_src_list);
-                String fundId = tv2.getText().toString();
-
-
-                Intent intent = new Intent(SearchActivity.this,FundInfoActivity.class);
-                Bundle bundle = new Bundle();
-                bundle.putString("fundName", fundName);
-                bundle.putString("fundId", fundId);
-                intent.putExtras(bundle);
-                startActivity(intent);
-
-
-            }
-        });
-        //添加点击事件监听器
-        lv3.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-            @Override
-            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                //将基金名称与代号传入信息界面
-                tv1 = findViewById(R.id.tv1_src_list);
-                String fundName = tv1.getText().toString();
-
-                tv2 = findViewById(R.id.tv2_src_list);
-                String fundId = tv2.getText().toString();
-
-
-                Intent intent = new Intent(SearchActivity.this,FundInfoActivity.class);
-                Bundle bundle = new Bundle();
-                bundle.putString("fundName", fundName);
-                bundle.putString("fundId", fundId);
-                intent.putExtras(bundle);
-                startActivity(intent);
-
-
-            }
-        });
+        lv2.setOnItemClickListener(SearchActivity.this);
     }
 
 
+    @Override
+    public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+        tv1 = findViewById(R.id.tv1_src_list);
+        String fundName = tv1.getText().toString();
 
+        tv2 = findViewById(R.id.tv2_src_list);
+        String fundId = tv2.getText().toString();
+
+        Intent intent = new Intent(SearchActivity.this,FundInfoActivity.class);
+        Bundle bundle = new Bundle();
+        bundle.putString("fundName", fundName);
+        bundle.putString("fundId", fundId);
+        intent.putExtras(bundle);
+        startActivity(intent);
+    }
 }

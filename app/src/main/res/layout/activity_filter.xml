@@ -9,96 +9,62 @@
 
     <android.support.v7.widget.CardView
         android:layout_width="match_parent"
-        android:layout_height="153dp"
+        android:layout_height="120dp"
         android:layout_centerInParent="true"
         app:cardCornerRadius="12dp"
         app:cardElevation="12dp">
 
         <TextView
             android:id="@+id/textView6"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="80dp"
+            android:layout_height="30dp"
+            android:textSize="16sp"
+            android:gravity="center"
             android:layout_marginStart="20dp"
             android:layout_marginLeft="20dp"
             android:layout_marginTop="20dp"
-            android:text="基金组别：" />
+            android:text="基金类型：" />
+
+        <Spinner
+            android:id="@+id/spin_fundkind"
+            android:layout_width="wrap_content"
+            android:layout_height="30dp"
+            android:layout_marginLeft="120dp"
+            android:layout_marginTop="20dp"
+            android:spinnerMode="dropdown" />
 
         <TextView
             android:id="@+id/textView16"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="80dp"
+            android:layout_height="30dp"
             android:layout_marginStart="200dp"
             android:layout_marginLeft="200dp"
             android:layout_marginTop="20dp"
-            android:text="基金分类：" />
-
-        <TextView
-            android:id="@+id/textView17"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="20dp"
-            android:layout_marginLeft="20dp"
-            android:layout_marginTop="80dp"
-            android:text="基金评级：" />
-
-        <TextView
-            android:id="@+id/textView18"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="200dp"
-            android:layout_marginLeft="200dp"
-            android:layout_marginTop="80dp"
-            android:text="更多：" />
+            android:gravity="center"
+            android:text="风险类型：" />
 
         <Spinner
-            android:id="@+id/spinner"
+            android:id="@+id/spin_riskkind"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="100dp"
-            android:layout_marginLeft="100dp"
+            android:layout_height="30dp"
+            android:layout_marginLeft="300dp"
             android:layout_marginTop="20dp"
-            android:spinnerMode="dropdown" />
-
-        <Spinner
-            android:id="@+id/spinner2"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="275dp"
-            android:layout_marginLeft="275dp"
-            android:layout_marginTop="20dp"
-            android:spinnerMode="dropdown" />
-
-        <Spinner
-            android:id="@+id/spinner3"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="100dp"
-            android:layout_marginLeft="100dp"
-            android:layout_marginTop="80dp"
-            android:spinnerMode="dropdown" />
-
-        <Spinner
-            android:id="@+id/spinner4"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="275dp"
-            android:layout_marginLeft="275dp"
-            android:layout_marginTop="80dp"
             android:spinnerMode="dropdown" />
 
         <Button
             android:id="@+id/filterButton"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="250dp"
-            android:layout_marginLeft="250dp"
-            android:layout_marginTop="120dp"
+            android:layout_width="71dp"
+            android:layout_height="40dp"
+            android:layout_marginLeft="280dp"
+            android:layout_marginTop="60dp"
             android:background="@color/modulecolor"
             android:text="筛选"
             android:textColor="@color/titlecolor" />
     </android.support.v7.widget.CardView>
 
     <ListView
+        android:id="@+id/lv_filter"
         android:layout_width="match_parent"
         android:layout_height="wrap_content" />
+
 </LinearLayout>

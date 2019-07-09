@@ -2,8 +2,6 @@ package com.example.myapplication;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.os.Handler;
-import android.os.Message;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.AdapterView;
@@ -29,7 +27,8 @@ import okhttp3.Response;
 
 
 public class FilterActivity extends AppCompatActivity {
-    private Spinner spinner1, spinner2,spinner3,spinner4;
+    //下拉菜单
+    private Spinner spinner1, spinner2;
 
     //JSON数据对象
     public JSONObject object;
@@ -41,7 +40,7 @@ public class FilterActivity extends AppCompatActivity {
     //界面上用于显示筛选信息的listView
     private ListView lv;
     //从服务器获取的信息
-    private String fundName, fundId, fundType, fundRisk, fundIncre, fundNetweigh;
+    private String fundName, fundId, fundType, fundRisk, fundIncre, fundNetweigh, sortType;
 
     //用于筛选的数据
     private String filterFundType,filterFundRisk;
@@ -62,47 +61,10 @@ public class FilterActivity extends AppCompatActivity {
         title = findViewById(R.id.title_tv);
         title.setText("基金筛选");
 
-        spinner1 = (Spinner) findViewById(R.id.spinner);
-        spinner2 = (Spinner) findViewById(R.id.spinner2);
-        spinner3 = (Spinner) findViewById(R.id.spinner3);
-        spinner4 = (Spinner) findViewById(R.id.spinner4);
+        spinner1 = (Spinner) findViewById(R.id.spin_fundkind);
+        spinner2 = (Spinner) findViewById(R.id.spin_riskkind);
         filterButton = (Button) findViewById(R.id.filterButton);
-        //筛选按钮监听事件 用于从服务器获取筛选数据
-        filterButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                fundInfoList.clear();
-                new Thread(new Runnable() {
-                    @Override
-                    public void run() {
 
-                        OkHttpClient okHttpClient = new OkHttpClient();
-
-                        //服务器返回地址，填入请求数据参数
-                        //传入的参数为全部推荐基金的名称，若无推荐基金，则返回值传入参数为空字符串""
-                        Request request = new Request.Builder()
-                                .get()
-                                .url("http://47.100.120.235:8081/filter?fundType=" + filterFundType +"@"+filterFundRisk).build();
-
-                        try {
-                            Response response = null;
-                            response = okHttpClient.newCall(request).execute();
-                            assert response.body() != null;
-                            String data = null;
-                            data = response.body().string();
-                            //把数据传入解析JSON数据方法
-                            jsonJX(data);
-
-                        } catch (IOException e) {
-                            e.printStackTrace();
-                        }
-
-                        //createList();
-                    }
-                }).start();
-
-            }
-        });
         // 声明四个ArrayAdapter用于存放简单数据
         ArrayAdapter<String> adapter = new ArrayAdapter<String>(
                 FilterActivity.this, android.R.layout.simple_spinner_item,
@@ -110,17 +72,11 @@ public class FilterActivity extends AppCompatActivity {
         ArrayAdapter<String> adapter2 = new ArrayAdapter<String>(
                 FilterActivity.this, android.R.layout.simple_spinner_item,
                 getData2());
-        ArrayAdapter<String> adapter3 = new ArrayAdapter<String>(
-                FilterActivity.this, android.R.layout.simple_spinner_item,
-                getData3());
-        ArrayAdapter<String> adapter4 = new ArrayAdapter<String>(
-                FilterActivity.this, android.R.layout.simple_spinner_item,
-                getData4());
+
         // 把定义好的Adapter设定到spinner中
         spinner1.setAdapter(adapter);
         spinner2.setAdapter(adapter2);
-        spinner3.setAdapter(adapter3);
-        spinner4.setAdapter(adapter4);
+
         spinner1.setOnItemSelectedListener(new OnItemSelectedListener() {
 
             @Override
@@ -170,43 +126,43 @@ public class FilterActivity extends AppCompatActivity {
 
     //建立服务器连接，获取当前基金的基本信息并生成基本信息
     public void initConnection() {
-        new Thread(new Runnable() {
+        //筛选按钮监听事件 用于从服务器获取筛选数据
+        filterButton.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void run() {
+            public void onClick(View v) {
+                //TODO 识别用户点击筛选方式
 
-                OkHttpClient okHttpClient = new OkHttpClient();
+                fundInfoList.clear();
 
-                //获取推荐基金名称列表
-                String str_fundNameList = "";
-                for (int i = 0; i < fundNameList.size(); i++) {
-                    if (i == 0)
-                        str_fundNameList += fundNameList.get(i);
-                    else
-                        str_fundNameList += ("@" + fundNameList.get(i));
-                }
+                new Thread(new Runnable() {
+                    @Override
+                    public void run() {
 
-                //服务器返回地址，填入请求数据参数
-                //传入的参数为全部推荐基金的名称，若无推荐基金，则返回值传入参数为空字符串""
-                Request request = new Request.Builder()
-                        .get()
-                        .url("http://47.100.120.235:8081/mainInfo?fundName=" + str_fundNameList).build();
+                        OkHttpClient okHttpClient = new OkHttpClient();
 
-                try {
-                    Response response = null;
-                    response = okHttpClient.newCall(request).execute();
-                    assert response.body() != null;
-                    String data = null;
-                    data = response.body().string();
-                    //把数据传入解析JSON数据方法
-                    jsonJX(data);
+                        //服务器返回地址，填入请求数据参数
+                        //传入的参数为全部推荐基金的名称，若无推荐基金，则返回值传入参数为空字符串""
+                        Request request = new Request.Builder()
+                                .get()
+                                .url("http://47.100.120.235:8081/filter?fundType=" + filterFundType +"&fundRisk=" + filterFundRisk+ "&sortType=" + sortType).build();
+                        try {
+                            Response response = null;
+                            response = okHttpClient.newCall(request).execute();
+                            assert response.body() != null;
+                            String data = null;
+                            data = response.body().string();
+                            //把数据传入解析JSON数据方法
+                            jsonJX(data);
 
-                } catch (IOException e) {
-                    e.printStackTrace();
-                }
+                        } catch (IOException e) {
+                            e.printStackTrace();
+                        }
 
-                //createList();
+                        //createList();
+                    }
+                }).start();
             }
-        }).start();
+        });
     }
 
     private void jsonJX(String data) {
@@ -277,12 +233,7 @@ public class FilterActivity extends AppCompatActivity {
                             }
                         }
                 );
-                //通过handler可以通过子线程与UI线程进行信息传递
-                Message message = new Message();
-                //传递的信息
-                message.what = 1;
-                handler.sendMessage(message);
-                // }
+
             } catch (JSONException e) {
                 e.printStackTrace();
             }
@@ -291,7 +242,6 @@ public class FilterActivity extends AppCompatActivity {
     }
 
     public void createList() {
-
         //初始化ListView展示基金信息
         baseAdapter = new FundinfoListitem_main_Adapter(getApplicationContext(), R.layout.listitem_mainwin, fundInfoList);
         lv.setAdapter(baseAdapter);
@@ -328,51 +278,43 @@ public class FilterActivity extends AppCompatActivity {
         });
     }
 
-    public Handler handler = new Handler() {
-        @Override
-        public void handleMessage(Message msg) {
-            super.handleMessage(msg);
-        }
-    };
-
     private List<String> getData() {
         // 数据源
         List<String> dataList = new ArrayList<String>();
-        dataList.add("1");
-        dataList.add("2");
-        dataList.add("3");
-        dataList.add("4");
+        dataList.add("股票型");
+        dataList.add("股票指数");
+        dataList.add("固定收益");
+        dataList.add("混合型");
+        dataList.add("货币型");
+        dataList.add("理财型");
+        dataList.add("联接基金");
+        dataList.add("其他创新");
+        dataList.add("债券型");
+        dataList.add("债券指数");
+        dataList.add("混合-FOF");
+        dataList.add("ETF-场内");
+        dataList.add("QDII");
+        dataList.add("QDII-ETF");
+        dataList.add("QDII-指数");
+        dataList.add("定开债券");
+        dataList.add("分级杠杆");
+
         return dataList;
     }
 
     private List<String> getData2() {
         // 数据源
         List<String> dataList = new ArrayList<String>();
-        dataList.add("a");
-        dataList.add("b");
-        dataList.add("c");
-        dataList.add("d");
+        dataList.add("低风险");
+        dataList.add("中低风险");
+        dataList.add("中风险");
+        dataList.add("中高风险");
+        dataList.add("高风险");
         return dataList;
     }
 
-    private List<String> getData3() {
-        // 数据源
-        List<String> dataList = new ArrayList<String>();
-        dataList.add("q");
-        dataList.add("w");
-        dataList.add("e");
-        dataList.add("r");
-        return dataList;
-    }
+    public void initList(){
 
-    private List<String> getData4() {
-        // 数据源
-        List<String> dataList = new ArrayList<String>();
-        dataList.add("!");
-        dataList.add("@");
-        dataList.add("#");
-        dataList.add("$");
-        return dataList;
     }
 
     public String convertId(String orig_id){
