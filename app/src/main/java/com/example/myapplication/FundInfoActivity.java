@@ -17,9 +17,7 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.io.IOException;
-import java.sql.Time;
 import java.util.ArrayList;
-import java.util.Calendar;
 
 import okhttp3.MediaType;
 import okhttp3.OkHttpClient;
@@ -284,10 +282,14 @@ public class FundInfoActivity extends Activity {
         final String temp_Id = simplyfyId(fundId);
         if(favoriteFundIds.contains(temp_Id)) {
             addOrRemoveFavButton.setText("取消自选");
+            addOrRemoveFavButton.setBackgroundColor(getResources().getColor(R.color.exitcolor));
+            addOrRemoveFavButton.setTextColor(getResources().getColor(R.color.titlecolor));
             favFlag = true;
         }else {
             addOrRemoveFavButton.setText("加入自选");
             favFlag = false;
+            addOrRemoveFavButton.setBackgroundColor(getResources().getColor(R.color.subtitledarkercolor));
+            addOrRemoveFavButton.setTextColor(getResources().getColor(R.color.black));
         }
         addOrRemoveFavButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -295,9 +297,13 @@ public class FundInfoActivity extends Activity {
                 if(favoriteFundIds.contains(temp_Id)){
                     favoriteFundIds.remove(temp_Id);
                     addOrRemoveFavButton.setText("加入自选");
+                    addOrRemoveFavButton.setBackgroundColor(getResources().getColor(R.color.subtitledarkercolor));
+                    addOrRemoveFavButton.setTextColor(getResources().getColor(R.color.black));
                 }else{
                     favoriteFundIds.add(temp_Id);
                     addOrRemoveFavButton.setText("取消自选");
+                    addOrRemoveFavButton.setBackgroundColor(getResources().getColor(R.color.exitcolor));
+                    addOrRemoveFavButton.setTextColor(getResources().getColor(R.color.titlecolor));
                 }
             }
         });

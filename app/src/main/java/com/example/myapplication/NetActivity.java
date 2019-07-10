@@ -249,4 +249,9 @@ public class NetActivity extends AppCompatActivity {
         });
     }
 
+    //统一定义单击返回按键执行操作
+    public void backToMain(View view){
+        onBackPressed();
+    }
+
 }

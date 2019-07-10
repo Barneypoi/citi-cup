@@ -172,8 +172,8 @@ public class MainActivity extends FragmentActivity implements OnClickListener {
     }
     //跳转到回报
     public void jumpToReturn(View view) {
-        Intent intent = new Intent(this, ReturnActivity.class);
-        startActivity(intent);
+//        Intent intent = new Intent(this, ReturnActivity.class);
+//        startActivity(intent);
     }
     //跳转到净值
     public void jumpToNet(View view) {

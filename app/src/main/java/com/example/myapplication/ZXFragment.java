@@ -1,17 +1,19 @@
 package com.example.myapplication;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.text.TextUtils;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
 import android.widget.ListView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -33,7 +35,7 @@ public class ZXFragment extends Fragment{
     //接受基金信息的TextView tv1为基金名称 tv2为七日年化收益率 tv3，tv4为其他可选添加信息
     private TextView tv1, tv2, tv3, tv4;
 
-    private NetListitemAdapter baseAdapter;
+    private FundNetInfoAdapter baseAdapter;
 
     private ListView lv;
 
@@ -62,6 +64,8 @@ public class ZXFragment extends Fragment{
         lv = (ListView) view.findViewById(R.id.lv_favourite);
         //此用于连接数据库 得到该用户的自选信息
         //initFavConnection();
+        TextView title = view.findViewById(R.id.title_tv);
+        title.setText("自选基金");
 
         return view;
     }
@@ -156,6 +160,9 @@ public class ZXFragment extends Fragment{
                         FundInfoObject temp_fund;
 
                         //TODO 依照API给的数据修改这里的东西
+                        //获取到json数据中的activity数组里的内容fundId
+                        String temp_fundId = object.optString("fundId");
+                        fundId = temp_fundId;
 
                         //获取到json数据中的activity数组里的内容fundName
                         String temp_name = object.getString("fundName");
@@ -236,41 +243,40 @@ public class ZXFragment extends Fragment{
 
         //TODO 这里应该修改改成
         //初始化ListView展示基金信息
-        baseAdapter = new NetListitemAdapter(getContext(), R.layout.listitem_net, fundInfoList);
+        baseAdapter = new FundNetInfoAdapter(getContext(), R.layout.listitem_net, fundInfoList);
         lv.setAdapter(baseAdapter);
 
         //获取当前ListView点击的行数，并且得到该数据信息
-//        lv.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-//            @Override
-//            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-//
-//                //TODO 这个地方应该修改成 用fundInfoArraylist来传递数据
-//                tv1 = view.findViewById(R.id.tv_mainwin_fundName);
-//                fundName = tv1.getText().toString();//得到数据
-//
-//                tv2 = view.findViewById(R.id.tv_mainwin_fundRate);
-//                fundIncre = tv2.getText().toString();
-//
-//                tv3 = view.findViewById(R.id.tv_mainwin_info1);
-//                fundId = tv3.getText().toString();
-//
-//                tv4 = view.findViewById(R.id.tv_mainwin_info2);
-//                fundType = tv4.getText().toString();
-//
-//                Intent i = new Intent(getContext(), FundInfoActivity.class);
-//                Bundle bundle = new Bundle();
-//                bundle.putString("fundName", fundName);
-//                bundle.putString("fundIncre", fundIncre);
-//                bundle.putString("fundId", fundId);
-//                bundle.putString("fundType", fundType);
-//                bundle.putString("fundNetweigh", fundNetweigh);
-//
-//                i.putExtras(bundle);
-//                startActivity(i);
-//
-//                Toast.makeText(getContext(), "" + fundName, Toast.LENGTH_SHORT).show();//显示数据
-//            }
-//        });
+        lv.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+
+                //TODO 这个地方应该修改成 用fundInfoArraylist来传递数据
+                tv1 = view.findViewById(R.id.netListFundName);
+                fundName = tv1.getText().toString();//得到数据
+
+                tv2 = view.findViewById(R.id.netListFundId);
+                fundId = tv2.getText().toString();
+
+                tv3 = view.findViewById(R.id.netListFundNetWeight);
+                fundNetweigh = tv3.getText().toString();
+
+                tv4 = view.findViewById(R.id.netListFundIncre);
+                fundIncre = tv4.getText().toString();
+
+                Intent i = new Intent(getContext(), FundInfoActivity.class);
+                Bundle bundle = new Bundle();
+                bundle.putString("fundName", fundName);
+                bundle.putString("fundIncre", fundIncre);
+                bundle.putString("fundId", fundId);
+                bundle.putString("fundNetweigh", fundNetweigh);
+
+                i.putExtras(bundle);
+                startActivity(i);
+
+                Toast.makeText(getContext(), "" + fundName, Toast.LENGTH_SHORT).show();//显示数据
+            }
+        });
     }
 
     public Handler handler = new Handler() {
@@ -280,15 +286,6 @@ public class ZXFragment extends Fragment{
         }
     };
 
-    public String convertId(String orig_id){
-        int orig_length = orig_id.length();
-        int result_length = 6 - orig_length;
-        String zero ="";
-        for(int i=0;i<result_length;i++){
-            zero += "0";
-        }
-        return zero + orig_id ;
-    }
 
     public static final String removeBOM(String data) {
         if (TextUtils.isEmpty(data)) {

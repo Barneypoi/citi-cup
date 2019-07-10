@@ -248,24 +248,24 @@ public class FilterActivity extends AppCompatActivity {
         lv.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                tv1 = view.findViewById(R.id.tv_mainwin_fundName);
+                //TODO 这个地方应该修改成 用fundInfoArraylist来传递数据
+                tv1 = view.findViewById(R.id.netListFundName);
                 fundName = tv1.getText().toString();//得到数据
 
-                tv2 = view.findViewById(R.id.tv_mainwin_fundRate);
-                fundIncre = tv2.getText().toString();
+                tv2 = view.findViewById(R.id.netListFundId);
+                fundId = tv2.getText().toString();
 
-                tv3 = view.findViewById(R.id.tv_mainwin_info1);
-                fundId = tv3.getText().toString();
+                tv3 = view.findViewById(R.id.netListFundNetWeight);
+                fundNetweigh = tv3.getText().toString();
 
-                tv4 = view.findViewById(R.id.tv_mainwin_info2);
-                fundType = tv4.getText().toString();
+                tv4 = view.findViewById(R.id.netListFundIncre);
+                fundIncre = tv4.getText().toString();
 
                 Intent i = new Intent(getApplicationContext(), FundInfoActivity.class);
                 Bundle bundle = new Bundle();
                 bundle.putString("fundName", fundName);
-                bundle.putString("fundId", simplyfyId(fundId));
                 bundle.putString("fundIncre", fundIncre);
-                bundle.putString("fundType", fundType);
+                bundle.putString("fundId", fundId);
                 bundle.putString("fundNetweigh", fundNetweigh);
 
                 i.putExtras(bundle);
@@ -319,5 +319,9 @@ public class FilterActivity extends AppCompatActivity {
     public String simplyfyId(String id){
         String result = valueOf(Integer.parseInt(id));
         return result;
+    }
+    //统一定义单击返回按键执行操作
+    public void backToMain(View view){
+        onBackPressed();
     }
 }

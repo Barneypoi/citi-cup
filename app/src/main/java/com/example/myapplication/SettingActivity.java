@@ -7,6 +7,7 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ListView;
 import android.widget.SimpleAdapter;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import java.util.ArrayList;
@@ -16,12 +17,14 @@ import java.util.Map;
 
 public class SettingActivity extends AppCompatActivity {
 
+    private TextView title;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_setting);
-
+        title = findViewById(R.id.title_tv);
+        title.setText("账户设置");
         initUserInfoList();
         initList1();
         initList2();
@@ -157,6 +160,10 @@ public class SettingActivity extends AppCompatActivity {
     public void jumpToUserInfo(View view) {
         Intent intent = new Intent(this, UserInfoActivity.class);
         startActivity(intent);
+    }
+    //统一定义单击返回按键执行操作
+    public void backToMain(View view){
+        onBackPressed();
     }
 
 }

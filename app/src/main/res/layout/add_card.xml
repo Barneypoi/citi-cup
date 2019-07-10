@@ -6,33 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="vertical">
-
-        <RelativeLayout
-            android:layout_width="match_parent"
-            android:layout_height="50dp"
-            android:background="@color/main">
-
-            <Button
-                android:id="@+id/button5"
-                style="@style/backButton"
-                android:onClick="backToMain" />
-
-            <TextView
-                android:id="@+id/textView15"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="175dp"
-                android:layout_marginTop="17dp"
-                android:gravity="center_horizontal"
-                android:text="我的银行卡"
-                android:textColor="@color/titlecolor"
-                android:textSize="18sp" />
-        </RelativeLayout>
-    </LinearLayout>
+    <include layout="@layout/titlebar_for_all"/>
 
     <ImageView
         android:id="@+id/imageView3"

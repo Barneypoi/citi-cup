@@ -5,47 +5,59 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <TextView
-        android:id="@+id/textView"
+    <RelativeLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
         android:layout_width="match_parent"
         android:layout_height="50dp"
-        android:background="@color/main"
-        android:gravity="center"
-        android:text="自选基金"
-        android:textAppearance="@style/TextAppearance.AppCompat.Display1"
-        android:textColor="@color/titlecolor"
-        app:fontFamily="cursive" />
+        android:background="@color/main">
+
+        <TextView
+            android:id="@+id/title_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:text="自选基金"
+            android:textColor="@color/titlecolor"
+            android:textSize="14sp" />
+
+    </RelativeLayout>
 
 
-    <LinearLayout
+    <android.support.v7.widget.CardView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal">
+        android:layout_height="50dp" >
 
-        <Button
-            android:id="@+id/buttonJJ"
+        <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:background="@color/titlecolor"
-            android:text="基金" />
+            android:layout_height="40dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="10dp"
+            android:orientation="horizontal">
 
-        <Button
-            android:id="@+id/buttonJZ"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:background="@color/titlecolor"
-            android:text="净值↑" />
+            <Button
+                android:id="@+id/button10"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="@color/titlecolor"
+                android:text="基金" />
 
-        <Button
-            android:id="@+id/buttonZF"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:background="@color/titlecolor"
-            android:text="加入后涨幅" />
-    </LinearLayout>
+            <Button
+                android:id="@+id/netView_netWeightSortButton"
+                android:layout_width="80dp"
+                android:layout_height="match_parent"
+                android:background="@color/titlecolor"
+                android:text="净值" />
+
+            <Button
+                android:id="@+id/netView_increSortButton"
+                android:layout_width="80dp"
+                android:layout_height="match_parent"
+                android:background="@color/titlecolor"
+                android:text="涨幅" />
+        </LinearLayout>
+    </android.support.v7.widget.CardView>
 
     <ListView
         android:id="@+id/lv_favourite"
