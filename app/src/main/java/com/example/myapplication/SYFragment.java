@@ -72,9 +72,11 @@ public class SYFragment extends Fragment {
 
         //测试数据
         fundIdList.add("136");
-        fundIdList.add("142");
+        fundIdList.add("333");
         fundIdList.add("165");
         fundIdList.add("173");
+        fundIdList.add("45");
+        fundIdList.add("72");
 
         //initFundInfo();
         initConnection();
