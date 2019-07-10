@@ -5,6 +5,8 @@ import android.os.Handler;
 import android.os.Message;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
+import android.text.TextUtils;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -18,8 +20,10 @@ import org.json.JSONObject;
 import java.io.IOException;
 import java.util.ArrayList;
 
+import okhttp3.MediaType;
 import okhttp3.OkHttpClient;
 import okhttp3.Request;
+import okhttp3.RequestBody;
 import okhttp3.Response;
 
 public class ZXFragment extends Fragment{
@@ -46,32 +50,80 @@ public class ZXFragment extends Fragment{
 
     private View view;
 
+    //用于储存该用户自选基金Id的数组
+    private ArrayList<String> favoriteFundIds = new ArrayList<>();
+
+
+
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.tab2, container, false);
         lv = (ListView) view.findViewById(R.id.lv_favourite);
-        initConnection();
-
+        //此用于连接数据库 得到该用户的自选信息
+        //initFavConnection();
 
         return view;
     }
 
-    //建立服务器连接，获取当前基金的基本信息并生成基本信息
-    public void initConnection() {
+    @Override
+    public void onResume() {
+        super.onResume();
+        initFavConnection();
+    }
+
+    private void initFavConnection(){
+        favoriteFundIds.clear();
+        //创建子线程发送网络请求
         new Thread(new Runnable() {
             @Override
             public void run() {
 
                 OkHttpClient okHttpClient = new OkHttpClient();
 
-                for(int i = 0;i<5;i++) {
+                //服务器返回地址，填入请求数据参数
+                // TODO 传入的参数为用户id 需要将Url替换成访问自选基金的服务器网址
+                MediaType mediaType = MediaType.parse("application/x-www-form-urlencoded");
+                RequestBody body = RequestBody.create(mediaType,
+                        "uuid=111&fundId=*"+"&option=read&date=*");
+
+                Request request = new Request.Builder()
+                        .post(body)
+                        .url("http://47.100.120.235:8081/collection").build();
+
+
+                try{
+                    Response response = okHttpClient.newCall(request).execute();
+                    assert response.body() != null;
+                    String data = response.body().string();
+                    //把数据传入解析JSON数据方法
+                    jsonJXFav(data);
+
+                }catch(IOException e){
+                    e.printStackTrace();
+                }
+
+            }
+        }).start();
+    }
+
+    //建立服务器连接，获取当前基金的基本信息并生成基本信息
+    public void initConnection() {
+        fundInfoList.clear();
+        new Thread(new Runnable() {
+            @Override
+            public void run() {
+
+                OkHttpClient okHttpClient = new OkHttpClient();
+
+                for(int i = 0;i< favoriteFundIds.size();i++) {
+                    String fundIdForConnect = favoriteFundIds.get(i);
                     //服务器返回地址，填入请求数据参数
                     //传入的参数为全部推荐基金的名称，若无推荐基金，则返回值传入参数为空字符串""
                     //TODO 访问显示自选基金的API
                     Request request = new Request.Builder()
                             .get()
-                            .url("http://47.100.120.235:8081/basicInfo?fundId=" + String.valueOf(136 + i)).build();
+                            .url("http://47.100.120.235:8081/basicInfo?fundId=" + fundIdForConnect).build();
 
                     try {
                         Response response = null;
@@ -159,6 +211,27 @@ public class ZXFragment extends Fragment{
 
     }
 
+    private void jsonJXFav(String data){
+        //判断数据是空
+        if(data!=null){
+            try {
+
+                JSONArray resultJsonArray = new JSONArray(removeBOM(data));
+                //遍历
+                for(int i=0;i<resultJsonArray.length();i++){
+                    //JSON数据对象
+                    object=resultJsonArray.getJSONObject(i);
+                    //此处将自选的基金放入数组中
+                    String favFundId = object.optString("fundId");
+                    favoriteFundIds.add(favFundId);
+                }
+                initConnection();
+            } catch (JSONException e) {
+                e.printStackTrace();
+            }
+
+        }
+    }
     public void createList() {
 
         //TODO 这里应该修改改成
@@ -215,6 +288,17 @@ public class ZXFragment extends Fragment{
             zero += "0";
         }
         return zero + orig_id ;
+    }
+
+    public static final String removeBOM(String data) {
+        if (TextUtils.isEmpty(data)) {
+            return data;
+        }
+        if (data.startsWith("\ufeff")) {
+            return data.substring(1);
+        } else {
+            return data;
+        }
     }
 
 }
