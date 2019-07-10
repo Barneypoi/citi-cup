@@ -30,7 +30,7 @@ public class NetActivity extends AppCompatActivity {
     private Button byNetweigh,byIncre;
 
     //排序方式
-    private String sortType;
+    private String sortType = "increDesc";
 
     //用于转换数据的JSON对象
     private JSONObject object;
@@ -39,10 +39,11 @@ public class NetActivity extends AppCompatActivity {
     private String fundId, fundName,fundNetweigh,fundIncre;
 
     //改变该条目数据对象内容，将数据显示在ListView中
-    private ArrayList<FundInfoObject> fundInfoList1 = new ArrayList<>();
-    private ArrayList<FundInfoObject> fundInfoList2 = new ArrayList<>();
-    private ArrayList<FundInfoObject> fundInfoList3 = new ArrayList<>();
-    private ArrayList<FundInfoObject> fundInfoList4 = new ArrayList<>();
+    //1,2,3,4用于存放已拿取到的数据
+    private ArrayList<FundInfoObject> fundInfoList1 = new ArrayList<>();//increAs
+    private ArrayList<FundInfoObject> fundInfoList2 = new ArrayList<>();//increDesc
+    private ArrayList<FundInfoObject> fundInfoList3 = new ArrayList<>();//netweighAs
+    private ArrayList<FundInfoObject> fundInfoList4 = new ArrayList<>();//netweighDesc
 
     //界面内ListView的响应器
     private FundNetInfoAdapter baseAdapter;
@@ -52,7 +53,7 @@ public class NetActivity extends AppCompatActivity {
 
     private TextView title, tv1,tv2,tv3,tv4;
 
-    //筛选数据方式
+    //筛选数据方式--为真则按升序排列
     private boolean increAs = false;
     private boolean netweighAs = false;
 
@@ -65,7 +66,13 @@ public class NetActivity extends AppCompatActivity {
         title.setText("基金净值");
 
         //默认排序方式以及选择排序方式
-        sortType = "IncreDesc";
+        sortType = "increDesc";
+
+        //初始化ListView
+        lv = findViewById(R.id.lv_net);
+        initConnection();
+
+        //网络请求判断，已取过的数据已存在本地变量中，再次访问不需要提交网络请求
         byIncre = findViewById(R.id.netView_increSortButton);
         byIncre.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -73,10 +80,18 @@ public class NetActivity extends AppCompatActivity {
                 if (increAs == true) {
                     increAs = false;
                     sortType = "increDesc";
+                    if(fundInfoList2.size() ==0)
+                        initConnection();
+                    else
+                        createList();
                 }
-                if (increAs == false) {
+                else {
                     increAs = true;
                     sortType = "increAs";
+                    if(fundInfoList1.size() ==0)
+                        initConnection();
+                    else
+                        createList();
                 }
             }
         });
@@ -88,16 +103,21 @@ public class NetActivity extends AppCompatActivity {
                 if (netweighAs == true) {
                     netweighAs = false;
                     sortType = "netweighDesc";
+                    if(fundInfoList4.size() ==0)
+                        initConnection();
+                    else
+                        createList();
                 }
-                if (netweighAs == false) {
+                else{
                     netweighAs = true;
                     sortType = "netweighAs";
+                    if(fundInfoList3.size() ==0)
+                        initConnection();
+                    else
+                        createList();
                 }
             }
         });
-
-        initConnection();
-
     }
 
     //建立服务器连接，获取当前基金的基本信息并生成基本信息
@@ -106,14 +126,11 @@ public class NetActivity extends AppCompatActivity {
             @Override
             public void run() {
 
-
                 OkHttpClient okHttpClient = new OkHttpClient();
                 //服务器返回地址，填入请求数据参数
-                //想要获得所有的基金
-
                     Request request = new Request.Builder()
                             .get()
-                            .url("http://47.100.120.235:8081/netWeighSort?&sortType=" + sortType).build();
+                            .url("http://47.100.120.235:8081/netInfo?&sortType=" + sortType).build();
 
                     try {
                         Response response = null;
@@ -147,8 +164,11 @@ public class NetActivity extends AppCompatActivity {
                         String temp_name = object.optString("fundName");
                         fundName = temp_name;
 
+                        String temp_id = object.optString("fundId");
+                        fundId = temp_id;
+
                         //获取到json数据中的activity数组里的内容fundNetWeigh
-                        String temp_fundNetWeigh = object.optString("fundNetweigh");
+                        String temp_fundNetWeigh = object.optString("nowNetweigh");
                         fundNetweigh = temp_fundNetWeigh;
 
 
@@ -158,10 +178,16 @@ public class NetActivity extends AppCompatActivity {
 
                         //创建基金信息对象
                         temp_fund = new FundInfoObject(fundName,fundId, fundNetweigh,fundIncre);
-                        fundInfoList1.add(temp_fund);
-
-
-
+                        switch (sortType){
+                            case "increAs":
+                                fundInfoList1.add(temp_fund);
+                            case "increDesc":
+                                fundInfoList2.add(temp_fund);
+                            case "netweighAs":
+                                fundInfoList3.add(temp_fund);
+                            case "netweighDesc":
+                                fundInfoList4.add(temp_fund);
+                        }
                 }
                 //执行完数据线程再执行UI线程防止引用空对象
                 runOnUiThread(
@@ -172,8 +198,6 @@ public class NetActivity extends AppCompatActivity {
                             }
                         }
                 );
-
-
             } catch (JSONException e) {
                 e.printStackTrace();
             }
@@ -184,7 +208,16 @@ public class NetActivity extends AppCompatActivity {
     public void createList() {
 
         //初始化ListView展示基金信息
-        baseAdapter = new FundNetInfoAdapter(getApplicationContext(), R.layout.listitem_net, fundInfoList1);
+        switch (sortType){
+            case "increAs":
+                baseAdapter = new FundNetInfoAdapter(getApplicationContext(), R.layout.listitem_net, fundInfoList1);
+            case "increDesc":
+                baseAdapter = new FundNetInfoAdapter(getApplicationContext(), R.layout.listitem_net, fundInfoList2);
+            case "netweighAs":
+                baseAdapter = new FundNetInfoAdapter(getApplicationContext(), R.layout.listitem_net, fundInfoList3);
+            case "netweighDesc":
+                baseAdapter = new FundNetInfoAdapter(getApplicationContext(), R.layout.listitem_net, fundInfoList4);
+        }
         lv.setAdapter(baseAdapter);
 
         //获取当前ListView点击的行数，并且得到该数据信息

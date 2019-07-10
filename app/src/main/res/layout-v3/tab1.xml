@@ -63,20 +63,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:orientation="horizontal">
-                    <Button
-                        android:id="@+id/button3"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:background="@drawable/selector_mainbtn"
-                        android:text="查回报率"
-                        android:drawableLeft="@mipmap/return_main"
-                        android:layout_marginTop="3dp"
-                        android:layout_marginBottom="1.5dp"
-                        android:layout_marginLeft="5dp"
-                        android:layout_marginRight="2dp"
-                        android:textColor="@color/titlecolor"
-                        android:onClick="jumpToReturn"/>
+
                     <Button
                         android:id="@+id/button4"
                         android:layout_width="wrap_content"
@@ -87,10 +74,24 @@
                         android:drawableLeft="@mipmap/netweigh_main"
                         android:layout_marginBottom="3dp"
                         android:layout_marginTop="1.5dp"
-                        android:layout_marginRight="5dp"
-                        android:layout_marginLeft="2dp"
+                        android:layout_marginRight="2dp"
+                        android:layout_marginLeft="5dp"
                         android:textColor="@color/titlecolor"
                         android:onClick="jumpToNet"/>
+                <Button
+                    android:id="@+id/button3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:background="@drawable/selector_mainbtn"
+                    android:text="查看更多"
+                    android:drawableLeft="@mipmap/return_main"
+                    android:layout_marginTop="3dp"
+                    android:layout_marginBottom="1.5dp"
+                    android:layout_marginLeft="2dp"
+                    android:layout_marginRight="5dp"
+                    android:textColor="@color/titlecolor"
+                    android:onClick="jumpToReturn"/>
             </LinearLayout>
             <LinearLayout
                 android:layout_width="match_parent"

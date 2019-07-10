@@ -39,7 +39,7 @@
             android:layout_centerHorizontal="true"
             android:textAlignment="center"
             android:layout_below="@id/tv_mainwin_fundRate"
-            android:text="七日年化收益率"
+            android:text="当日涨幅"
             android:textColor="@color/settingSubtitleColor"
             android:textSize="10sp" />
 
