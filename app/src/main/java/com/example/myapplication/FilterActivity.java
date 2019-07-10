@@ -156,7 +156,6 @@ public class FilterActivity extends AppCompatActivity {
 
     //建立服务器连接，获取当前基金的基本信息并生成基本信息
     public void initConnection() {
-        //TODO 识别用户点击筛选方式
         fundInfoList.clear();
         new Thread(new Runnable() {
             @Override

@@ -25,7 +25,7 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:layout_marginTop="8dp"
-        android:text="期望年化收益率"
+        android:text="当日涨幅"
         android:textAlignment="center"
         android:textSize="14sp"
         android:textColor="@color/subtitlecolor"/>

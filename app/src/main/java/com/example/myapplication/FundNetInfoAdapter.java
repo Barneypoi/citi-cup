@@ -36,7 +36,6 @@ public class FundNetInfoAdapter extends ArrayAdapter<FundInfoObject> {
         tv3.setText(fundinfo.getFundNetweigh());
         tv4.setText(fundinfo.getFundIncre());
 
-
         return view;
     }
 
