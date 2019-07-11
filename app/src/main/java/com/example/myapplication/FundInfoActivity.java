@@ -113,7 +113,7 @@ public class FundInfoActivity extends Activity {
 
                 MediaType mediaType = MediaType.parse("application/x-www-form-urlencoded");
                 RequestBody body = RequestBody.create(mediaType,
-                        "uuid=111&fundId=*"+"&option=read&date=*");
+                        "uuid="+UserInformation.shared.getUserId()+"&fundId=*"+"&operation=read&date=*");
 
                 Request request = new Request.Builder()
                         .post(body)
@@ -344,7 +344,7 @@ public class FundInfoActivity extends Activity {
 
                         MediaType mediaType = MediaType.parse("application/x-www-form-urlencoded");
                         RequestBody body = RequestBody.create(mediaType,
-                                "uuid=111&fundId="+temp_Id+"&option=delete&date="+ System.currentTimeMillis());
+                                "uuid="+UserInformation.shared.getUserId()+"&fundId="+temp_Id+"&operation=delete&date="+ System.currentTimeMillis());
                         Request request = new Request.Builder()
                                 .post(body)
                                 .url("http://47.100.120.235:8081/collection").build();
@@ -373,7 +373,7 @@ public class FundInfoActivity extends Activity {
 
                         MediaType mediaType = MediaType.parse("application/x-www-form-urlencoded");
                         RequestBody body = RequestBody.create(mediaType,
-                                "uuid=111&fundId="+temp_Id+"&option=add&date="+ System.currentTimeMillis());
+                                "uuid="+UserInformation.shared.getUserId()+"&fundId="+temp_Id+"&operation=add&date="+ System.currentTimeMillis());
                         Request request = new Request.Builder()
                                 .post(body)
                                 .url("http://47.100.120.235:8081/collection").build();

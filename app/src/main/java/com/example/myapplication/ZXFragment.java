@@ -89,7 +89,7 @@ public class ZXFragment extends Fragment{
                 // TODO 传入的参数为用户id 需要将Url替换成访问自选基金的服务器网址
                 MediaType mediaType = MediaType.parse("application/x-www-form-urlencoded");
                 RequestBody body = RequestBody.create(mediaType,
-                        "uuid=111&fundId=*"+"&option=read&date=*");
+                        "uuid="+UserInformation.shared.getUserId()+"&fundId=*"+"&operation=read&date=*");
 
                 Request request = new Request.Builder()
                         .post(body)
