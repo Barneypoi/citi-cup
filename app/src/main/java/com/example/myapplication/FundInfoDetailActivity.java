@@ -8,6 +8,7 @@ import android.os.Handler;
 import android.os.Message;
 import android.support.annotation.Nullable;
 import android.util.Log;
+import android.view.View;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -234,5 +235,9 @@ public class FundInfoDetailActivity extends Activity {
         //String date = new java.text.SimpleDateFormat("yyyy-MM-dd HH:mm:ss").format(new java.util.Date(timestamp));
         String date = new java.text.SimpleDateFormat("yyyy-MM-dd").format(new java.util.Date(timestamp));
         return date;
+    }
+    //统一定义单击返回按键执行操作
+    public void backToMain(View view){
+        onBackPressed();
     }
 }

@@ -210,11 +210,11 @@ public class SYFragment extends Fragment {
 
                 Intent i = new Intent(getContext(), FundInfoActivity.class);
                 Bundle bundle = new Bundle();
-                bundle.putString("fundName", fundName);
-                bundle.putString("fundIncre", fundIncre);
+//                bundle.putString("fundName", fundName);
+//                bundle.putString("fundIncre", fundIncre);
                 bundle.putString("fundId", fundId);
-                //bundle.putString("fundRisk",fundRisk);
-                bundle.putString("fundType", fundType);
+//                //bundle.putString("fundRisk",fundRisk);
+//                bundle.putString("fundType", fundType);
 
                 i.putExtras(bundle);
                 startActivity(i);

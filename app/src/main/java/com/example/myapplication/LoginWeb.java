@@ -52,13 +52,18 @@ public class LoginWeb extends AppCompatActivity {
             public boolean shouldOverrideUrlLoading(WebView view, String url) {
                 Toast.makeText(getApplicationContext(), url, Toast.LENGTH_SHORT).show();
                 view.loadUrl(url, header);
+                //正确登录
                 if (url.startsWith("http://47.100.120.235:8081/test?uuid=")) {
                     Intent intent = new Intent(getApplicationContext(), MainActivity.class);
                     String userid = url.substring(url.indexOf("uuid=")+5);
                     UserInformation.shared.setUserId(userid);
                     intent.putExtra("userid", userid);
                     startActivity(intent);
+                }else if (url.startsWith("http://47.100.120.235:8081/feedback?error=")) {
+                    Intent intent = new Intent(getApplicationContext(), MainActivity.class);
+                    startActivity(intent);
                 }
+
                 return true;
             }
         });

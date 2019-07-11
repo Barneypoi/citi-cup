@@ -200,7 +200,7 @@ public class FundInfoActivity extends Activity {
                         Log.v("FundInfoActivity",fundRisk);
 
                         //获取到json数据中的activity数组里的内容fundNetweigh
-                        String temp_netweigh = jsobject.getString("fundNetweigh");
+                        String temp_netweigh = jsobject.optString("fundNetweigh");
                         fundNetweigh = temp_netweigh;
                         Log.v("FundInfoActivity",fundNetweigh);
 
@@ -212,7 +212,7 @@ public class FundInfoActivity extends Activity {
                         fundType = temp_type;
                         Log.v("FundInfoActivity",fundType);
 
-                        String temp_incre = jsobject.getString("fundIncre");
+                        String temp_incre = jsobject.optString("fundIncre");
                         fundIncre = temp_incre;
                         Log.v("FundInfoActivity",fundIncre);
 
@@ -241,7 +241,7 @@ public class FundInfoActivity extends Activity {
                     //JSON数据对象
                     jsobject=resultJsonArray.getJSONObject(i);
                     //此处将自选的基金放入数组中
-                    String favFundId = jsobject.optString("fundId");
+                    String favFundId = jsobject.getString("fundId");
                     favoriteFundIds.add(favFundId);
 
                     String date = jsobject.optString("generationDate");
@@ -277,7 +277,9 @@ public class FundInfoActivity extends Activity {
         tv2.setText(fundIncre);
 
         //设置日涨幅颜色
-        if(fundIncre.charAt(0) == '+') {
+        if (fundIncre == null)
+        {}
+        else if(fundIncre.charAt(0) == '+') {
             tv2.setTextColor(getResources().getColor(R.color.highlighttext));
         }
         else if(fundIncre.charAt(0) == '-') {

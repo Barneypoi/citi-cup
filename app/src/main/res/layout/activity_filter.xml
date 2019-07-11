@@ -26,12 +26,11 @@
 
         <Spinner
             android:id="@+id/spin_fundkind"
-            android:layout_width="80dp"
+            android:layout_width="135dp"
             android:layout_height="30dp"
-            android:layout_marginLeft="150dp"
+            android:layout_marginLeft="130dp"
             android:layout_marginTop="20dp"
-            android:spinnerMode="dropdown"
-            />
+            android:spinnerMode="dropdown" />
 
         <TextView
             android:id="@+id/textView16"
@@ -39,15 +38,15 @@
             android:layout_height="30dp"
             android:layout_marginStart="20dp"
             android:layout_marginLeft="20dp"
-            android:layout_marginTop="60dp"
+            android:layout_marginTop="70dp"
             android:text="风险类型："
-            android:textSize="16sp"/>
+            android:textSize="16sp" />
 
         <Spinner
             android:id="@+id/spin_riskkind"
-            android:layout_width="80dp"
-            android:layout_height="30dp"
-            android:layout_marginLeft="150dp"
+            android:layout_width="135dp"
+            android:layout_height="44dp"
+            android:layout_marginLeft="130dp"
             android:layout_marginTop="60dp"
             android:spinnerMode="dropdown" />
 
