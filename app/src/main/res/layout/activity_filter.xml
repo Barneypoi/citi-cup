@@ -40,8 +40,7 @@
             android:layout_marginStart="20dp"
             android:layout_marginLeft="20dp"
             android:layout_marginTop="60dp"
-            android:gravity="center"
-            android:text="风险类型 ："
+            android:text="风险类型："
             android:textSize="16sp"/>
 
         <Spinner

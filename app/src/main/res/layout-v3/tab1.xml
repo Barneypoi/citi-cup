@@ -1,127 +1,127 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/subtitlecolor"
-    android:orientation="vertical">
+    android:background="@color/titlecolor">
 
-    <ScrollView
-        android:background="@color/titlecolor"
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <com.example.myapplication.SYPosterViewPager
+            android:layout_width="match_parent"
+            android:layout_height="190dp">
+
+        </com.example.myapplication.SYPosterViewPager>
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical">
+            android:layout_height="match_parent"
+            android:layout_marginTop="20dp"
+            android:background="@color/titlecolor"
+            android:orientation="horizontal">
 
-            <com.example.myapplication.SYPosterViewPager
-                android:layout_width="match_parent"
-                android:layout_height="150dp" >
+            <Button
+                android:id="@+id/buttonJJ"
+                android:layout_width="wrap_content"
+                android:layout_height="60dp"
+                android:layout_marginLeft="5dp"
+                android:layout_marginTop="3dp"
+                android:layout_marginRight="7dp"
+                android:layout_marginBottom="1.5dp"
+                android:layout_weight="1"
+                android:background="@drawable/selector_mainbtn"
+                android:drawableLeft="@mipmap/search_main"
+                android:onClick="jumpToSearch"
+                android:padding="5pt"
+                android:text="基金搜索"
+                android:textColor="@color/titlecolor" />
 
-            </com.example.myapplication.SYPosterViewPager>
-
-            <LinearLayout
-                android:background="@color/titlecolor"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:orientation="horizontal">
-
-                    <Button
-                        android:id="@+id/buttonJJ"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:background="@drawable/selector_mainbtn"
-                        android:text="基金搜索"
-                        android:drawableLeft="@mipmap/search_main"
-                        android:layout_marginTop="3dp"
-                        android:layout_marginBottom="1.5dp"
-                        android:layout_marginLeft="5dp"
-                        android:layout_marginRight="2dp"
-                        android:textColor="@color/titlecolor"
-                        android:onClick="jumpToSearch"/>
-                    <Button
-                        android:id="@+id/button2"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:background="@drawable/selector_mainbtn"
-                        android:text="基金筛选"
-                        android:drawableLeft="@mipmap/filter_main"
-                        android:layout_marginBottom="3dp"
-                        android:layout_marginTop="1.5dp"
-                        android:layout_marginRight="5dp"
-                        android:layout_marginLeft="2dp"
-                        android:textColor="@color/titlecolor"
-                        android:onClick="jumpToFilter"/>
-            </LinearLayout>
-            <LinearLayout
-                android:background="@color/titlecolor"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:orientation="horizontal">
-
-                    <Button
-                        android:id="@+id/button4"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:background="@drawable/selector_mainbtn"
-                        android:text="基金净值"
-                        android:drawableLeft="@mipmap/netweigh_main"
-                        android:layout_marginBottom="3dp"
-                        android:layout_marginTop="1.5dp"
-                        android:layout_marginRight="2dp"
-                        android:layout_marginLeft="5dp"
-                        android:textColor="@color/titlecolor"
-                        android:onClick="jumpToNet"/>
-                <Button
-                    android:id="@+id/button3"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:background="@drawable/selector_mainbtn"
-                    android:text="查看更多"
-                    android:drawableLeft="@mipmap/return_main"
-                    android:layout_marginTop="3dp"
-                    android:layout_marginBottom="1.5dp"
-                    android:layout_marginLeft="2dp"
-                    android:layout_marginRight="5dp"
-                    android:textColor="@color/titlecolor"
-                    android:onClick="jumpToReturn"/>
-            </LinearLayout>
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:orientation="vertical">
-                //主要推荐 待修改
-
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:background="@drawable/double_border"
-                    android:text="推荐基金"
-                    android:layout_marginTop="5dp"
-                    android:layout_marginBottom="5dp"
-                    android:textSize="17sp"
-                    android:textColor="#000000"
-                    android:padding="5dp"/>
-
-                <include layout="@layout/block_fundinfo"/>
-
-                <ListView
-                    android:id="@+id/lv_mainwin"
-                    android:layout_width="match_parent"
-                    android:layout_height="320dp">
-
-
-                </ListView>
-            </LinearLayout>
-
+            <Button
+                android:id="@+id/button2"
+                android:layout_width="wrap_content"
+                android:layout_height="60dp"
+                android:layout_marginLeft="7dp"
+                android:layout_marginTop="1.5dp"
+                android:layout_marginRight="5dp"
+                android:layout_marginBottom="3dp"
+                android:layout_weight="1"
+                android:background="@drawable/selector_mainbtn"
+                android:drawableLeft="@mipmap/filter_main"
+                android:onClick="jumpToFilter"
+                android:padding="5pt"
+                android:text="基金筛选"
+                android:textColor="@color/titlecolor" />
         </LinearLayout>
-    </ScrollView>
 
-</LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginBottom="20dp"
+            android:background="@color/titlecolor"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/button4"
+                android:layout_width="wrap_content"
+                android:layout_height="60dp"
+                android:layout_marginLeft="5dp"
+                android:layout_marginTop="4dp"
+                android:layout_marginRight="7dp"
+                android:layout_marginBottom="3dp"
+                android:layout_weight="1"
+                android:background="@drawable/selector_mainbtn"
+                android:drawableLeft="@mipmap/netweigh_main"
+                android:onClick="jumpToNet"
+                android:padding="5pt"
+                android:text="基金净值"
+                android:textColor="@color/titlecolor" />
+
+            <Button
+                android:id="@+id/button3"
+                android:layout_width="wrap_content"
+                android:layout_height="60dp"
+                android:layout_marginLeft="7dp"
+                android:layout_marginTop="4dp"
+                android:layout_marginRight="5dp"
+                android:layout_marginBottom="1.5dp"
+                android:layout_weight="1"
+                android:background="@drawable/selector_mainbtn"
+                android:drawableLeft="@mipmap/return_main"
+                android:onClick="jumpToReturn"
+                android:padding="5pt"
+                android:text="查看更多"
+                android:textColor="@color/titlecolor" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+            //主要推荐 待修改
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:layout_marginBottom="5dp"
+                android:background="@drawable/double_border"
+                android:padding="5dp"
+                android:text="推荐基金"
+                android:textColor="#000000"
+                android:textSize="17sp" />
+
+            <include layout="@layout/block_fundinfo" />
+
+            <ListView
+                android:id="@+id/lv_mainwin"
+                android:layout_width="match_parent"
+                android:layout_height="420dp">
+
+
+            </ListView>
+        </LinearLayout>
+
+    </LinearLayout>
+</ScrollView>

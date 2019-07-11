@@ -2,22 +2,21 @@
 <RelativeLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="40dp"
+    android:layout_height="50dp"
     android:background="@color/main">
 
     <Button
         android:id="@+id/button5"
         style="@style/backButton"
-        android:onClick="backToMain" />
+        android:layout_centerVertical="true"
+        android:onClick="backToMain"/>
 
     <TextView
         android:id="@+id/title_tv"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:layout_marginTop="10dp"
-        android:layout_marginBottom="10dp"
         android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
         android:text="请在activity中设置标题"
         android:textColor="@color/titlecolor"
         android:textSize="14sp" />

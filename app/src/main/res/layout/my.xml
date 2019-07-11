@@ -13,31 +13,50 @@
         android:orientation="vertical">
 
         <LinearLayout
+            android:paddingTop="20dp"
             android:orientation="horizontal"
             android:layout_width="match_parent"
-            android:layout_height="50dp"
+            android:layout_height="wrap_content"
             android:background="@color/main"
             android:onClick="jumpToSetting">
 
             <ImageView
                 android:id="@+id/imageView_user"
-                android:layout_width="50dp"
-                android:layout_height="50dp"
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:layout_marginLeft="20dp"
                 android:src="@drawable/image10"
                 />
+            <RelativeLayout
+                android:layout_marginTop="20dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:id="@+id/textView1_userName"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentTop="true"
+                    android:layout_gravity="center"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginTop="0dp"
+                    android:onClick="jumpToSetting"
+                    android:text="User_Name"
+                    android:textColor="@color/titlecolor"
+                    android:textSize="20sp" />
 
             <TextView
-                android:id="@+id/textView1_userName"
+                android:id="@+id/textView1_userId"
+                android:layout_below="@id/textView1_userName"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_gravity="center"
                 android:layout_marginLeft="20dp"
-                android:text="User_Name"
-                android:textSize="20sp"
-                android:textColor="@color/titlecolor"
+                android:layout_gravity="center"
                 android:onClick="jumpToSetting"
-                />
-
+                android:text="99XXXXXXXXX11"
+                android:textColor="@color/titlecolor"
+                android:textSize="12sp" />
+            </RelativeLayout>
         </LinearLayout>
 
         <TableLayout
@@ -46,6 +65,7 @@
             android:background="@color/main">
 
             <TableRow
+                android:layout_marginTop="5dp"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent">
 

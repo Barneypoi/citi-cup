@@ -162,4 +162,9 @@ public class UserInfoActivity extends AppCompatActivity {
         Intent intent = new Intent(this, AddCardActivity.class);
         startActivity(intent);
     }
+
+    //统一定义单击返回按键执行操作
+    public void backToMain(View view){
+        onBackPressed();
+    }
 }
