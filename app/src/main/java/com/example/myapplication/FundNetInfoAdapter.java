@@ -36,6 +36,18 @@ public class FundNetInfoAdapter extends ArrayAdapter<FundInfoObject> {
         tv3.setText(fundinfo.getFundNetweigh());
         tv4.setText(fundinfo.getFundIncre());
 
+        //设置日涨幅颜色
+        if(fundinfo.getFundIncre().charAt(0) == '+') {
+            tv4.setTextColor(getContext().getColor(R.color.highlighttext));
+        }
+        else if(fundinfo.getFundIncre().charAt(0) == '-') {
+            tv4.setTextColor(getContext().getColor(R.color.decreColor));
+        }
+        else
+        {
+            tv4.setTextColor(getContext().getColor(R.color.subtitledarkercolor));
+        }
+
         return view;
     }
 

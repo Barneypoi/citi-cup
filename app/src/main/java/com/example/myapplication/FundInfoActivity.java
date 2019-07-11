@@ -275,6 +275,18 @@ public class FundInfoActivity extends Activity {
 
         tv2 = findViewById(R.id.tv_big_fundRate);
         tv2.setText(fundIncre);
+
+        //设置日涨幅颜色
+        if(fundIncre.charAt(0) == '+') {
+            tv2.setTextColor(getResources().getColor(R.color.highlighttext));
+        }
+        else if(fundIncre.charAt(0) == '-') {
+            tv2.setTextColor(getResources().getColor(R.color.decreColor));
+        }
+        else
+        {
+            tv2.setTextColor(getResources().getColor(R.color.subtitledarkercolor));
+        }
     }
 
     private void setUIButton(){
