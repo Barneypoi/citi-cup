@@ -18,13 +18,13 @@ import okhttp3.Response;
 
 public class LoginWeb extends AppCompatActivity {
     private WebView webView;
-    private String client_id = "3906dd6d-534b-4d20-81d7-0e78848013a3";
-    private String client_secret = "";
-    private String redirect_uri = "https://sandbox.developerhub.citi.com/api-authorize";
-    //    private String client_id = "5bc9344e-8478-4a5f-a16d-b473328b114d";
-//    private String client_secret = "eU2eS4nA4cK0wV1tQ4wJ7nW2pB5mJ8wU5pB6hF6jQ2eH0cN3fO";
-//    private String redirect_uri = "http://47.100.120.235:8081/runo";
-    //"http://47.100.120.235:8081/runo"
+//    private String client_id = "3906dd6d-534b-4d20-81d7-0e78848013a3";
+//    private String client_secret = "";
+//    private String redirect_uri = "https://sandbox.developerhub.citi.com/api-authorize";
+        private String client_id = "5bc9344e-8478-4a5f-a16d-b473328b114d";
+    private String client_secret = "eU2eS4nA4cK0wV1tQ4wJ7nW2pB5mJ8wU5pB6hF6jQ2eH0cN3fO";
+    private String redirect_uri = "http://47.100.120.235:8081/feedback";
+//    "http://47.100.120.235:8081/runo"
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
@@ -52,9 +52,11 @@ public class LoginWeb extends AppCompatActivity {
             public boolean shouldOverrideUrlLoading(WebView view, String url) {
                 Toast.makeText(getApplicationContext(), url, Toast.LENGTH_SHORT).show();
                 view.loadUrl(url, header);
-                if (url.startsWith(redirect_uri)) {
+                if (url.startsWith("http://47.100.120.235:8081/test?uuid=")) {
                     Intent intent = new Intent(getApplicationContext(), MainActivity.class);
-                    intent.putExtra("url", url);
+                    String userid = url.substring(url.indexOf("uuid=")+5);
+                    UserInformation.shared.setUserId(userid);
+                    intent.putExtra("userid", userid);
                     startActivity(intent);
                 }
                 return true;
