@@ -17,4 +17,6 @@
     <color name="settingTitleColor">#98A5AB</color>
     <color name="settingSubtitleColor">#607D8B</color>
     <color name="myButtonTextColor">#03A9F4</color>
+    <color name="increColor">#DC143C</color>
+    <color name="decreColor">#3CB371</color>
 </resources>

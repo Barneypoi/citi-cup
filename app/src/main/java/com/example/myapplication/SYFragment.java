@@ -22,7 +22,6 @@ import org.json.JSONObject;
 
 import java.io.IOException;
 import java.util.ArrayList;
-import java.util.Map;
 
 import okhttp3.OkHttpClient;
 import okhttp3.Request;
@@ -39,9 +38,6 @@ public class SYFragment extends Fragment {
 
     private ListView lv;
 
-    //标识当前单击单元格的基金名称
-    private String fundName_onclick;
-
     //从服务器获取的信息
     private String fundName, fundId, fundType, fundRisk, fundIncre;
 
@@ -49,9 +45,6 @@ public class SYFragment extends Fragment {
     private ArrayList<String> fundIdList = new ArrayList<>();
     //改变该条目数据对象内容，将数据显示在ListView中
     private ArrayList<FundInfoObject> fundInfoList = new ArrayList<>();
-
-    //字符串到JSON对象的映射
-    public ArrayList<Map<String, Object>> mainlist = new ArrayList<>();
 
     private View view;
 
@@ -67,16 +60,16 @@ public class SYFragment extends Fragment {
         tv1 = view.findViewById(R.id.tv_big_fundName);
         tv1.setText("国富潜力组合混合A");
         tv2 = view.findViewById(R.id.tv_big_fundRate);
-        tv2.setText("5.29%");
+        tv2.setText("+5.29%");
 
 
         //测试数据
-        fundIdList.add("136");
-        fundIdList.add("333");
-        fundIdList.add("165");
-        fundIdList.add("173");
-        fundIdList.add("45");
-        fundIdList.add("72");
+        fundIdList.add("33");
+        fundIdList.add("86");
+        fundIdList.add("272");
+        fundIdList.add("373");
+        fundIdList.add("430");
+        fundIdList.add("548");
 
         //initFundInfo();
         initConnection();
@@ -161,7 +154,6 @@ public class SYFragment extends Fragment {
                         String temp_risk = object.getString("fundRisk");
                         fundRisk = temp_risk;
                         Log.v(getActivity().toString(), fundRisk);
-
 
                         //创建基金信息对象
                         temp_fund = new FundInfoObject(fundName, fundIncre, fundId, fundType, fundRisk);

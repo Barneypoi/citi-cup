@@ -34,6 +34,18 @@ public class FundinfoListitem_main_Adapter extends ArrayAdapter<FundInfoObject> 
         tv2.setText(fundinfo.getFundIncre());
         tv3.setText(convertId(fundinfo.getFundId()));
         tv4.setText(fundinfo.getFundType());
+
+        //设置日涨幅颜色
+        if(fundinfo.getFundIncre().charAt(0) == '+') {
+            tv2.setTextColor(getContext().getColor(R.color.highlighttext));
+        }
+        else if(fundinfo.getFundIncre().charAt(0) == '-') {
+            tv2.setTextColor(getContext().getColor(R.color.decreColor));
+        }
+        else
+        {
+            tv2.setTextColor(getContext().getColor(R.color.subtitledarkercolor));
+        }
         return view;
     }
 
@@ -46,4 +58,5 @@ public class FundinfoListitem_main_Adapter extends ArrayAdapter<FundInfoObject> 
         }
         return zero + orig_id ;
     }
+
 }
