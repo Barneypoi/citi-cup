@@ -38,8 +38,10 @@ public class FundInfoActivity extends Activity {
 
     private ArrayList<FundInfoObject> fundInfoList = new ArrayList<>();
 
+    //当前界面基金的名字，涨幅，ID，类型，风险，净值
     private String fundName, fundIncre, fundId, fundType, fundRisk, fundNetweigh;
 
+    //显示ID，可续，风险，净值，名字的textView
     private TextView tv_id, tv_type, tv_risk, tv_netweigh, title;
 
     //单元格跳转详细信息的控件
@@ -67,9 +69,12 @@ public class FundInfoActivity extends Activity {
         //fundName = getIntent().getExtras().getString("fundName");
         //fundIncre = getIntent().getExtras().getString("fundIncre");
         fundId = getIntent().getExtras().getString("fundId");
+        //初始化自选基金的按钮
         addOrRemoveFavButton = (Button) findViewById(R.id.addOrRemoveFavButton);
         addOrRemoveFavButton.setText("");
+        //每次生成界面的时候都需要清除查询数组
         favoriteFundIds.clear();
+        //此用于连接数据库 获得当前基金的信息
         initConnection();
         //此用于连接数据库 得到该用户的自选信息
         initFavConnection();
@@ -93,6 +98,7 @@ public class FundInfoActivity extends Activity {
 
     }
 
+    //每次界面暂停是保存自选信息
     @Override
     protected void onPause() {
         super.onPause();
@@ -140,6 +146,7 @@ public class FundInfoActivity extends Activity {
             }
         }).start();
     }
+
     public void initConnection(){
 
         //创建子线程发送网络请求
@@ -204,14 +211,16 @@ public class FundInfoActivity extends Activity {
                         fundNetweigh = temp_netweigh;
                         Log.v("FundInfoActivity",fundNetweigh);
 
+                        //获取到json数据中的activity数组里的内容fundName
                         String temp_name = jsobject.getString("fundName");
                         fundName = temp_name;
                         Log.v("FundInfoActivity",fundName);
-
+                        //获取到json数据中的activity数组里的内容fundType
                         String temp_type = jsobject.optString("fundType");
                         fundType = temp_type;
                         Log.v("FundInfoActivity",fundType);
 
+                        //获取到json数据中的activity数组里的内容fundIncre
                         String temp_incre = jsobject.optString("fundIncre");
                         fundIncre = temp_incre;
                         Log.v("FundInfoActivity",fundIncre);
@@ -294,6 +303,7 @@ public class FundInfoActivity extends Activity {
     private void setUIButton(){
         //先转换成Int值再转换成String消除补上的0
         final String temp_Id = simplyfyId(fundId);
+        //此部分用于检测进入界面时当前基金是否自选，并初始化自选按钮
         if(favoriteFundIds.contains(temp_Id)) {
             addOrRemoveFavButton.setText("取消自选");
             addOrRemoveFavButton.setBackgroundColor(getResources().getColor(R.color.exitcolor));
@@ -305,6 +315,7 @@ public class FundInfoActivity extends Activity {
             addOrRemoveFavButton.setBackgroundColor(getResources().getColor(R.color.subtitledarkercolor));
             addOrRemoveFavButton.setTextColor(getResources().getColor(R.color.black));
         }
+        ///设置按钮监听
         addOrRemoveFavButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

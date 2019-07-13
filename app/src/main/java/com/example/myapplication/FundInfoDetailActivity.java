@@ -126,6 +126,7 @@ public class FundInfoDetailActivity extends Activity {
                     JSONArray netWeighJSList = object.getJSONArray("netWeigh");
 
                     //for(int tmp = 0; tmp< netWeighJSList.length(); tmp++)
+                    //下述将基金每一天的净值放入Map集合中
                     for(int tmp = netWeighJSList.length() - 1; tmp>0; tmp--){
                         JSONObject tmpJSObject = netWeighJSList.getJSONObject(tmp);
                         Map<String, Object> map = new HashMap<String, Object>();
@@ -230,6 +231,7 @@ public class FundInfoDetailActivity extends Activity {
         tv_cash.setText(cashRatio);
     }
 
+    //将时间戳转化成格式化的时间
     public String TimeStamp2Date(String timestampString){
         Long timestamp = Long.parseLong(timestampString);
         //String date = new java.text.SimpleDateFormat("yyyy-MM-dd HH:mm:ss").format(new java.util.Date(timestamp));

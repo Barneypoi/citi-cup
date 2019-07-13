@@ -1,5 +1,6 @@
 package com.example.myapplication;
 
+//用于保存基金信息的基金类
 public class FundInfoObject {
     private String fundName;
     private String fundIncre;

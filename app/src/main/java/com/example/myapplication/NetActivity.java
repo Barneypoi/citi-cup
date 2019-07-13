@@ -20,7 +20,7 @@ import okhttp3.OkHttpClient;
 import okhttp3.Request;
 import okhttp3.Response;
 
-
+//基金净值界面
 public class NetActivity extends AppCompatActivity {
 
     //当前界面用于显示基金的listView

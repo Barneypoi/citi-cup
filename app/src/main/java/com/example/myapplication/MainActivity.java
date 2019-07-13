@@ -13,6 +13,7 @@ import android.widget.ImageButton;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
+//有下边栏切换的Activity
 public class MainActivity extends FragmentActivity implements OnClickListener {
     //声明Tab的布局文件
     private LinearLayout mTabSY;

@@ -28,22 +28,25 @@ import static java.lang.String.valueOf;
 
 
 public class FilterActivity extends AppCompatActivity {
-    //下拉菜单
+    //下拉菜单，spinner1为基金类型,spinner2为基金风险
     private Spinner spinner1, spinner2;
 
-    //JSON数据对象
+    //JSON数据对象，用于在转义网络信息是作中间变量媒介
     public JSONObject object;
+
     //筛选基金名称接口，用于储存推荐基金的名称
     private ArrayList<String> fundNameList = new ArrayList<>();
 
     //改变该条目数据对象内容，将数据显示在ListView中，即将筛选的基金显示出来
     private ArrayList<FundInfoObject> fundInfoList = new ArrayList<>();
+
     //界面上用于显示筛选信息的listView
     private ListView lv;
-    //从服务器获取的信息
+
+    //从服务器获取的基金信息
     private String fundName, fundId, fundType, fundRisk, fundIncre, fundNetweigh;
 
-    //用于筛选的数据
+    //用于筛选的数据，基金类型和基金风险
     private String filterFundType, filterFundRisk;
 
     //ListView的Adapter
@@ -60,6 +63,7 @@ public class FilterActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_filter);
 
+        //设置界面头部文字
         title = findViewById(R.id.title_tv);
         title.setText("基金筛选");
 
@@ -71,21 +75,28 @@ public class FilterActivity extends AppCompatActivity {
         fundNameList.add("长城核心优选混合");
         */
 
+        //初始化获得ListView
         lv = (ListView) findViewById(R.id.lv_filter) ;
+
+        //初始化筛选下拉单
         initSpinner();
 
         //筛选按钮监听事件 用于从服务器获取筛选数据
         filterButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                //从服务端获取数据
                 initConnection();
+                //调试信息
                 Toast.makeText(FilterActivity.this, filterFundRisk + "    " + filterFundType, Toast.LENGTH_SHORT).show();
             }
         });
 
     }
 
+    //初始化筛选框下拉单
     public void initSpinner() {
+        //初始化
         spinner1 = (Spinner) findViewById(R.id.spin_fundkind);
         spinner2 = (Spinner) findViewById(R.id.spin_riskkind);
         filterButton = (Button) findViewById(R.id.filterButton);
@@ -119,6 +130,7 @@ public class FilterActivity extends AppCompatActivity {
                 Toast.makeText(FilterActivity.this,
                         parent.getItemAtPosition(position).toString(),
                         Toast.LENGTH_SHORT).show();
+                //获取选择的基金类型
                 filterFundType = parent.getItemAtPosition(position).toString();
                 spinner1.setSelection(position);
             }
@@ -138,6 +150,7 @@ public class FilterActivity extends AppCompatActivity {
                 Toast.makeText(FilterActivity.this,
                         parent.getItemAtPosition(position).toString(),
                         Toast.LENGTH_SHORT).show();
+                //获取选择的基金风险
                 filterFundRisk = parent.getItemAtPosition(position).toString();
                 spinner2.setSelection(position);
             }
@@ -198,7 +211,7 @@ public class FilterActivity extends AppCompatActivity {
 
                     FundInfoObject temp_fund;
 
-                    //获取到json数据中的activity数组里的内容fundId
+                    //获取到json数据中的activity数组里的内容fundName
                     String temp_name = object.optString("fundName");
                     fundName = temp_name;
                     //Log.v(getActivity().toString(), fundName);
@@ -213,6 +226,7 @@ public class FilterActivity extends AppCompatActivity {
                     fundIncre = temp_incre;
                     //Log.v(getActivity().toString(), fundIncre);
 
+                    //获取到json数据中的activity数组里的内容fundIncre
                     String temp_netweigh = object.optString("nowNetweigh");
                     fundNetweigh = temp_netweigh;
                     //.v(getActivity().toString(),fundNetweigh);
@@ -240,6 +254,8 @@ public class FilterActivity extends AppCompatActivity {
     }
 
     public void createList() {
+        if(fundInfoList.size() == 0)
+            Toast.makeText(getApplicationContext(),"没有这种类型风险的基金",Toast.LENGTH_SHORT);
         //初始化ListView展示基金信息
         baseAdapter = new FundNetInfoAdapter(getApplicationContext(), R.layout.listitem_net, fundInfoList);
         lv.setAdapter(baseAdapter);
@@ -248,7 +264,7 @@ public class FilterActivity extends AppCompatActivity {
         lv.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                //TODO 这个地方应该修改成 用fundInfoArraylist来传递数据
+                // 这个地方应该修改成 用fundInfoArraylist来传递数据
                 tv1 = view.findViewById(R.id.netListFundName);
                 fundName = tv1.getText().toString();//得到数据
 
@@ -276,6 +292,7 @@ public class FilterActivity extends AppCompatActivity {
         });
     }
 
+    //基金类型筛选下拉框的数据源
     private List<String> getData1() {
         // 数据源
         List<String> dataList = new ArrayList<String>();
@@ -300,6 +317,7 @@ public class FilterActivity extends AppCompatActivity {
         return dataList;
     }
 
+    //基金风险筛选下拉框的数据源
     private List<String> getData2() {
         // 数据源
         List<String> dataList = new ArrayList<String>();

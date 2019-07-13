@@ -23,7 +23,7 @@ import okhttp3.Response;
 
 import static java.lang.String.valueOf;
 
-
+//用于显示搜索结果的界面
 public class SearchViewActivity extends Activity {
 
     JSONObject object;

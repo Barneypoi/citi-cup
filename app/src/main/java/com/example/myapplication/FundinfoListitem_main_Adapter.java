@@ -11,6 +11,7 @@ import android.widget.TextView;
 
 import java.util.List;
 
+//用于在首页显示基金的Adapter
 public class FundinfoListitem_main_Adapter extends ArrayAdapter<FundInfoObject> {
     private int resourceId;
 

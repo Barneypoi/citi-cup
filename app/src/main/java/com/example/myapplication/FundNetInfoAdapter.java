@@ -11,6 +11,7 @@ import android.widget.TextView;
 
 import java.util.List;
 
+//用于在净值界面，自选界面显示基金的Adapter
 public class FundNetInfoAdapter extends ArrayAdapter<FundInfoObject> {
     private int resourceId;
 

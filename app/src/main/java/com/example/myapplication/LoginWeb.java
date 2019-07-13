@@ -16,6 +16,7 @@ import java.util.Map;
 import okhttp3.Request;
 import okhttp3.Response;
 
+//用于显示花旗登录界面的WebView界面
 public class LoginWeb extends AppCompatActivity {
     private WebView webView;
 //    private String client_id = "3906dd6d-534b-4d20-81d7-0e78848013a3";
@@ -53,7 +54,7 @@ public class LoginWeb extends AppCompatActivity {
                 Toast.makeText(getApplicationContext(), url, Toast.LENGTH_SHORT).show();
                 view.loadUrl(url, header);
                 //正确登录
-                if (url.startsWith("http://47.100.120.235:8081/test?uuid=")) {
+                if (url.startsWith("http://47.100.120.235:8081/index?uuid=")) {
                     Intent intent = new Intent(getApplicationContext(), MainActivity.class);
                     String userid = url.substring(url.indexOf("uuid=")+5);
                     UserInformation.shared.setUserId(userid);

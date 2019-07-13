@@ -22,6 +22,7 @@ import org.json.JSONObject;
 
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.concurrent.TimeUnit;
 
 import okhttp3.OkHttpClient;
 import okhttp3.Request;
@@ -84,6 +85,9 @@ public class SYFragment extends Fragment {
             public void run() {
 
                 OkHttpClient okHttpClient = new OkHttpClient();
+                okHttpClient.newBuilder()
+                        .connectTimeout(10000, TimeUnit.SECONDS)
+                        .readTimeout(20000, TimeUnit.SECONDS).build();
 
                 //获取推荐基金名称列表
                 String str_fundIdList = "";
@@ -98,11 +102,17 @@ public class SYFragment extends Fragment {
                 //传入的参数为全部推荐基金的名称，若无推荐基金，则返回值传入参数为空字符串""
                 Request request = new Request.Builder()
                         .get()
-                        .url("http://47.100.120.235:8081/mainInfo?fundId=" + str_fundIdList).build();
+                        .url("http://47.100.120.235:8081/recommend").build();
 
                 try {
                     Response response = null;
-                    response = okHttpClient.newCall(request).execute();
+                    response = okHttpClient.newBuilder()
+                            .connectTimeout(10000, TimeUnit.SECONDS)
+                            .readTimeout(20000, TimeUnit.SECONDS)
+//                            .callTimeout(10000, TimeUnit.SECONDS)
+                            .build()
+                            .newCall(request)
+                            .execute();
                     assert response.body() != null;
                     String data = null;
                     data = response.body().string();

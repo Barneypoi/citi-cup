@@ -86,7 +86,7 @@ public class ZXFragment extends Fragment{
                 OkHttpClient okHttpClient = new OkHttpClient();
 
                 //服务器返回地址，填入请求数据参数
-                // TODO 传入的参数为用户id 需要将Url替换成访问自选基金的服务器网址
+                // 传入的参数为用户id 需要将Url替换成访问自选基金的服务器网址
                 MediaType mediaType = MediaType.parse("application/x-www-form-urlencoded");
                 RequestBody body = RequestBody.create(mediaType,
                         "uuid="+UserInformation.shared.getUserId()+"&fundId=*"+"&operation=read&date=*");
@@ -124,7 +124,7 @@ public class ZXFragment extends Fragment{
                     String fundIdForConnect = favoriteFundIds.get(i);
                     //服务器返回地址，填入请求数据参数
                     //传入的参数为全部推荐基金的名称，若无推荐基金，则返回值传入参数为空字符串""
-                    //TODO 访问显示自选基金的API
+                    // 访问显示自选基金的API
                     Request request = new Request.Builder()
                             .get()
                             .url("http://47.100.120.235:8081/basicInfo?fundId=" + fundIdForConnect).build();
@@ -159,7 +159,7 @@ public class ZXFragment extends Fragment{
                     try {
                         FundInfoObject temp_fund;
 
-                        //TODO 依照API给的数据修改这里的东西
+                        // 依照API给的数据修改这里的东西
                         //获取到json数据中的activity数组里的内容fundId
                         String temp_fundId = object.optString("fundId");
                         fundId = temp_fundId;
@@ -241,7 +241,7 @@ public class ZXFragment extends Fragment{
     }
     public void createList() {
 
-        //TODO 这里应该修改改成
+        // 这里应该修改改成
         //初始化ListView展示基金信息
         baseAdapter = new FundNetInfoAdapter(getContext(), R.layout.listitem_net, fundInfoList);
         lv.setAdapter(baseAdapter);
@@ -251,7 +251,7 @@ public class ZXFragment extends Fragment{
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
 
-                //TODO 这个地方应该修改成 用fundInfoArraylist来传递数据
+                //这个地方应该修改成 用fundInfoArraylist来传递数据
                 tv1 = view.findViewById(R.id.netListFundName);
                 fundName = tv1.getText().toString();//得到数据
 

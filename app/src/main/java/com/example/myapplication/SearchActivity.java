@@ -15,6 +15,7 @@ import android.widget.Toast;
 
 import java.util.ArrayList;
 
+//用于基金搜索的界面
 public class SearchActivity extends Activity implements AdapterView.OnItemClickListener {
 
     private SearchView sv;
