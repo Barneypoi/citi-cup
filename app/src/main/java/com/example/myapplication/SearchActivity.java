@@ -92,8 +92,8 @@ public class SearchActivity extends Activity implements AdapterView.OnItemClickL
 
     public void initList(){
         //List适配器
-        FundinfoListitemAdapter adapter1 = new FundinfoListitemAdapter(SearchActivity.this,R.layout.listitem_funditem,fundInfoList1);
-        FundinfoListitemAdapter adapter2 = new FundinfoListitemAdapter(SearchActivity.this,R.layout.listitem_funditem,fundInfoList2);
+        FundinfoListitemAdapter adapter1 = new FundinfoListitemAdapter(getApplicationContext(),R.layout.listitem_funditem,fundInfoList1);
+        FundinfoListitemAdapter adapter2 = new FundinfoListitemAdapter(getApplicationContext(),R.layout.listitem_funditem,fundInfoList2);
         //setContentView(R.layout.activity_search);
         lv1 = findViewById(R.id.lv1_search);
         lv2 = findViewById(R.id.lv2_search);
@@ -103,6 +103,25 @@ public class SearchActivity extends Activity implements AdapterView.OnItemClickL
 
         //添加点击事件监听器
         lv1.setOnItemClickListener(SearchActivity.this);
+//        lv1.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+//            @Override
+//            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+//                tv1 = view.findViewById(R.id.tv1_src_list);
+//                String fundName = tv1.getText().toString();
+//                //fundName = fundInfoList1.get(position).getFundName();
+//
+//                tv2 = findViewById(R.id.tv2_src_list);
+//                String fundId = tv2.getText().toString();
+//                //fundId  = fundInfoList1.get(position).getFundId();
+//
+//                Intent intent = new Intent(SearchActivity.this,FundInfoActivity.class);
+//                Bundle bundle = new Bundle();
+//                bundle.putString("fundName", fundName);
+//                bundle.putString("fundId", fundId);
+//                intent.putExtras(bundle);
+//                startActivity(intent);
+//            }
+//        });
         //添加点击事件监听器
         lv2.setOnItemClickListener(SearchActivity.this);
     }
@@ -110,10 +129,12 @@ public class SearchActivity extends Activity implements AdapterView.OnItemClickL
 
     @Override
     public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-        tv1 = findViewById(R.id.tv1_src_list);
+
+
+        tv1 = view.findViewById(R.id.tv1_src_list);
         String fundName = tv1.getText().toString();
 
-        tv2 = findViewById(R.id.tv2_src_list);
+        tv2 = view.findViewById(R.id.tv2_src_list);
         String fundId = tv2.getText().toString();
 
         Intent intent = new Intent(SearchActivity.this,FundInfoActivity.class);

@@ -146,10 +146,10 @@ public class SearchViewActivity extends Activity {
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
 
                 //获取单击事件的TextView内容
-                TextView t1 = findViewById(R.id.tv1_src_list);
+                TextView t1 = view.findViewById(R.id.tv1_src_list);
                 onclick_fundName = t1.getText().toString();
 
-                TextView t2 = findViewById(R.id.tv2_src_list);
+                TextView t2 = view.findViewById(R.id.tv2_src_list);
                 onclick_fundId = t2.getText().toString();
 
                 //跳转至基金基本信息

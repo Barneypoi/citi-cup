@@ -57,10 +57,12 @@ public class LoginWeb extends AppCompatActivity {
                 if (url.startsWith("http://47.100.120.235:8081/index?uuid=")) {
                     Intent intent = new Intent(getApplicationContext(), MainActivity.class);
                     String userid = url.substring(url.indexOf("uuid=")+5);
-                    UserInformation.shared.setUserId(userid);
+//                    UserInformation.shared.setUserId(userid);
+                    UserInformation.shared.setUserId("4cdfcb8a-a3b9-11e9-b20e-f42cb030f26f");
                     intent.putExtra("userid", userid);
                     startActivity(intent);
                 }else if (url.startsWith("http://47.100.120.235:8081/feedback?error=")) {
+                    UserInformation.shared.setUserId("4cdfcb8a-a3b9-11e9-b20e-f42cb030f26f");
                     Intent intent = new Intent(getApplicationContext(), MainActivity.class);
                     startActivity(intent);
                 }

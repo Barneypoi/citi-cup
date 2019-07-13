@@ -236,6 +236,7 @@ public class FilterActivity extends AppCompatActivity {
                     fundInfoList.add(temp_fund);
 
                 }
+
                 //执行完数据线程再执行UI线程防止引用空对象
                 runOnUiThread(
                         new Runnable() {
@@ -254,8 +255,9 @@ public class FilterActivity extends AppCompatActivity {
     }
 
     public void createList() {
+
         if(fundInfoList.size() == 0)
-            Toast.makeText(getApplicationContext(),"没有这种类型风险的基金",Toast.LENGTH_SHORT);
+            Toast.makeText(getApplicationContext(),"没有这种类型风险的基金",Toast.LENGTH_LONG);
         //初始化ListView展示基金信息
         baseAdapter = new FundNetInfoAdapter(getApplicationContext(), R.layout.listitem_net, fundInfoList);
         lv.setAdapter(baseAdapter);
